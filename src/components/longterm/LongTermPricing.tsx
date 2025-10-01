@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Home, CheckCircle, Star, Calendar } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const pricingPlans = [
   {
@@ -80,12 +81,12 @@ export default function LongTermPricing() {
   const [hoveredPlan, setHoveredPlan] = useState<number | null>(null)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-gray-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -115,7 +116,7 @@ export default function LongTermPricing() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            The longer you stay, the more you save. Our long-term pricing offers significant 
+            The longer you stay, the more you save. Our long-term pricing offers significant
             discounts with enhanced amenities and personalized services for extended residents.
           </motion.p>
         </motion.div>
@@ -133,11 +134,10 @@ export default function LongTermPricing() {
               variants={withMotion(fadeInUp)}
               onMouseEnter={() => setHoveredPlan(index)}
               onMouseLeave={() => setHoveredPlan(null)}
-              className={`relative bg-white border-2 rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl ${
-                plan.popular 
-                  ? 'border-accent shadow-lg scale-105' 
-                  : 'border-gray-100 hover:border-gray-200'
-              }`}
+              className={`relative bg-white border-2 rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl ${plan.popular
+                ? 'border-accent shadow-lg scale-105'
+                : 'border-gray-100 hover:border-gray-200'
+                }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
@@ -177,19 +177,24 @@ export default function LongTermPricing() {
                 </ul>
 
                 {/* CTA Button */}
-                <button className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 ${
-                  plan.popular
-                    ? 'bg-accent text-black hover:shadow-lg'
-                    : 'border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
-                }`}>
-                  Choose This Plan
-                </button>
+                <ContactFormDialog
+                  trigger={
+                    <button className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 ${plan.popular
+                      ? 'bg-accent text-black hover:shadow-lg'
+                      : 'border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
+                      }`}>
+                      Choose This Plan
+                    </button>
+                  }
+                  title={`Choose ${plan.title}`}
+                  description={`Select the ${plan.type.toLowerCase()} for your extended stay with all amenities included.`}
+                  serviceType={`${plan.title} Selection`}
+                />
               </div>
 
               {/* Hover Accent */}
-              <div className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-500 ${
-                hoveredPlan === index ? 'w-full' : 'w-0'
-              }`} />
+              <div className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-500 ${hoveredPlan === index ? 'w-full' : 'w-0'
+                }`} />
             </motion.div>
           ))}
         </motion.div>
@@ -206,7 +211,7 @@ export default function LongTermPricing() {
               Long-term Resident Exclusive Benefits
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Extended stay residents enjoy special perks and savings that make long-term living 
+              Extended stay residents enjoy special perks and savings that make long-term living
               with Cohousy even more rewarding.
             </p>
           </div>
@@ -221,9 +226,16 @@ export default function LongTermPricing() {
           </div>
 
           <div className="text-center mt-8">
-            <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Calculate Your Savings
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Calculate Your Savings
+                </button>
+              }
+              title="Calculate Your Savings"
+              description="Get a personalized savings calculation for your long-term stay with exclusive benefits."
+              serviceType="Savings Calculator"
+            />
           </div>
         </motion.div>
       </div>

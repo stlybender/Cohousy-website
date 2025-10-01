@@ -20,6 +20,7 @@ import {
   ChevronRight
 } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from './ContactFormDialog'
 
 const footerLinks = {
   'Accommodation': [
@@ -117,13 +118,26 @@ export default function Footer() {
               Join hundreds of professionals who've made Cohousy their home in Kharadi's tech hub.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                Schedule a Tour
-              </button>
-              <button className="px-8 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-gray-900 transition-all duration-300">
-                <Download size={20} className="inline mr-2" />
-                Download App
-              </button>
+              <ContactFormDialog
+                trigger={
+                  <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                    Schedule a Tour
+                  </button>
+                }
+                title="Schedule Your Tour"
+                description="Book a personalized tour of our premium co-living spaces at your convenience."
+                serviceType="Property Tour"
+              />
+              <ContactFormDialog
+                trigger={
+                  <button className="w-fit flex items-center gap-2 px-4 py-2 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300">
+                    <Download />    Download App
+                  </button>
+                }
+                title="Get Cohousy App"
+                description="Download our app for seamless booking and management of your PG accommodation."
+                serviceType="App Download"
+              />
             </div>
           </motion.div>
 
@@ -153,7 +167,7 @@ export default function Footer() {
               className="lg:col-span-1"
             >
               <div className="flex items-center space-x-3 mb-6">
-               <img src='/white.png'  className='h-20'/>
+                <img src='/white.png' className='h-20' />
               </div>
 
               <p className="text-gray-300 mb-6 leading-relaxed">

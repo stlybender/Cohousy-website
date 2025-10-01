@@ -146,8 +146,8 @@ export default function WhyChooseSection() {
                   >
                     {/* Professional Icon */}
                     <div className={`flex-shrink-0 p-3 rounded-xl transition-all duration-300 ${hoveredBenefit === index
-                        ? 'bg-accent text-black shadow-lg'
-                        : 'bg-gray-100 text-gray-600'
+                      ? 'bg-accent text-black shadow-lg'
+                      : 'bg-gray-100 text-gray-600'
                       }`}>
                       <IconComponent size={24} strokeWidth={1.5} />
                     </div>
@@ -177,22 +177,17 @@ export default function WhyChooseSection() {
 
             {/* Clean CTA Section */}
             <motion.div variants={withMotion(fadeInUp)} className="pt-8">
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex  justify-center  gap-4">
                 <ContactFormDialog
-                  title="Schedule a Visit"
-                  description="Book a visit to see the property in person."
-                  serviceType="Schedule Visit"
+                  serviceType="Co-living"
                   trigger={
-                    <div className='flex justify-center'>
-                      <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 w-fit transition-colors text-sm">
-                        Schedule Visit
-                      </button>
-                    </div>
+                    <button className="relative inline-flex items-center px-6 py-3 bg-accent text-black font-semibold rounded-xl overflow-hidden group transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 hover:scale-105">
+                      <span className="relative z-10">Schedule Visit</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-accent to-accent/80 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
+                    </button>
                   }
                 />
-                <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-                  Learn More
-                </button>
+
               </div>
             </motion.div>
           </motion.div>

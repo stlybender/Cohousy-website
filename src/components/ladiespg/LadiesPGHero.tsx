@@ -122,9 +122,18 @@ export default function LadiesPGHero() {
                   </div>
                 }
               />
-              <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-                Schedule Ladies-Only Tour
-              </button>
+              <ContactFormDialog
+                title="Schedule a Visit"
+                description="Book a visit to see the property in person."
+                serviceType="Schedule Visit"
+                trigger={
+                  <div className='flex justify-center'>
+                    <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                      Schedule Ladies-Only Visit
+                    </button>
+                  </div>
+                }
+              />
             </motion.div>
           </motion.div>
 

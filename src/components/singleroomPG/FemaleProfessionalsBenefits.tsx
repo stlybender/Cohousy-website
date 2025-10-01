@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Shield, Users, Home, Camera, Clock, Heart } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const safetyFeatures = [
   {
@@ -50,12 +51,12 @@ export default function FemaleProfessionalsBenefits() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -85,14 +86,14 @@ export default function FemaleProfessionalsBenefits() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Safety tops the list for women in Kharadi's dynamic environment. Our single room PG in 
-            Kharadi Pune for female includes dedicated sections with 24/7 security and CCTV. 
+            Safety tops the list for women in Kharadi's dynamic environment. Our single room PG in
+            Kharadi Pune for female includes dedicated sections with 24/7 security and CCTV.
             Female residents appreciate attached washrooms and AC rooms for comfort.
           </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Safety Features */}
           <motion.div
             variants={withMotion(staggerContainer)}
@@ -116,7 +117,7 @@ export default function FemaleProfessionalsBenefits() {
                     <h3 className="text-lg font-bold text-black mb-2">
                       {feature.title}
                     </h3>
-                    
+
                     <p className="text-gray-600 leading-relaxed mb-2">
                       {feature.description}
                     </p>
@@ -182,16 +183,30 @@ export default function FemaleProfessionalsBenefits() {
             Ready to Experience Secure Living?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Book a virtual tour today and secure your spot in our premium single room PG 
+            Book a virtual tour today and secure your spot in our premium single room PG
             designed specifically for women professionals in Kharadi's IT corridor.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-pink-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Book Virtual Tour for Women
-            </button>
-            <button className="px-8 py-3 border-2 border-pink-600 text-pink-600 font-semibold rounded-lg hover:bg-pink-600 hover:text-white transition-all duration-300">
-              Speak with Female Residents
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-pink-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Book Virtual Tour for Women
+                </button>
+              }
+              title="Book Virtual Tour for Women"
+              description="Schedule a personalized virtual tour of our secure single room PG for female professionals."
+              serviceType="Women Virtual Tour"
+            />
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 border-2 border-pink-600 text-pink-600 font-semibold rounded-lg hover:bg-pink-600 hover:text-white transition-all duration-300">
+                  Speak with Female Residents
+                </button>
+              }
+              title="Connect with Female Residents"
+              description="Chat with our current female residents to learn about their safe living experience."
+              serviceType="Female Resident Chat"
+            />
           </div>
         </motion.div>
       </div>

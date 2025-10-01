@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Users, MapPin, Home, Wifi, Shield, Coffee } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const benefits = [
   {
@@ -50,12 +51,12 @@ export default function WhyChooseMalePG() {
   const [hoveredBenefit, setHoveredBenefit] = useState<number | null>(null)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-blue-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -85,8 +86,8 @@ export default function WhyChooseMalePG() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Kharadi has emerged as Pune's premier IT hub, home to major companies like Barclays, Credit Suisse, 
-            and Honeywell at Eon IT Park Kharadi. For male professionals relocating here, finding the right 
+            Kharadi has emerged as Pune's premier IT hub, home to major companies like Barclays, Credit Suisse,
+            and Honeywell at Eon IT Park Kharadi. For male professionals relocating here, finding the right
             accommodation can make all the difference in work-life balance.
           </motion.p>
         </motion.div>
@@ -108,18 +109,16 @@ export default function WhyChooseMalePG() {
                 onMouseLeave={() => setHoveredBenefit(null)}
                 className="group bg-white border border-blue-100 rounded-2xl p-8 hover:border-blue-200 transition-all duration-500 hover:shadow-lg"
               >
-                <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-300 ${
-                  hoveredBenefit === index ? 'bg-blue-600 text-white' : 'bg-blue-100 text-blue-600'
-                }`}>
+                <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-300 ${hoveredBenefit === index ? 'bg-blue-600 text-white' : 'bg-blue-100 text-blue-600'
+                  }`}>
                   <IconComponent size={24} strokeWidth={1.5} />
                 </div>
 
-                <h3 className={`text-xl font-bold mb-4 transition-colors duration-300 ${
-                  hoveredBenefit === index ? 'text-blue-600' : 'text-black'
-                }`}>
+                <h3 className={`text-xl font-bold mb-4 transition-colors duration-300 ${hoveredBenefit === index ? 'text-blue-600' : 'text-black'
+                  }`}>
                   {benefit.title}
                 </h3>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-4">
                   {benefit.description}
                 </p>
@@ -128,9 +127,8 @@ export default function WhyChooseMalePG() {
                   {benefit.highlight}
                 </div>
 
-                <div className={`mt-6 h-0.5 bg-blue-600 transition-all duration-500 ${
-                  hoveredBenefit === index ? 'w-full' : 'w-0'
-                }`} />
+                <div className={`mt-6 h-0.5 bg-blue-600 transition-all duration-500 ${hoveredBenefit === index ? 'w-full' : 'w-0'
+                  }`} />
               </motion.div>
             )
           })}
@@ -178,9 +176,16 @@ export default function WhyChooseMalePG() {
             <p className="text-gray-600 mb-4">
               Join professionals who chose convenience and community over compromise
             </p>
-            <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Explore Our Male PG Options
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Explore Our Male PG Options
+                </button>
+              }
+              title="Explore Male PG Options"
+              description="Discover different accommodation options available for male professionals in Kharadi."
+              serviceType="Male PG Options"
+            />
           </div>
         </motion.div>
       </div>

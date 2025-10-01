@@ -103,10 +103,12 @@ export default function BookNowCTA() {
                             }
                         />
 
-                        <button className="group relative px-12 py-4 border-3 border-orange-600 text-orange-600 font-bold text-lg rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105">
-                            <Phone size={20} className="inline mr-3" />
-                            Call for Location Tour
-                        </button>
+                        <a href="tel:+918908903900">
+                            <button className="group relative px-12 py-4 border-3 border-orange-600 text-orange-600 font-bold text-lg rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300 transform hover:scale-105">
+                                <Phone size={20} className="inline mr-3" />
+                                Call for Location Tour
+                            </button>
+                        </a>
                     </motion.div>
 
                     {/* Quick Stats */}
@@ -153,9 +155,16 @@ export default function BookNowCTA() {
                         </div>
                         <h3 className="text-lg font-bold text-black mb-2">Call & Book</h3>
                         <p className="text-sm text-gray-600 mb-4">Direct booking assistance</p>
-                        <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
-                            📞 Call Now
-                        </button>
+                        <ContactFormDialog
+                            trigger={
+                                <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
+                                    📞 Call Now
+                                </button>
+                            }
+                            title="Request Call Back"
+                            description="Our team will call you back within 10 minutes for direct booking assistance."
+                            serviceType="Call Back Request"
+                        />
                     </div>
 
                     {/* WhatsApp Option */}
@@ -165,9 +174,16 @@ export default function BookNowCTA() {
                         </div>
                         <h3 className="text-lg font-bold text-black mb-2">WhatsApp</h3>
                         <p className="text-sm text-gray-600 mb-4">Quick queries & booking</p>
-                        <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
-                            Message Us
-                        </button>
+                        <ContactFormDialog
+                            trigger={
+                                <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
+                                    Message Us
+                                </button>
+                            }
+                            title="WhatsApp Support"
+                            description="Get instant responses to your queries via WhatsApp."
+                            serviceType="WhatsApp Support"
+                        />
                     </div>
 
                     {/* Virtual Tour Option */}
@@ -177,9 +193,16 @@ export default function BookNowCTA() {
                         </div>
                         <h3 className="text-lg font-bold text-black mb-2">Virtual Tour</h3>
                         <p className="text-sm text-gray-600 mb-4">Explore rooms online</p>
-                        <button className="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300">
-                            Start Tour
-                        </button>
+                        <ContactFormDialog
+                            trigger={
+                                <button className="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300">
+                                    Start Tour
+                                </button>
+                            }
+                            title="Schedule Virtual Tour"
+                            description="Book a live virtual tour of our PG accommodations near Eon IT Park."
+                            serviceType="Virtual Tour"
+                        />
                     </div>
 
                     {/* App Download Option */}
@@ -189,9 +212,16 @@ export default function BookNowCTA() {
                         </div>
                         <h3 className="text-lg font-bold text-black mb-2">Download App</h3>
                         <p className="text-sm text-gray-600 mb-4">Book & manage digitally</p>
-                        <button className="w-full py-2 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300">
-                            Get App
-                        </button>
+                        <ContactFormDialog
+                            trigger={
+                                <button className="w-full py-2 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300">
+                                    Get App
+                                </button>
+                            }
+                            title="Get Cohousy App"
+                            description="Download our app for seamless booking and management of your PG accommodation."
+                            serviceType="App Download"
+                        />
                     </div>
                 </motion.div>
 
@@ -263,9 +293,16 @@ export default function BookNowCTA() {
                         <span>✓ Zero Brokerage</span>
                         <span>✓ Digital Experience</span>
                     </div>
-                    <button className="px-12 py-4 bg-orange-600 text-white font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300">
-                        🚀 Book Your Spot Now - Save on First Month!
-                    </button>
+                    <ContactFormDialog
+                        trigger={
+                            <button className="px-12 py-4 bg-orange-600 text-white font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300">
+                                🚀 Book Your Spot Now - Save on First Month!
+                            </button>
+                        }
+                        title="Book Your Spot & Save!"
+                        description="Secure your PG accommodation near Eon IT Park and save on your first month with our special offer."
+                        serviceType="Special Offer Booking"
+                    />
                 </motion.div>
             </div>
         </section>

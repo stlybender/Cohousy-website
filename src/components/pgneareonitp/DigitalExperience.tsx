@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Smartphone, Zap, Users, CreditCard, Settings, Shield } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const appFeatures = [
   {
@@ -49,12 +50,12 @@ export default function DigitalExperience() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -84,8 +85,8 @@ export default function DigitalExperience() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            What differentiates Cohousy's PG near Eon IT Park Kharadi is our tenant smart app—offering 
-            a 100% digital journey that competitors simply can't match. This streamlines life for 
+            What differentiates Cohousy's PG near Eon IT Park Kharadi is our tenant smart app—offering
+            a 100% digital journey that competitors simply can't match. This streamlines life for
             busy professionals, reducing friction with comprehensive digital features.
           </motion.p>
         </motion.div>
@@ -112,7 +113,7 @@ export default function DigitalExperience() {
                 <h3 className="text-xl font-bold text-black mb-4 group-hover:text-orange-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-4">
                   {feature.description}
                 </p>
@@ -139,7 +140,7 @@ export default function DigitalExperience() {
               Digital-First vs Traditional PG Management
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              This app streamlines life for busy professionals at Eon IT Park Kharadi, 
+              This app streamlines life for busy professionals at Eon IT Park Kharadi,
               reducing friction with comprehensive features that traditional PGs can't offer.
             </p>
           </div>
@@ -158,7 +159,7 @@ export default function DigitalExperience() {
                 <li>• Real-time updates & notifications</li>
               </ul>
             </div>
-           <div>
+            <div>
               <h4 className="font-semibold text-red-600 mb-4">📄 Traditional PG Management</h4>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>• Lengthy paperwork and manual processes</li>
@@ -177,9 +178,16 @@ export default function DigitalExperience() {
             <p className="text-gray-600 mb-4">
               Perfect for IT professionals who value efficiency and digital convenience
             </p>
-            <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Download Cohousy App
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Download Cohousy App
+                </button>
+              }
+              title="Download Cohousy App"
+              description="Get the Cohousy mobile app for complete digital living management and seamless PG experience."
+              serviceType="App Download"
+            />
           </div>
         </motion.div>
       </div>

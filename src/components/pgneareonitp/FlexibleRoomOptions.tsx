@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Home, CheckCircle, Users, DollarSign } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 import Link from 'next/link'
+import ContactFormDialog from '../ContactFormDialog'
 
 const roomOptions = [
     {
@@ -162,10 +163,18 @@ export default function FlexibleRoomOptions() {
 
                             {/* CTA */}
                             <div className="px-6 pb-6">
-                                <button className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 ${index === 1 ? 'bg-orange-600 text-white hover:shadow-lg' : 'border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'
-                                    }`}>
-                                    Book {option.type}
-                                </button>
+                                <ContactFormDialog
+                                    trigger={
+                                        <button className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 ${index === 1 ? 'bg-orange-600 text-white hover:shadow-lg' : 'border-2 border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white'
+                                            }`}>
+                                            Book {option.type}
+                                        </button>
+                                    }
+                                    title={`Book ${option.type}`}
+                                    description={`Reserve your ${option.type.toLowerCase()} at ${option.properties} near Eon IT Park.`}
+                                    serviceType={`${option.type} Booking`}
+                                    propertyName={`${option.properties} - ${option.type}`}
+                                />
                             </div>
 
                             {/* Hover Accent */}
@@ -271,9 +280,16 @@ export default function FlexibleRoomOptions() {
                             </Link>
                         </div>
 
-                        <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                            Check Room Availability
-                        </button>
+                        <ContactFormDialog
+                            trigger={
+                                <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                                    Check Room Availability
+                                </button>
+                            }
+                            title="Check Room Availability"
+                            description="Check current availability and book your preferred room type near Eon IT Park."
+                            serviceType="Room Availability"
+                        />
                     </div>
                 </motion.div>
             </div>

@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Home, CheckCircle, Star, Users } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const pricingPlans = [
   {
@@ -77,12 +78,12 @@ export default function LadiesPGPricing() {
   const [hoveredPlan, setHoveredPlan] = useState<number | null>(null)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -112,8 +113,8 @@ export default function LadiesPGPricing() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Our pricing starts at ₹8,000 per month for shared rooms, up to ₹15,000 for single room 
-            ladies PG with AC and premium amenities. All packages include meals, Wi-Fi, and housekeeping 
+            Our pricing starts at ₹8,000 per month for shared rooms, up to ₹15,000 for single room
+            ladies PG with AC and premium amenities. All packages include meals, Wi-Fi, and housekeeping
             with no brokerage fees - designed specifically for women's comfort and budget.
           </motion.p>
         </motion.div>
@@ -131,11 +132,10 @@ export default function LadiesPGPricing() {
               variants={withMotion(fadeInUp)}
               onMouseEnter={() => setHoveredPlan(index)}
               onMouseLeave={() => setHoveredPlan(null)}
-              className={`relative bg-white border-2 rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl ${
-                plan.popular 
-                  ? 'border-pink-600 shadow-lg scale-105' 
-                  : 'border-pink-100 hover:border-pink-200'
-              }`}
+              className={`relative bg-white border-2 rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl ${plan.popular
+                ? 'border-pink-600 shadow-lg scale-105'
+                : 'border-pink-100 hover:border-pink-200'
+                }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
@@ -149,7 +149,7 @@ export default function LadiesPGPricing() {
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-black mb-2">{plan.title}</h3>
                   <p className="text-gray-600 mb-4">{plan.type}</p>
-                  
+
                   {/* Pricing */}
                   <div className="flex items-center justify-center space-x-2 mb-2">
                     <span className="text-4xl font-bold text-black">{plan.price}</span>
@@ -172,19 +172,24 @@ export default function LadiesPGPricing() {
                 </ul>
 
                 {/* CTA Button */}
-                <button className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 ${
-                  plan.popular
-                    ? 'bg-pink-600 text-white hover:shadow-lg'
-                    : 'border-2 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white'
-                }`}>
-                  Book Safe Accommodation
-                </button>
+                <ContactFormDialog
+                  trigger={
+                    <button className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 ${plan.popular
+                        ? 'bg-pink-600 text-white hover:shadow-lg'
+                        : 'border-2 border-pink-600 text-pink-600 hover:bg-pink-600 hover:text-white'
+                      }`}>
+                      Book Safe Accommodation
+                    </button>
+                  }
+                  title={`Book ${plan.title}`}
+                  description={`Reserve your ${plan.type.toLowerCase()} accommodation with enhanced safety features for women.`}
+                  serviceType={`${plan.title} Booking`}
+                />
               </div>
 
               {/* Hover Accent */}
-              <div className={`absolute bottom-0 left-0 h-1 bg-pink-600 transition-all duration-500 ${
-                hoveredPlan === index ? 'w-full' : 'w-0'
-              }`} />
+              <div className={`absolute bottom-0 left-0 h-1 bg-pink-600 transition-all duration-500 ${hoveredPlan === index ? 'w-full' : 'w-0'
+                }`} />
             </motion.div>
           ))}
         </motion.div>
@@ -201,7 +206,7 @@ export default function LadiesPGPricing() {
               Women-Focused Benefits Included
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Our pricing is designed with women's specific needs in mind, offering 
+              Our pricing is designed with women's specific needs in mind, offering
               comprehensive support and services that ensure comfort and security.
             </p>
           </div>
@@ -219,9 +224,16 @@ export default function LadiesPGPricing() {
             <p className="text-sm text-gray-600 mb-4">
               Special offers available for women professionals and students
             </p>
-            <button className="px-8 py-3 bg-pink-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Get Customized Quote for Women
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-pink-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Get Customized Quote for Women
+                </button>
+              }
+              title="Get Customized Quote for Women"
+              description="Get personalized pricing and options designed specifically for women's accommodation needs."
+              serviceType="Women Customized Quote"
+            />
           </div>
         </motion.div>
       </div>

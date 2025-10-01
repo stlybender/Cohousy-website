@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Wifi, Home, Utensils, Dumbbell, Shield, Car, Coffee, Zap } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const amenities = [
   {
@@ -72,17 +73,17 @@ export default function LuxuryAmenities() {
   const [hoveredAmenity, setHoveredAmenity] = useState<number | null>(null)
 
   const categories = ['All', ...Array.from(new Set(amenities.map(a => a.category)))]
-  const filteredAmenities = activeCategory === 'All' 
-    ? amenities 
+  const filteredAmenities = activeCategory === 'All'
+    ? amenities
     : amenities.filter(amenity => amenity.category === activeCategory)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-gray-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -112,8 +113,8 @@ export default function LuxuryAmenities() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Cohousy elevates PG near Eon IT Park Kharadi with a full suite of amenities 
-            focusing on comfort, productivity, and health. These features exceed standard 
+            Cohousy elevates PG near Eon IT Park Kharadi with a full suite of amenities
+            focusing on comfort, productivity, and health. These features exceed standard
             PG hostels, with AC options and post-pandemic hygiene protocols.
           </motion.p>
         </motion.div>
@@ -129,11 +130,10 @@ export default function LuxuryAmenities() {
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                activeCategory === category
+              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${activeCategory === category
                   ? 'bg-orange-600 text-white shadow-sm'
                   : 'text-gray-600 hover:text-orange-600 hover:bg-orange-50 border border-orange-200'
-              }`}
+                }`}
             >
               {category}
             </button>
@@ -166,7 +166,7 @@ export default function LuxuryAmenities() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                   />
-                  
+
                   {/* Icon Overlay */}
                   <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-sm">
                     <IconComponent size={20} className="text-orange-600" strokeWidth={1.5} />
@@ -179,20 +179,18 @@ export default function LuxuryAmenities() {
                     {amenity.category}
                   </div>
 
-                  <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${
-                    hoveredAmenity === index ? 'text-orange-600' : 'text-black'
-                  }`}>
+                  <h3 className={`text-lg font-bold mb-3 transition-colors duration-300 ${hoveredAmenity === index ? 'text-orange-600' : 'text-black'
+                    }`}>
                     {amenity.title}
                   </h3>
-                  
+
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {amenity.description}
                   </p>
                 </div>
 
-                <div className={`h-0.5 bg-orange-600 transition-all duration-500 ${
-                  hoveredAmenity === index ? 'w-full' : 'w-0'
-                }`} />
+                <div className={`h-0.5 bg-orange-600 transition-all duration-500 ${hoveredAmenity === index ? 'w-full' : 'w-0'
+                  }`} />
               </motion.div>
             )
           })}
@@ -208,7 +206,7 @@ export default function LuxuryAmenities() {
           <h3 className="text-2xl font-bold text-black mb-6 text-center">
             How Our Amenities Compare
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <h4 className="font-semibold text-green-600 mb-4 flex items-center">
@@ -246,9 +244,16 @@ export default function LuxuryAmenities() {
             <p className="text-gray-600 mb-4">
               Residents praise how our amenities support demanding schedules near WTC Kharadi
             </p>
-            <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Book PG with Premium Amenities
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Book PG with Premium Amenities
+                </button>
+              }
+              title="Book Premium PG Accommodation"
+              description="Reserve your spot in our luxury PG with world-class amenities near Eon IT Park."
+              serviceType="Premium PG Booking"
+            />
           </div>
         </motion.div>
       </div>

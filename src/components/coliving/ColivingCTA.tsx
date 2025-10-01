@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Phone, Download, MapPin, Clock, Star } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const quickStats = [
   { icon: MapPin, value: '5 min', label: 'Walk to Eon IT Park' },
@@ -67,16 +68,29 @@ export default function ColivingCTA() {
             variants={withMotion(fadeInUp)}
             className="flex flex-col sm:flex-row gap-6 justify-center mb-12"
           >
-            <button className="group relative px-12 py-4 bg-accent text-black font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <Phone size={20} className="inline mr-3" />
-              Call Now to Book
-              <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="group relative px-12 py-4 bg-accent text-black font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <Phone size={20} className="inline mr-3" />
+                  Call Now to Book
+                  <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </button>
+              }
+              title="Book Your Room Now"
+              description="Secure your spot in our premium co-living spaces near Eon IT Park."
+              serviceType="Room Booking"
+            />
 
-            <button className="group relative px-12 py-4 border-3 border-gray-900 text-gray-900 font-bold text-lg rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-105">
-              <Download size={20} className="inline mr-3" />
-              Download Cohousy App
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300">
+                  Get App
+                </button>
+              }
+              title="Get Cohousy App"
+              description="Download our app for seamless booking and management of your PG accommodation."
+              serviceType="App Download"
+            />
           </motion.div>
 
           {/* Quick Stats */}
@@ -135,9 +149,16 @@ export default function ColivingCTA() {
             </div>
             <h3 className="text-xl font-bold text-black mb-2">Book via App</h3>
             <p className="text-gray-600 mb-4">100% digital booking process</p>
-            <button className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
-              Download Cohousy App
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
+                  Download Cohousy App
+                </button>
+              }
+              title="Download Cohousy App"
+              description="Get the Cohousy mobile app for seamless co-living management and community features."
+              serviceType="App Download"
+            />
           </div>
         </motion.div>
 

@@ -382,18 +382,17 @@ export default function LocationAmenitiesSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <ContactFormDialog
-              title="Schedule Property Tour"
-              description="Book a visit to see the property in person."
-              serviceType="Schedule Visit"
+              serviceType="Co-living"
               trigger={
-                <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition-colors text-sm">
-                  Schedule Visit
+                <button className="relative inline-flex items-center px-6 py-3 bg-accent text-black font-semibold rounded-xl overflow-hidden group transition-all duration-300 hover:shadow-xl hover:shadow-accent/25 hover:scale-105">
+                  <span className="relative z-10">Schedule Visit</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-accent to-accent/80 translate-x-full group-hover:translate-x-0 transition-transform duration-300" />
                 </button>
               }
             />
-            <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+            {/* <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
               Download Amenities Guide
-            </button>
+            </button> */}
           </div>
         </motion.div>
       </div>

@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Smartphone, Shield, Heart, Users, Zap, Bell } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const appFeatures = [
   {
@@ -49,12 +50,12 @@ export default function DigitalLiving() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-pink-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -84,8 +85,8 @@ export default function DigitalLiving() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Experience the future of ladies PG living with Cohousy's innovative app, transforming your 
-            stay into a 100% digital journey designed specifically for women's needs. From safety features 
+            Experience the future of ladies PG living with Cohousy's innovative app, transforming your
+            stay into a 100% digital journey designed specifically for women's needs. From safety features
             to wellness tracking, every aspect is tailored for the modern professional woman.
           </motion.p>
         </motion.div>
@@ -112,7 +113,7 @@ export default function DigitalLiving() {
                 <h3 className="text-xl font-bold text-black mb-4 group-hover:text-pink-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-4">
                   {feature.description}
                 </p>
@@ -139,7 +140,7 @@ export default function DigitalLiving() {
               App Features Designed for Women's Needs
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Every feature in our app considers women's unique requirements, from safety to wellness, 
+              Every feature in our app considers women's unique requirements, from safety to wellness,
               creating a supportive digital ecosystem.
             </p>
           </div>
@@ -168,9 +169,17 @@ export default function DigitalLiving() {
           </div>
 
           <div className="text-center mt-8">
-            <button className="px-8 py-3 bg-pink-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Download Women-Centric App
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-pink-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Download Women-Centric App
+                </button>
+              }
+              title="Get Cohousy App"
+              description="Download our app for seamless booking and management of your PG accommodation."
+              serviceType="App Download"
+            />
+
           </div>
         </motion.div>
       </div>

@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Shield, Camera, Users, MapPin, Clock, Heart } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import Link from 'next/link'
 
 const safetyFeatures = [
     {
@@ -179,10 +180,12 @@ export default function SafetyMeasures() {
                                 </li>
                             ))}
                         </ul>
+                        <Link href='/ladies-pg-kharadi'>
 
-                        <button className="mt-6 px-6 py-2 bg-pink-600 text-white font-semibold rounded-lg hover:bg-pink-700 transition-colors duration-300">
-                            Learn About Ladies PG Safety
-                        </button>
+                            <button className="mt-6 px-6 py-2 bg-pink-600 text-white font-semibold rounded-lg hover:bg-pink-700 transition-colors duration-300">
+                                Learn About Ladies PG Safety
+                            </button>
+                        </Link>
                     </div>
 
                     {/* Male Safety */}
@@ -204,10 +207,11 @@ export default function SafetyMeasures() {
                                 </li>
                             ))}
                         </ul>
-
-                        <button className="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                            Explore Male PG Security
-                        </button>
+                        <Link href='/male-pg-kharadi'>
+                            <button className="mt-6 px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                                Explore Male PG Security
+                            </button>
+                        </Link>
                     </div>
                 </motion.div>
 

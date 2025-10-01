@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Phone, Calendar, Home, Clock, Star, MapPin } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const quickStats = [
   { icon: Home, value: '3-12+', label: 'Months Flexible' },
@@ -66,16 +67,30 @@ export default function LongTermCTA() {
             variants={withMotion(fadeInUp)}
             className="flex flex-col sm:flex-row gap-6 justify-center mb-12"
           >
-            <button className="group relative px-12 py-4 bg-accent text-black font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <Calendar size={20} className="inline mr-3" />
-              Book Long-term Stay
-              <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="group relative px-12 py-4 bg-accent text-black font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <Calendar size={20} className="inline mr-3" />
+                  Book Long-term Stay
+                  <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </button>
+              }
+              title="Book Long-term Stay"
+              description="Secure your extended stay accommodation with exclusive long-term benefits."
+              serviceType="Long-term Booking"
+            />
 
-            <button className="group relative px-12 py-4 border-3 border-gray-900 text-gray-900 font-bold text-lg rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-105">
-              <Phone size={20} className="inline mr-3" />
-              Talk to Specialist
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="group relative px-12 py-4 border-3 border-gray-900 text-gray-900 font-bold text-lg rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-105">
+                  <Phone size={20} className="inline mr-3" />
+                  Talk to Specialist
+                </button>
+              }
+              title="Speak with Long-term Specialist"
+              description="Get personalized guidance from our long-term rental experts."
+              serviceType="Specialist Consultation"
+            />
           </motion.div>
 
           {/* Quick Stats */}
@@ -122,9 +137,16 @@ export default function LongTermCTA() {
             </div>
             <h3 className="text-xl font-bold text-black mb-2">Call Now</h3>
             <p className="text-gray-600 mb-4">Speak with long-term rental experts</p>
-            <button className="w-full py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
-              Call +91 8908903900
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
+                  Call +91 8908903900
+                </button>
+              }
+              title="Call Long-term Rental Experts"
+              description="Connect with our specialists for immediate assistance with long-term rentals."
+              serviceType="Long-term Expert Call"
+            />
           </div>
 
           {/* Visit Option */}
@@ -134,9 +156,16 @@ export default function LongTermCTA() {
             </div>
             <h3 className="text-xl font-bold text-black mb-2">Property Tour</h3>
             <p className="text-gray-600 mb-4">See your future home in person</p>
-            <button className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
-              Schedule Visit
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
+                  Schedule Visit
+                </button>
+              }
+              title="Schedule Property Tour"
+              description="Book a personalized tour to see your future long-term home."
+              serviceType="Property Tour"
+            />
           </div>
 
           {/* Online Option */}
@@ -146,9 +175,16 @@ export default function LongTermCTA() {
             </div>
             <h3 className="text-xl font-bold text-black mb-2">Virtual Tour</h3>
             <p className="text-gray-600 mb-4">Explore rooms from anywhere</p>
-            <button className="w-full py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300">
-              Start Virtual Tour
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300">
+                  Start Virtual Tour
+                </button>
+              }
+              title="Virtual Property Tour"
+              description="Take a virtual tour of our long-term rental properties from anywhere."
+              serviceType="Virtual Tour"
+            />
           </div>
         </motion.div>
 

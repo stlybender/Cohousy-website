@@ -6,6 +6,7 @@ import { Phone, Calendar, MapPin, Download, Star, Home } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const quickStats = [
   { icon: Home, value: '100%', label: 'Private Rooms' },
@@ -39,7 +40,7 @@ export default function BookLuxuryCTA() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
@@ -55,7 +56,7 @@ export default function BookLuxuryCTA() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        
+
         {/* Main CTA Section */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -71,15 +72,15 @@ export default function BookLuxuryCTA() {
               <span className="w-2 h-2 bg-purple-600 rounded-full inline-block mr-2 animate-pulse" />
               BOOK YOUR LUXURY SINGLE ROOM TODAY
             </span>
-            
+
             <h2 className="text-display-lg font-bold text-black mb-6">
               Book Your Luxury Single Room PG
               <span className="text-purple-600"> in Kharadi Pune Now</span>
             </h2>
 
             <p className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto mb-8">
-              Don't settle for less in Kharadi's competitive market. Cohousy's single room PG in Kharadi Pune 
-              delivers privacy, amenities, and location perks near Eon IT Park. Limited availability—act fast! 
+              Don't settle for less in Kharadi's competitive market. Cohousy's single room PG in Kharadi Pune
+              delivers privacy, amenities, and location perks near Eon IT Park. Limited availability—act fast!
               Experience the ultimate in AC PG in Kharadi Pune.
             </p>
           </motion.div>
@@ -89,16 +90,30 @@ export default function BookLuxuryCTA() {
             variants={withMotion(fadeInUp)}
             className="flex flex-col sm:flex-row gap-6 justify-center mb-12"
           >
-            <button className="group relative px-12 py-4 bg-purple-600 text-white font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <Calendar size={20} className="inline mr-3" />
-              Book Luxury Single Room Now
-              <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
-            
-            <button className="group relative px-12 py-4 border-3 border-purple-600 text-purple-600 font-bold text-lg rounded-lg hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-105">
-              <Phone size={20} className="inline mr-3" />
-              Call for Private Room Tour
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="group relative px-12 py-4 bg-purple-600 text-white font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <Calendar size={20} className="inline mr-3" />
+                  Book Luxury Single Room Now
+                  <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </button>
+              }
+              title="Book Luxury Single Room"
+              description="Reserve your private luxury single room PG accommodation in Kharadi."
+              serviceType="Luxury Single Room Booking"
+            />
+
+            <ContactFormDialog
+              trigger={
+                <button className="group relative px-12 py-4 border-3 border-purple-600 text-purple-600 font-bold text-lg rounded-lg hover:bg-purple-600 hover:text-white transition-all duration-300 transform hover:scale-105">
+                  <Phone size={20} className="inline mr-3" />
+                  Call for Private Room Tour
+                </button>
+              }
+              title="Private Room Tour"
+              description="Schedule a personalized tour of our luxury single room accommodations."
+              serviceType="Private Room Tour"
+            />
           </motion.div>
 
           {/* Quick Stats */}
@@ -145,9 +160,16 @@ export default function BookLuxuryCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">WhatsApp Quote</h3>
             <p className="text-sm text-gray-600 mb-4">Get personalized pricing</p>
-            <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
-              WhatsApp Now
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300">
+                  Message Us
+                </button>
+              }
+              title="WhatsApp Quick Booking"
+              description="Get instant responses and quick booking assistance via WhatsApp."
+              serviceType="WhatsApp Booking"
+            />
           </div>
 
           {/* App Download Option */}
@@ -157,9 +179,16 @@ export default function BookLuxuryCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Download App</h3>
             <p className="text-sm text-gray-600 mb-4">Digital check-in & manage</p>
-            <button className="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300">
-              Get Cohousy App
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300">
+                  Get App
+                </button>
+              }
+              title="Get Cohousy App"
+              description="Download our app for seamless booking and management of your PG accommodation."
+              serviceType="App Download"
+            />
           </div>
 
           {/* Virtual Tour Option */}
@@ -169,9 +198,16 @@ export default function BookLuxuryCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Virtual Tour</h3>
             <p className="text-sm text-gray-600 mb-4">See single rooms online</p>
-            <button className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
-              Start Room Tour
-            </button>
+            <ContactFormDialog
+              title="Virtual Property Tour"
+              description="Take a virtual tour of our PG accommodations near Eon IT Park."
+              serviceType="Virtual Tour"
+              trigger={
+                <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                  Virtual Property Tour
+                </button>
+              }
+            />
           </div>
 
           {/* Call Option */}
@@ -181,9 +217,16 @@ export default function BookLuxuryCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Call & Book</h3>
             <p className="text-sm text-gray-600 mb-4">Instant booking support</p>
-         <button className="w-full py-2 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all duration-300">
-              📞 Call Now
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
+                  📞 Call Now
+                </button>
+              }
+              title="Request Call Back"
+              description="Our team will call you back within 10 minutes for direct booking assistance."
+              serviceType="Call Back Request"
+            />
           </div>
         </motion.div>
 
@@ -197,7 +240,7 @@ export default function BookLuxuryCTA() {
           <h3 className="text-2xl font-bold text-black mb-8 text-center">
             Also Explore Our Other Accommodation Options
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedPages.map((page, index) => (
               <Link
@@ -230,7 +273,7 @@ export default function BookLuxuryCTA() {
             Elevate Your Professional Life in Pune
           </h3>
           <p className="text-gray-600 mb-6">
-            Experience the ultimate in AC PG in Kharadi Pune. Book today and enjoy luxury single room 
+            Experience the ultimate in AC PG in Kharadi Pune. Book today and enjoy luxury single room
             living with complete privacy, premium amenities, and unmatched convenience near Eon IT Park!
           </p>
           <div className="flex items-center justify-center space-x-6 text-sm text-gray-500 mb-6">
@@ -239,9 +282,16 @@ export default function BookLuxuryCTA() {
             <span>✓ Zero Hidden Charges</span>
             <span>✓ Digital Experience</span>
           </div>
-          <button className="px-12 py-4 bg-purple-600 text-white font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300">
-            🏠 Book Luxury Single Room - 20% Off First Month!
-          </button>
+          <ContactFormDialog
+            trigger={
+              <button className="px-12 py-4 bg-purple-600 text-white font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300">
+                🏠 Book Luxury Single Room - 20% Off First Month!
+              </button>
+            }
+            title="Book with Special Discount!"
+            description="Secure your luxury single room with our exclusive 20% off first month offer."
+            serviceType="Special Discount Booking"
+          />
         </motion.div>
       </div>
     </section>

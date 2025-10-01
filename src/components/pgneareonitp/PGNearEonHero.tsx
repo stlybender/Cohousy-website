@@ -104,6 +104,7 @@ export default function PGNearEonHero() {
             </motion.div>
 
             {/* CTA Buttons */}
+            {/* CTA Buttons */}
             <motion.div
               variants={withMotion(fadeInUp)}
               className="flex flex-col sm:flex-row gap-4 mt-8"
@@ -120,9 +121,16 @@ export default function PGNearEonHero() {
                   </div>
                 }
               />
-              <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-                Virtual Property Tour
-              </button>
+              <ContactFormDialog
+                title="Virtual Property Tour"
+                description="Take a virtual tour of our PG accommodations near Eon IT Park."
+                serviceType="Virtual Tour"
+                trigger={
+                  <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                    Virtual Property Tour
+                  </button>
+                }
+              />
             </motion.div>
           </motion.div>
 
@@ -132,7 +140,7 @@ export default function PGNearEonHero() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/PG/hero.jpg"
+              src="/PG/500+ IT Professionals.jpg"
               alt="PG accommodation walking distance from Eon IT Park Kharadi"
               fill
 

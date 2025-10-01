@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Plus, Minus, HelpCircle } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const faqs = [
   {
@@ -54,12 +55,12 @@ export default function SingleRoomFAQ() {
   }
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -89,7 +90,7 @@ export default function SingleRoomFAQ() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Get answers to the most important questions about our single room PG accommodation in Kharadi Pune. 
+            Get answers to the most important questions about our single room PG accommodation in Kharadi Pune.
             We address concerns about privacy, amenities, location, safety, and all aspects of luxury single room living.
           </motion.p>
         </motion.div>
@@ -122,7 +123,7 @@ export default function SingleRoomFAQ() {
                   )}
                 </div>
               </button>
-              
+
               <motion.div
                 initial={false}
                 animate={{
@@ -151,17 +152,31 @@ export default function SingleRoomFAQ() {
             Still Have Questions About Single Room Living?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Our support team understands the specific needs of professionals seeking private accommodation 
-            in Kharadi's IT corridor. We're available 24/7 to help with any queries about our single room 
+            Our support team understands the specific needs of professionals seeking private accommodation
+            in Kharadi's IT corridor. We're available 24/7 to help with any queries about our single room
             PG options, amenities, and booking process.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Chat with Single Room Residents
-            </button>
-            <button className="px-8 py-3 border-2 border-purple-600 text-purple-600 font-semibold rounded-lg hover:bg-purple-600 hover:text-white transition-all duration-300">
-              Schedule Private Room Tour
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Chat with Single Room Residents
+                </button>
+              }
+              title="Chat with Single Room Residents"
+              description="Connect with our current single room residents to learn about their private living experience."
+              serviceType="Single Room Resident Chat"
+            />
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 border-2 border-purple-600 text-purple-600 font-semibold rounded-lg hover:bg-purple-600 hover:text-white transition-all duration-300">
+                  Schedule Private Room Tour
+                </button>
+              }
+              title="Schedule Private Room Tour"
+              description="Book a personalized tour of our single room PG accommodations and see the privacy benefits firsthand."
+              serviceType="Private Room Tour"
+            />
           </div>
         </motion.div>
       </div>

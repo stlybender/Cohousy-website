@@ -122,9 +122,16 @@ export default function MalePGHero() {
                   </div>
                 }
               />
-              <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-                View Room Options
-              </button>
+              <ContactFormDialog
+                trigger={
+                  <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                    View Room Options
+                  </button>
+                }
+                title="View Room Options"
+                description="Explore different room types and configurations available for male residents."
+                serviceType="Room Options Inquiry"
+              />
             </motion.div>
           </motion.div>
 

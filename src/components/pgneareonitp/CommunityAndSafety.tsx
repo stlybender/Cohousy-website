@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Users, Shield, Heart, Wifi, Coffee, Calendar } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import Link from 'next/link'
 
 const communityFeatures = [
   {
@@ -65,12 +66,12 @@ export default function CommunityAndSafety() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-gray-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -100,14 +101,14 @@ export default function CommunityAndSafety() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Community thrives in Cohousy's PG near Eon IT Park through app-managed events like 
-            wellness sessions and networking—combating isolation while maintaining safety as our 
+            Community thrives in Cohousy's PG near Eon IT Park through app-managed events like
+            wellness sessions and networking—combating isolation while maintaining safety as our
             paramount concern with comprehensive security measures.
           </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
-          
+
           {/* Community Section */}
           <motion.div
             variants={withMotion(staggerContainer)}
@@ -136,7 +137,7 @@ export default function CommunityAndSafety() {
                       <h4 className="text-lg font-bold text-black mb-2">
                         {feature.title}
                       </h4>
-                      
+
                       <p className="text-gray-600 leading-relaxed mb-2">
                         {feature.description}
                       </p>
@@ -164,7 +165,7 @@ export default function CommunityAndSafety() {
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              
+
               <div className="absolute inset-0 bg-gradient-to-r from-orange-600/90 to-transparent flex items-center">
                 <div className="p-6 text-white">
                   <h4 className="text-xl font-bold mb-2">500+ IT Professionals</h4>
@@ -202,7 +203,7 @@ export default function CommunityAndSafety() {
                       <h4 className="font-semibold text-black mb-1">
                         {feature.title}
                       </h4>
-                      
+
                       <p className="text-gray-600 text-sm leading-relaxed">
                         {feature.description}
                       </p>
@@ -243,7 +244,7 @@ export default function CommunityAndSafety() {
               Specialized Accommodation Options
             </h3>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              For enhanced comfort and community, we offer specialized accommodations 
+              For enhanced comfort and community, we offer specialized accommodations
               designed specifically for different needs and preferences.
             </p>
           </div>
@@ -252,23 +253,27 @@ export default function CommunityAndSafety() {
             <div className="bg-pink-50 rounded-xl p-6 border border-pink-200">
               <h4 className="text-xl font-bold text-pink-600 mb-3">For Women Professionals</h4>
               <p className="text-gray-600 mb-4">
-                Enhanced safety features, women-only environments, and female-focused amenities. 
+                Enhanced safety features, women-only environments, and female-focused amenities.
                 Perfect for professional women working at companies in Kharadi.
               </p>
-              <button className="px-6 py-2 bg-pink-600 text-white font-semibold rounded-lg hover:bg-pink-700 transition-colors duration-300">
-                Explore Ladies PG
-              </button>
+              <Link href='/ladies-pg-kharadi'>
+                <button className="px-6 py-2 bg-pink-600 text-white font-semibold rounded-lg hover:bg-pink-700 transition-colors duration-300">
+                  Explore Ladies PG
+                </button>
+              </Link>
             </div>
 
             <div className="bg-blue-50 rounded-xl p-6 border border-blue-200">
               <h4 className="text-xl font-bold text-blue-600 mb-3">For Male Professionals</h4>
               <p className="text-gray-600 mb-4">
-                Brotherhood-focused environment, professional networking, and male-centric 
+                Brotherhood-focused environment, professional networking, and male-centric
                 community activities near Eon IT Park and WTC Kharadi.
               </p>
-              <button className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300">
-                Explore Male PG
-              </button>
+              <Link href='/male-pg-kharadi'>
+                <button className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-300">
+                  Explore Male PG
+                </button>
+              </Link>
             </div>
           </div>
 

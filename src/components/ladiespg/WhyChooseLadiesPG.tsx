@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Shield, Users, Heart, Smartphone, Home, Lock } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const benefits = [
   {
@@ -50,12 +51,12 @@ export default function WhyChooseLadiesPG() {
   const [hoveredBenefit, setHoveredBenefit] = useState<number | null>(null)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-pink-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -85,8 +86,8 @@ export default function WhyChooseLadiesPG() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            When it comes to selecting the best ladies PG in Kharadi Pune, Cohousy sets the benchmark 
-            with its resident-centric approach. Unlike traditional PG hostels that often lack personalization, 
+            When it comes to selecting the best ladies PG in Kharadi Pune, Cohousy sets the benchmark
+            with its resident-centric approach. Unlike traditional PG hostels that often lack personalization,
             we prioritize your comfort, safety, and well-being above all else.
           </motion.p>
         </motion.div>
@@ -108,18 +109,16 @@ export default function WhyChooseLadiesPG() {
                 onMouseLeave={() => setHoveredBenefit(null)}
                 className="group bg-white border border-pink-100 rounded-2xl p-8 hover:border-pink-200 transition-all duration-500 hover:shadow-lg"
               >
-                <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-300 ${
-                  hoveredBenefit === index ? 'bg-pink-600 text-white' : 'bg-pink-100 text-pink-600'
-                }`}>
+                <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-300 ${hoveredBenefit === index ? 'bg-pink-600 text-white' : 'bg-pink-100 text-pink-600'
+                  }`}>
                   <IconComponent size={24} strokeWidth={1.5} />
                 </div>
 
-                <h3 className={`text-xl font-bold mb-4 transition-colors duration-300 ${
-                  hoveredBenefit === index ? 'text-pink-600' : 'text-black'
-                }`}>
+                <h3 className={`text-xl font-bold mb-4 transition-colors duration-300 ${hoveredBenefit === index ? 'text-pink-600' : 'text-black'
+                  }`}>
                   {benefit.title}
                 </h3>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-4">
                   {benefit.description}
                 </p>
@@ -128,9 +127,8 @@ export default function WhyChooseLadiesPG() {
                   {benefit.highlight}
                 </div>
 
-                <div className={`mt-6 h-0.5 bg-pink-600 transition-all duration-500 ${
-                  hoveredBenefit === index ? 'w-full' : 'w-0'
-                }`} />
+                <div className={`mt-6 h-0.5 bg-pink-600 transition-all duration-500 ${hoveredBenefit === index ? 'w-full' : 'w-0'
+                  }`} />
               </motion.div>
             )
           })}
@@ -184,9 +182,18 @@ export default function WhyChooseLadiesPG() {
             <p className="text-gray-600 mb-4">
               Experience the Cohousy difference - where women's safety and comfort come first
             </p>
-            <button className="px-8 py-3 bg-pink-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Schedule Your Ladies-Only Tour
-            </button>
+            <ContactFormDialog
+              title="Schedule a Visit"
+              description="Book a visit to see the property in person."
+              serviceType="Schedule Visit"
+              trigger={
+                <div className='flex justify-center'>
+                  <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                    Schedule Your Ladies-Only Visit
+                  </button>
+                </div>
+              }
+            />
           </div>
         </motion.div>
       </div>

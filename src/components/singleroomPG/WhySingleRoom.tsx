@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Home, Clock, Users, Wifi, Shield, Coffee } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const benefits = [
     {
@@ -175,9 +176,16 @@ export default function WhySingleRoom() {
                         <p className="text-gray-600 mb-4">
                             Experience the perfect blend of privacy and community in Kharadi's premier location
                         </p>
-                        <button className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                            Book Your Private Room
-                        </button>
+                        <ContactFormDialog
+                            trigger={
+                                <button className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                                    Book Your Private Room
+                                </button>
+                            }
+                            title="Book Your Private Room"
+                            description="Reserve your private single room PG accommodation in Kharadi near Eon IT Park."
+                            serviceType="Private Room Booking"
+                        />
                     </div>
                 </motion.div>
             </div>

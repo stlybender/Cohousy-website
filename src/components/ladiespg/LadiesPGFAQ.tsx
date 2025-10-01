@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Plus, Minus, HelpCircle } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const faqs = [
   {
@@ -54,12 +55,12 @@ export default function LadiesPGFAQ() {
   }
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -89,8 +90,8 @@ export default function LadiesPGFAQ() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Get answers to the most important questions about our ladies PG in Kharadi Pune. 
-            We understand that safety and comfort are paramount when choosing accommodation as a woman, 
+            Get answers to the most important questions about our ladies PG in Kharadi Pune.
+            We understand that safety and comfort are paramount when choosing accommodation as a woman,
             and we're here to address all your concerns.
           </motion.p>
         </motion.div>
@@ -123,7 +124,7 @@ export default function LadiesPGFAQ() {
                   )}
                 </div>
               </button>
-              
+
               <motion.div
                 initial={false}
                 animate={{
@@ -152,16 +153,30 @@ export default function LadiesPGFAQ() {
             Still Have Questions About Women's Safety?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Our women-focused support team is available 24/7 to address any specific concerns 
+            Our women-focused support team is available 24/7 to address any specific concerns
             about safety, amenities, or accommodation options for ladies in Kharadi.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-pink-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Talk to Female Counselor
-            </button>
-            <button className="px-8 py-3 border-2 border-pink-600 text-pink-600 font-semibold rounded-lg hover:bg-pink-600 hover:text-white transition-all duration-300">
-              Schedule Women-Only Tour
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-pink-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Talk to Female Counselor
+                </button>
+              }
+              title="Talk to Female Counselor"
+              description="Connect with our female counselor for personalized support and guidance on women's accommodation."
+              serviceType="Female Counselor Support"
+            />
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 border-2 border-pink-600 text-pink-600 font-semibold rounded-lg hover:bg-pink-600 hover:text-white transition-all duration-300">
+                  Schedule Women-Only Tour
+                </button>
+              }
+              title="Schedule Women-Only Tour"
+              description="Book an exclusive women-only tour to experience our safe and secure ladies PG environment."
+              serviceType="Women-Only Tour"
+            />
           </div>
         </motion.div>
       </div>

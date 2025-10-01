@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Calendar, CheckCircle, Zap, Clock } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const pricingPlans = [
   {
@@ -80,12 +81,12 @@ export default function ShortTermPricing() {
   const [hoveredPlan, setHoveredPlan] = useState<number | null>(null)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-gray-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -115,7 +116,7 @@ export default function ShortTermPricing() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Transparent pricing with better rates for longer stays. No hidden charges, 
+            Transparent pricing with better rates for longer stays. No hidden charges,
             no lock-in periods - just flexible accommodation that adapts to your schedule.
           </motion.p>
         </motion.div>
@@ -133,11 +134,10 @@ export default function ShortTermPricing() {
               variants={withMotion(fadeInUp)}
               onMouseEnter={() => setHoveredPlan(index)}
               onMouseLeave={() => setHoveredPlan(null)}
-              className={`relative bg-white border-2 rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl ${
-                plan.popular 
-                  ? 'border-accent shadow-lg scale-105' 
-                  : 'border-gray-100 hover:border-gray-200'
-              }`}
+              className={`relative bg-white border-2 rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl ${plan.popular
+                ? 'border-accent shadow-lg scale-105'
+                : 'border-gray-100 hover:border-gray-200'
+                }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
@@ -151,7 +151,7 @@ export default function ShortTermPricing() {
                 <div className="text-center mb-8">
                   <h3 className="text-2xl font-bold text-black mb-2">{plan.title}</h3>
                   <p className="text-gray-600 mb-4">{plan.duration}</p>
-                  
+
                   {/* Pricing */}
                   <div className="flex items-center justify-center space-x-2 mb-2">
                     <span className="text-4xl font-bold text-black">{plan.price}</span>
@@ -163,7 +163,7 @@ export default function ShortTermPricing() {
                       Save ₹{parseInt(plan.originalPrice.replace('₹', '')) - parseInt(plan.price.replace('₹', ''))}
                     </span>
                   </div>
-                  
+
                   <p className="text-sm text-gray-600 italic">{plan.bestFor}</p>
                 </div>
 
@@ -178,19 +178,24 @@ export default function ShortTermPricing() {
                 </ul>
 
                 {/* CTA Button */}
-                <button className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 ${
-                  plan.popular
-                    ? 'bg-accent text-black hover:shadow-lg'
-                    : 'border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
-                }`}>
-                  Book Now
-                </button>
+                <ContactFormDialog
+                  trigger={
+                    <button className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 ${plan.popular
+                      ? 'bg-accent text-black hover:shadow-lg'
+                      : 'border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
+                      }`}>
+                      Book Now
+                    </button>
+                  }
+                  title={`Book ${plan.title}`}
+                  description={`Reserve your ${plan.duration} accommodation with flexible terms and all amenities included.`}
+                  serviceType={`${plan.title} Booking`}
+                />
               </div>
 
               {/* Hover Accent */}
-              <div className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-500 ${
-                hoveredPlan === index ? 'w-full' : 'w-0'
-              }`} />
+              <div className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-500 ${hoveredPlan === index ? 'w-full' : 'w-0'
+                }`} />
             </motion.div>
           ))}
         </motion.div>
@@ -207,7 +212,7 @@ export default function ShortTermPricing() {
               Why Choose Our Short-term Rates?
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Compare our all-inclusive rates with traditional hotels and serviced apartments - 
+              Compare our all-inclusive rates with traditional hotels and serviced apartments -
               we offer better value with more amenities and flexibility.
             </p>
           </div>
@@ -244,9 +249,16 @@ export default function ShortTermPricing() {
           </div>
 
           <div className="text-center mt-8">
-            <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Calculate Your Stay Cost
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Calculate Your Stay Cost
+                </button>
+              }
+              title="Calculate Your Stay Cost"
+              description="Get a personalized cost calculation for your short-term stay with all amenities included."
+              serviceType="Stay Cost Calculator"
+            />
           </div>
         </motion.div>
       </div>

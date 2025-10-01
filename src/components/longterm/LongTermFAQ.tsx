@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Plus, Minus, HelpCircle } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const faqs = [
   {
@@ -50,12 +51,12 @@ export default function LongTermFAQ() {
   }
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -85,7 +86,7 @@ export default function LongTermFAQ() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Everything you need to know about our long-term rental options, 
+            Everything you need to know about our long-term rental options,
             policies, and exclusive benefits for extended stay residents.
           </motion.p>
         </motion.div>
@@ -118,7 +119,7 @@ export default function LongTermFAQ() {
                   )}
                 </div>
               </button>
-              
+
               <motion.div
                 initial={false}
                 animate={{
@@ -147,16 +148,30 @@ export default function LongTermFAQ() {
             Need More Information?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Our long-term rental specialists are here to help you find the perfect 
+            Our long-term rental specialists are here to help you find the perfect
             extended stay solution that meets your specific needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Talk to Specialist
-            </button>
-            <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-              Schedule Property Tour
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Talk to Specialist
+                </button>
+              }
+              title="Talk to Long-term Specialist"
+              description="Connect with our long-term rental specialist for personalized extended stay solutions."
+              serviceType="Long-term Specialist"
+            />
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                  Schedule Property Tour
+                </button>
+              }
+              title="Schedule Property Tour"
+              description="Book a personalized tour of our long-term rental properties and see the extended stay benefits."
+              serviceType="Property Tour"
+            />
           </div>
         </motion.div>
       </div>

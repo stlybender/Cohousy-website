@@ -108,23 +108,21 @@ export default function ColivingHero() {
             {/* CTA Buttons */}
             <motion.div
               variants={withMotion(fadeInUp)}
-              className="flex flex-col sm:flex-row gap-4 mt-8"
+              className="flex  sm:flex-row gap-4 mt-8"
             >
               <ContactFormDialog
-                title="Schedule a Visit"
-                description="Book a visit to see the property in person."
-                serviceType="Schedule Visit"
                 trigger={
-                  <div className='flex justify-center'>
-                    <button className="flex-1 bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 w-fit transition-colors text-sm">
-                      Schedule Visit
-                    </button>
-                  </div>
+                  <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                    Schedule a Tour
+                  </button>
                 }
+                title="Schedule Your Tour"
+                description="Book a personalized tour of our premium co-living spaces at your convenience."
+                serviceType="Property Tour"
               />
-              <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+              {/* <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
                 Download Brochure
-              </button>
+              </button> */}
             </motion.div>
           </motion.div>
 

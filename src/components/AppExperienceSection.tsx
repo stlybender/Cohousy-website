@@ -5,6 +5,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { Smartphone, Calendar, Users, Wrench, CreditCard, Download, Play } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from './ContactFormDialog'
 
 const appFeatures = [
   {
@@ -42,17 +43,17 @@ export default function AppExperienceSection() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
   const [activeFeature, setActiveFeature] = useState(0)
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null)
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   })
-  
+
   const headerY = useTransform(scrollYProgress, [0, 0.3], [50, -50])
   const phoneY = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-gradient-to-b from-white to-gray-50 relative overflow-hidden"
     >
@@ -65,7 +66,7 @@ export default function AppExperienceSection() {
       </div>
 
       <div className="container mx-auto px-6 relative">
-        
+
         {/* Clean Section Header */}
         <motion.div
           style={{ y: headerY }}
@@ -96,13 +97,13 @@ export default function AppExperienceSection() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Experience the future of co-living with our comprehensive mobile platform. 
+            Experience the future of co-living with our comprehensive mobile platform.
             From booking to community building, everything you need at your fingertips.
           </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Clean Phone Mockup */}
           <motion.div
             style={{ y: phoneY }}
@@ -115,7 +116,7 @@ export default function AppExperienceSection() {
               {/* Phone Frame */}
               <div className="w-[320px] h-[640px] bg-gray-900 rounded-[32px] p-2 shadow-2xl">
                 <div className="w-full h-full bg-white rounded-[24px] overflow-hidden relative">
-                  
+
                   {/* Status Bar */}
                   <div className="absolute top-0 left-0 right-0 h-12 bg-gray-900 z-20 rounded-t-[24px] flex items-center justify-between px-6">
                     <div className="flex items-center space-x-1">
@@ -149,16 +150,14 @@ export default function AppExperienceSection() {
                         return (
                           <div
                             key={feature.id}
-                            className={`p-4 rounded-xl transition-all duration-300 ${
-                              activeFeature === index
-                                ? 'bg-accent/10 border-2 border-accent'
-                                : 'bg-gray-50 border border-gray-200'
-                            }`}
+                            className={`p-4 rounded-xl transition-all duration-300 ${activeFeature === index
+                              ? 'bg-accent/10 border-2 border-accent'
+                              : 'bg-gray-50 border border-gray-200'
+                              }`}
                           >
                             <div className="flex items-center space-x-3">
-                              <div className={`p-2 rounded-lg ${
-                                activeFeature === index ? 'bg-accent text-black' : 'bg-gray-200 text-gray-600'
-                              }`}>
+                              <div className={`p-2 rounded-lg ${activeFeature === index ? 'bg-accent text-black' : 'bg-gray-200 text-gray-600'
+                                }`}>
                                 <IconComponent size={16} />
                               </div>
                               <div className="flex-1">
@@ -178,9 +177,8 @@ export default function AppExperienceSection() {
                           {[Calendar, Users, Wrench, CreditCard].map((Icon, idx) => (
                             <div key={idx} className="flex flex-col items-center">
                               <Icon size={20} className={idx === activeFeature ? 'text-accent' : 'text-gray-400'} />
-                              <div className={`w-1 h-1 rounded-full mt-2 ${
-                                idx === activeFeature ? 'bg-accent' : 'bg-transparent'
-                              }`} />
+                              <div className={`w-1 h-1 rounded-full mt-2 ${idx === activeFeature ? 'bg-accent' : 'bg-transparent'
+                                }`} />
                             </div>
                           ))}
                         </div>
@@ -198,7 +196,7 @@ export default function AppExperienceSection() {
               >
                 Online
               </motion.div>
-              
+
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -227,38 +225,34 @@ export default function AppExperienceSection() {
                     setActiveFeature(index)
                   }}
                   onMouseLeave={() => setHoveredFeature(null)}
-                  className={`group p-6 rounded-xl cursor-pointer transition-all duration-300 border ${
-                    activeFeature === index 
-                      ? 'bg-gray-900 text-white border-gray-900' 
-                      : 'bg-white text-black border-gray-200 hover:border-gray-300 hover:bg-gray-50'
-                  }`}
+                  className={`group p-6 rounded-xl cursor-pointer transition-all duration-300 border ${activeFeature === index
+                    ? 'bg-gray-900 text-white border-gray-900'
+                    : 'bg-white text-black border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                    }`}
                 >
                   <div className="flex items-start space-x-4">
                     {/* Icon */}
-                    <div className={`p-3 rounded-xl transition-all duration-300 ${
-                      activeFeature === index 
-                        ? 'bg-accent text-black' 
-                        : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200'
-                    }`}>
+                    <div className={`p-3 rounded-xl transition-all duration-300 ${activeFeature === index
+                      ? 'bg-accent text-black'
+                      : 'bg-gray-100 text-gray-600 group-hover:bg-gray-200'
+                      }`}>
                       <IconComponent size={24} strokeWidth={1.5} />
                     </div>
-                    
+
                     <div className="flex-1">
                       <h3 className="text-xl font-bold mb-3">
                         {feature.title}
                       </h3>
-                      <p className={`leading-relaxed mb-4 transition-colors duration-300 ${
-                        activeFeature === index ? 'text-white/80' : 'text-gray-600'
-                      }`}>
+                      <p className={`leading-relaxed mb-4 transition-colors duration-300 ${activeFeature === index ? 'text-white/80' : 'text-gray-600'
+                        }`}>
                         {feature.description}
                       </p>
-                      
+
                       {/* Benefits */}
                       <div className="space-y-2">
                         {feature.benefits.map((benefit, idx) => (
-                          <div key={idx} className={`flex items-center text-sm transition-colors duration-300 ${
-                            activeFeature === index ? 'text-white/70' : 'text-gray-500'
-                          }`}>
+                          <div key={idx} className={`flex items-center text-sm transition-colors duration-300 ${activeFeature === index ? 'text-white/70' : 'text-gray-500'
+                            }`}>
                             <span className="w-1.5 h-1.5 bg-accent rounded-full mr-3 flex-shrink-0" />
                             {benefit}
                           </div>
@@ -279,14 +273,16 @@ export default function AppExperienceSection() {
                 Download the Cohousy App
               </h4>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="flex items-center justify-center gap-3 bg-gray-900 text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-all duration-300">
-                  <Download size={20} />
-                  App Store
-                </button>
-                <button className="flex items-center justify-center gap-3 bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-all duration-300">
-                  <Play size={20} />
-                  Google Play
-                </button>
+                <ContactFormDialog
+                  trigger={
+                    <button className="w-full py-2 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300">
+                      Get App
+                    </button>
+                  }
+                  title="Get Cohousy App"
+                  description="Download our app for seamless booking and management of your PG accommodation."
+                  serviceType="App Download"
+                />
               </div>
             </motion.div>
           </motion.div>

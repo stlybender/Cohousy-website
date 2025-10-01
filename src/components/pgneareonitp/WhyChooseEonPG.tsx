@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { MapPin, Clock, Users, Smartphone, Shield, DollarSign } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const benefits = [
   {
@@ -50,12 +51,12 @@ export default function WhyChooseEonPG() {
   const [hoveredBenefit, setHoveredBenefit] = useState<number | null>(null)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-orange-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -85,9 +86,9 @@ export default function WhyChooseEonPG() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Selecting the right PG near Eon IT Park Kharadi can transform your daily routine, 
-            and Cohousy sets the standard with a blend of location perks, luxury features, 
-            and tech-savvy management. Unlike aggregator platforms, our properties are 
+            Selecting the right PG near Eon IT Park Kharadi can transform your daily routine,
+            and Cohousy sets the standard with a blend of location perks, luxury features,
+            and tech-savvy management. Unlike aggregator platforms, our properties are
             exclusively managed for quality and personalization.
           </motion.p>
         </motion.div>
@@ -109,18 +110,16 @@ export default function WhyChooseEonPG() {
                 onMouseLeave={() => setHoveredBenefit(null)}
                 className="group bg-white border border-orange-100 rounded-2xl p-8 hover:border-orange-200 transition-all duration-500 hover:shadow-lg"
               >
-                <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-300 ${
-                  hoveredBenefit === index ? 'bg-orange-600 text-white' : 'bg-orange-100 text-orange-600'
-                }`}>
+                <div className={`w-12 h-12 rounded-xl mb-6 flex items-center justify-center transition-all duration-300 ${hoveredBenefit === index ? 'bg-orange-600 text-white' : 'bg-orange-100 text-orange-600'
+                  }`}>
                   <IconComponent size={24} strokeWidth={1.5} />
                 </div>
 
-                <h3 className={`text-xl font-bold mb-4 transition-colors duration-300 ${
-                  hoveredBenefit === index ? 'text-orange-600' : 'text-black'
-                }`}>
+                <h3 className={`text-xl font-bold mb-4 transition-colors duration-300 ${hoveredBenefit === index ? 'text-orange-600' : 'text-black'
+                  }`}>
                   {benefit.title}
                 </h3>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-4">
                   {benefit.description}
                 </p>
@@ -129,9 +128,8 @@ export default function WhyChooseEonPG() {
                   {benefit.highlight}
                 </div>
 
-                <div className={`mt-6 h-0.5 bg-orange-600 transition-all duration-500 ${
-                  hoveredBenefit === index ? 'w-full' : 'w-0'
-                }`} />
+                <div className={`mt-6 h-0.5 bg-orange-600 transition-all duration-500 ${hoveredBenefit === index ? 'w-full' : 'w-0'
+                  }`} />
               </motion.div>
             )
           })}
@@ -185,9 +183,16 @@ export default function WhyChooseEonPG() {
             <p className="text-gray-600 mb-4">
               Our resident-centric approach ensures continual improvements—making Cohousy the top choice in 2025's competitive market
             </p>
-            <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Experience the Cohousy Difference
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Experience the Cohousy Difference
+                </button>
+              }
+              title="Experience the Cohousy Difference"
+              description="Discover how our PG accommodations near Eon IT Park redefine modern living."
+              serviceType="Cohousy Experience"
+            />
           </div>
         </motion.div>
       </div>

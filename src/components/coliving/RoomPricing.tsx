@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Home, Users, DollarSign, CheckCircle } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const pricingData = [
   {
@@ -51,12 +52,12 @@ export default function RoomPricing() {
   const [hoveredPlan, setHoveredPlan] = useState<number | null>(null)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-gray-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -86,8 +87,8 @@ export default function RoomPricing() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Flexibility is key in our co-living spaces, with options to suit various needs. 
-            Whether you're seeking privacy or affordability, our properties offer competitive 
+            Flexibility is key in our co-living spaces, with options to suit various needs.
+            Whether you're seeking privacy or affordability, our properties offer competitive
             rates near WTC Kharadi with no hidden fees.
           </motion.p>
         </motion.div>
@@ -118,20 +119,19 @@ export default function RoomPricing() {
               {/* Room Options */}
               <div className="p-6 space-y-4">
                 {plan.rooms.map((room, roomIndex) => (
-                  <div 
+                  <div
                     key={roomIndex}
-                    className={`relative p-4 rounded-xl border transition-all duration-300 ${
-                      room.popular 
-                        ? 'border-accent bg-accent/5' 
-                        : 'border-gray-100 hover:border-gray-200'
-                    }`}
+                    className={`relative p-4 rounded-xl border transition-all duration-300 ${room.popular
+                      ? 'border-accent bg-accent/5'
+                      : 'border-gray-100 hover:border-gray-200'
+                      }`}
                   >
                     {room.popular && (
                       <div className="absolute -top-2 left-4 bg-accent text-black text-xs font-bold px-2 py-1 rounded">
                         POPULAR
                       </div>
                     )}
-                    
+
                     <div className="flex items-center justify-between">
                       <div>
                         <div className="font-semibold text-black">{room.occupancy}</div>
@@ -160,16 +160,23 @@ export default function RoomPricing() {
                   </ul>
                 </div>
 
-                {/* CTA Button */}
-                <button className="w-full mt-6 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-                  View Details
-                </button>
+                {/* CTA Button with Contact Dialog */}
+                <ContactFormDialog
+                  trigger={
+                    <button className="w-full mt-6 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                      View Details
+                    </button>
+                  }
+                  title="Property Details & Booking"
+                  description="Get detailed information about this property and check availability."
+                  serviceType="Room Inquiry"
+                  propertyName={`${plan.property} - ${plan.type}`}
+                />
               </div>
 
               {/* Hover Accent */}
-              <div className={`h-0.5 bg-accent transition-all duration-500 ${
-                hoveredPlan === index ? 'w-full' : 'w-0'
-              }`} />
+              <div className={`h-0.5 bg-accent transition-all duration-500 ${hoveredPlan === index ? 'w-full' : 'w-0'
+                }`} />
             </motion.div>
           ))}
         </motion.div>
@@ -186,7 +193,7 @@ export default function RoomPricing() {
               Everything Included in Your Rent
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Pricing includes all amenities, meals, and utilities—no hidden fees. 
+              Pricing includes all amenities, meals, and utilities—no hidden fees.
               This transparency beats competitors, making Cohousy the best value for co-living in Kharadi.
             </p>
           </div>
@@ -201,9 +208,16 @@ export default function RoomPricing() {
           </div>
 
           <div className="text-center mt-8">
-            <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Get Detailed Pricing
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Get Detailed Pricing
+                </button>
+              }
+              title="Detailed Pricing Information"
+              description="Get comprehensive pricing details and customize your package."
+              serviceType="Pricing Inquiry"
+            />
           </div>
         </motion.div>
       </div>

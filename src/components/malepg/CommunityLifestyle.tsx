@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Users, Coffee, Dumbbell, Gamepad2, Wifi, Heart } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const communityFeatures = [
   {
@@ -50,12 +51,12 @@ export default function CommunityLifestyle() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -85,14 +86,14 @@ export default function CommunityLifestyle() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Living in a co-living PG in Kharadi at Cohousy means more than just a room—it's about 
-            building connections. Our male PG encourages community through shared spaces and events, 
+            Living in a co-living PG in Kharadi at Cohousy means more than just a room—it's about
+            building connections. Our male PG encourages community through shared spaces and events,
             helping you network with like-minded professionals from Eon IT Park Kharadi.
           </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
-          
+
           {/* Community Features */}
           <motion.div
             variants={withMotion(staggerContainer)}
@@ -116,7 +117,7 @@ export default function CommunityLifestyle() {
                     <h3 className="text-lg font-bold text-black mb-2">
                       {feature.title}
                     </h3>
-                    
+
                     <p className="text-gray-600 leading-relaxed mb-2">
                       {feature.description}
                     </p>
@@ -183,7 +184,7 @@ export default function CommunityLifestyle() {
               Real Community Experiences
             </h3>
             <p className="text-gray-600 max-w-3xl mx-auto">
-              Residents often share tips on local spots, from street food near WTC Kharadi to trekking at nearby hills. 
+              Residents often share tips on local spots, from street food near WTC Kharadi to trekking at nearby hills.
               This community-driven approach makes Cohousy the preferred male PG for those who value both independence and support.
             </p>
           </div>
@@ -214,9 +215,16 @@ export default function CommunityLifestyle() {
             <p className="text-gray-600 mb-4">
               Unlike couple PG or mixed accommodations, our exclusive boys PG ensures a focused, brotherly atmosphere
             </p>
-            <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Join Our Community Today
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Join Our Community Today
+                </button>
+              }
+              title="Join Our Community Today"
+              description="Become part of our thriving community of male professionals and experience the brotherhood at Cohousy."
+              serviceType="Community Membership"
+            />
           </div>
         </motion.div>
       </div>

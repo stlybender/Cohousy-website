@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Phone, Calendar, Shield, MapPin, Star, Users } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const quickStats = [
   { icon: Shield, value: '100%', label: 'Female Only' },
@@ -17,7 +18,7 @@ export default function LadiesPGCTA() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
@@ -33,7 +34,7 @@ export default function LadiesPGCTA() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        
+
         {/* Main CTA Section */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -49,15 +50,15 @@ export default function LadiesPGCTA() {
               <span className="w-2 h-2 bg-pink-600 rounded-full inline-block mr-2 animate-pulse" />
               SECURE YOUR SAFE HAVEN TODAY
             </span>
-            
+
             <h2 className="text-display-lg font-bold text-black mb-6">
               Ready to Experience Safe
               <span className="text-pink-600"> Women-Only Living?</span>
             </h2>
 
             <p className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto mb-8">
-              Ready to elevate your living experience? Book a tour of our ladies PG in Kharadi Pune today 
-              and discover why we're the best choice for female accommodation in Kharadi Pune. With limited 
+              Ready to elevate your living experience? Book a tour of our ladies PG in Kharadi Pune today
+              and discover why we're the best choice for female accommodation in Kharadi Pune. With limited
               spots available near Eon IT Park for professional women, don't miss out – secure your safe haven now!
             </p>
           </motion.div>
@@ -67,16 +68,29 @@ export default function LadiesPGCTA() {
             variants={withMotion(fadeInUp)}
             className="flex flex-col sm:flex-row gap-6 justify-center mb-12"
           >
-            <button className="group relative px-12 py-4 bg-pink-600 text-white font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <Calendar size={20} className="inline mr-3" />
-              Book Safe Accommodation Now
-              <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
-            
-            <button className="group relative px-12 py-4 border-3 border-pink-600 text-pink-600 font-bold text-lg rounded-lg hover:bg-pink-600 hover:text-white transition-all duration-300 transform hover:scale-105">
-              <Phone size={20} className="inline mr-3" />
-              Call for Women-Only Tour
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="group relative px-12 py-4 bg-pink-600 text-white font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <Calendar size={20} className="inline mr-3" />
+                  Book Safe Accommodation Now
+                  <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </button>
+              }
+              title="Book Safe Accommodation"
+              description="Secure your spot in our women-only PG accommodation with enhanced safety features."
+              serviceType="Safe Accommodation Booking"
+            />
+            <ContactFormDialog
+              trigger={
+                <button className="group relative px-12 py-4 border-3 border-pink-600 text-pink-600 font-bold text-lg rounded-lg hover:bg-pink-600 hover:text-white transition-all duration-300 transform hover:scale-105">
+                  <Phone size={20} className="inline mr-3" />
+                  Call for Women-Only Tour
+                </button>
+              }
+              title="Women-Only Tour"
+              description="Schedule a personalized women-only tour to experience our safe and secure environment."
+              serviceType="Women-Only Tour"
+            />
           </motion.div>
 
           {/* Quick Stats */}
@@ -109,23 +123,30 @@ export default function LadiesPGCTA() {
           </motion.div>
         </motion.div>
 
-        {/* Contact Options */}
+        {/* Contact Options with Contact Dialog Integration */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16"
         >
-          {/* Call Option */}
+          {/* Call Option - Already integrated */}
           <div className="bg-pink-50 border border-pink-100 rounded-2xl p-6 text-center">
             <div className="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
               <Phone size={32} className="text-green-600" />
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Call Female Counselor</h3>
             <p className="text-sm text-gray-600 mb-4">Speak with women-focused support team</p>
-            <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
-              Call Now
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
+                  Call Now
+                </button>
+              }
+              title="Speak with Female Counselor"
+              description="Connect with our women-focused support team for personalized assistance."
+              serviceType="Female Counselor Call"
+            />
           </div>
 
           {/* WhatsApp Option */}
@@ -135,9 +156,16 @@ export default function LadiesPGCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">WhatsApp</h3>
             <p className="text-sm text-gray-600 mb-4">Chat with female property manager</p>
-            <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
-              Message Us
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
+                  Message Us
+                </button>
+              }
+              title="Chat with Female Property Manager"
+              description="Connect with our female property manager via WhatsApp for women-specific queries."
+              serviceType="Female Manager WhatsApp"
+            />
           </div>
 
           {/* Visit Option */}
@@ -147,9 +175,16 @@ export default function LadiesPGCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Ladies-Only Tour</h3>
             <p className="text-sm text-gray-600 mb-4">Experience women-safe environment</p>
-            <button className="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300">
-              Schedule Tour
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300">
+                  Schedule Tour
+                </button>
+              }
+              title="Schedule Ladies-Only Tour"
+              description="Book a personalized ladies-only tour to experience our women-safe environment."
+              serviceType="Ladies-Only Tour"
+            />
           </div>
 
           {/* Virtual Tour Option */}
@@ -159,9 +194,16 @@ export default function LadiesPGCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Virtual Tour</h3>
             <p className="text-sm text-gray-600 mb-4">Explore rooms online safely</p>
-            <button className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
-              Start Tour
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
+                  Start Tour
+                </button>
+              }
+              title="Virtual Ladies PG Tour"
+              description="Take a safe virtual tour of our ladies PG accommodations from home."
+              serviceType="Virtual Ladies Tour"
+            />
           </div>
         </motion.div>
 
@@ -175,7 +217,7 @@ export default function LadiesPGCTA() {
           <h3 className="text-2xl font-bold text-black mb-6 text-center">
             Join the Community of Empowered Women
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: '🛡️', title: 'Guaranteed Safety', subtitle: '24/7 female security & monitoring' },
@@ -193,7 +235,7 @@ export default function LadiesPGCTA() {
                 </div>
                 <div className="text-sm text-gray-600">
                   {benefit.subtitle}
-                  </div>
+                </div>
               </div>
             ))}
           </div>

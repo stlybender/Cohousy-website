@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { DollarSign, CheckCircle, Home, Users } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const propertyDetails = [
   {
@@ -83,12 +84,12 @@ export default function PricingDetails() {
   const [activeProperty, setActiveProperty] = useState(0)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-gray-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -118,8 +119,8 @@ export default function PricingDetails() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Transparency defines our pricing for single room PG in Kharadi Pune. Starting at Rs 18,000/month 
-            for single occupancy, it includes all utilities. No hidden fees or brokerage—direct bookings save money. 
+            Transparency defines our pricing for single room PG in Kharadi Pune. Starting at Rs 18,000/month
+            for single occupancy, it includes all utilities. No hidden fees or brokerage—direct bookings save money.
             This value makes Cohousy the best PG in Kharadi Pune.
           </motion.p>
         </motion.div>
@@ -135,11 +136,10 @@ export default function PricingDetails() {
             <button
               key={index}
               onClick={() => setActiveProperty(index)}
-              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${
-                activeProperty === index
-                  ? 'bg-purple-600 text-white shadow-sm'
-                  : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50 border border-purple-200'
-              }`}
+              className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${activeProperty === index
+                ? 'bg-purple-600 text-white shadow-sm'
+                : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50 border border-purple-200'
+                }`}
             >
               {property.name}
             </button>
@@ -162,7 +162,7 @@ export default function PricingDetails() {
               <p className="text-purple-600 font-medium mb-4">
                 {propertyDetails[activeProperty].type}
               </p>
-              
+
               <div className="bg-purple-50 rounded-xl p-6 mb-6">
                 <div className="grid grid-cols-2 gap-4">
                   <div className="text-center">
@@ -260,9 +260,16 @@ export default function PricingDetails() {
             <p className="text-gray-600 mb-4">
               Compare to competitors and see why we offer the best value for single room PG in Kharadi Pune
             </p>
-            <button className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Book at Best Price - No Hidden Charges
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Book at Best Price - No Hidden Charges
+                </button>
+              }
+              title="Book at Best Price - No Hidden Charges"
+              description="Secure your single room PG at the best transparent pricing with no hidden charges."
+              serviceType="Best Price Booking"
+            />
           </div>
         </motion.div>
       </div>

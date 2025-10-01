@@ -4,6 +4,7 @@ import { useState, useRef } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { Plus, Minus, HelpCircle } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from './ContactFormDialog'
 
 const faqs = [
   {
@@ -44,12 +45,12 @@ export default function FAQSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
   const [openIndex, setOpenIndex] = useState<number | null>(null)
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   })
-  
+
   const headerY = useTransform(scrollYProgress, [0, 0.3], [50, -50])
 
   const handleClick = (index: number) => {
@@ -58,12 +59,12 @@ export default function FAQSection() {
   }
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Header */}
         <motion.div
           style={{ y: headerY }}
@@ -94,7 +95,7 @@ export default function FAQSection() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Find answers to common questions about our co-living spaces and accommodation 
+            Find answers to common questions about our co-living spaces and accommodation
             options in Kharadi's tech hub.
           </motion.p>
         </motion.div>
@@ -104,9 +105,8 @@ export default function FAQSection() {
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className={`border rounded-xl overflow-hidden transition-all duration-300 ${
-                openIndex === index ? 'border-accent bg-accent/5' : 'border-gray-200 bg-white'
-              }`}
+              className={`border rounded-xl overflow-hidden transition-all duration-300 ${openIndex === index ? 'border-accent bg-accent/5' : 'border-gray-200 bg-white'
+                }`}
             >
               {/* Question Button */}
               <div
@@ -122,15 +122,13 @@ export default function FAQSection() {
                 }}
               >
                 <div className="flex items-center justify-between">
-                  <h3 className={`text-lg font-semibold pr-4 ${
-                    openIndex === index ? 'text-accent' : 'text-black'
-                  }`}>
+                  <h3 className={`text-lg font-semibold pr-4 ${openIndex === index ? 'text-accent' : 'text-black'
+                    }`}>
                     {faq.question}
                   </h3>
-                  
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 ${
-                    openIndex === index ? 'bg-accent text-white' : 'bg-gray-100 text-gray-600'
-                  }`}>
+
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-200 ${openIndex === index ? 'bg-accent text-white' : 'bg-gray-100 text-gray-600'
+                    }`}>
                     {openIndex === index ? (
                       <Minus size={18} strokeWidth={2} />
                     ) : (
@@ -165,16 +163,30 @@ export default function FAQSection() {
             Still Have Questions?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Our dedicated support team is available 24/7 to assist you with any queries 
+            Our dedicated support team is available 24/7 to assist you with any queries
             about our co-living spaces and booking process.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Contact Support
-            </button>
-            <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-              Schedule Call
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Contact Support
+                </button>
+              }
+              title="Contact Support"
+              description="Get instant help from our dedicated support team available 24/7."
+              serviceType="Support Request"
+            />
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                  Schedule Call
+                </button>
+              }
+              title="Schedule a Call"
+              description="Book a personalized consultation call with our accommodation specialists."
+              serviceType="Consultation Call"
+            />
           </div>
         </div>
       </div>

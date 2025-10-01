@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Plus, Minus, HelpCircle } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const faqs = [
   {
@@ -54,12 +55,12 @@ export default function MalePGFAQ() {
   }
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -89,8 +90,8 @@ export default function MalePGFAQ() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Get answers to the most important questions about our boys PG in Kharadi Pune. 
-            We understand the specific needs of male professionals and are here to address 
+            Get answers to the most important questions about our boys PG in Kharadi Pune.
+            We understand the specific needs of male professionals and are here to address
             all your concerns about accommodation, amenities, and community living.
           </motion.p>
         </motion.div>
@@ -123,7 +124,7 @@ export default function MalePGFAQ() {
                   )}
                 </div>
               </button>
-              
+
               <motion.div
                 initial={false}
                 animate={{
@@ -152,17 +153,31 @@ export default function MalePGFAQ() {
             Still Have Questions About Boys Accommodation?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Our support team understands the specific needs of male professionals in Kharadi. 
-            We're available 24/7 to help with any queries about our PG facilities, 
+            Our support team understands the specific needs of male professionals in Kharadi.
+            We're available 24/7 to help with any queries about our PG facilities,
             community, or booking process.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Chat with Male Residents
-            </button>
-            <button className="px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300">
-              Schedule Property Visit
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Chat with Male Residents
+                </button>
+              }
+              title="Chat with Male Residents"
+              description="Connect with our current male residents to learn about their PG experience and community life."
+              serviceType="Male Resident Chat"
+            />
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300">
+                  Schedule Property Visit
+                </button>
+              }
+              title="Schedule Property Visit"
+              description="Book a personalized visit to see our male PG facilities and meet the community."
+              serviceType="Property Visit"
+            />
           </div>
         </motion.div>
       </div>

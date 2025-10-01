@@ -104,6 +104,7 @@ export default function SingleRoomPGHero() {
             </motion.div>
 
             {/* CTA Buttons */}
+            {/* CTA Buttons */}
             <motion.div
               variants={withMotion(fadeInUp)}
               className="flex flex-col sm:flex-row gap-4 mt-8"
@@ -120,9 +121,16 @@ export default function SingleRoomPGHero() {
                   </div>
                 }
               />
-              <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-                Virtual Room Tour
-              </button>
+              <ContactFormDialog
+                title="Virtual Room Tour"
+                description="Take a virtual tour of our private single room PG accommodations in Kharadi."
+                serviceType="Virtual Room Tour"
+                trigger={
+                  <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                    Virtual Room Tour
+                  </button>
+                }
+              />
             </motion.div>
           </motion.div>
 

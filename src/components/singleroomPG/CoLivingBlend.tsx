@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Users, Home, Heart, Coffee, Dumbbell, Wifi } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const blendFeatures = [
   {
@@ -49,12 +50,12 @@ export default function CoLivingBlend() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-purple-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -84,8 +85,8 @@ export default function CoLivingBlend() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Cohousy redefines single room PG in Kharadi Pune by infusing co-living elements. 
-            Private rooms pair with shared gyms and balconies. This appeals to "co-living PG in Kharadi" 
+            Cohousy redefines single room PG in Kharadi Pune by infusing co-living elements.
+            Private rooms pair with shared gyms and balconies. This appeals to "co-living PG in Kharadi"
             searches while fostering connections without sacrificing solitude.
           </motion.p>
         </motion.div>
@@ -112,7 +113,7 @@ export default function CoLivingBlend() {
                 <h3 className="text-xl font-bold text-black mb-4 group-hover:text-purple-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-4">
                   {feature.description}
                 </p>
@@ -175,9 +176,16 @@ export default function CoLivingBlend() {
             <p className="text-gray-600 mb-4">
               Outshine aggregators with personalized service ideal for professionals at Eon IT Park companies
             </p>
-            <button className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Experience Co-Living Benefits
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Experience Co-Living Benefits
+                </button>
+              }
+              title="Experience Co-Living Benefits"
+              description="Discover the perfect blend of privacy and community in our co-living single room PG."
+              serviceType="Co-Living Experience"
+            />
           </div>
         </motion.div>
 

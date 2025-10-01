@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Smartphone, Zap, Users, CreditCard, Settings, Shield } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const appFeatures = [
   {
@@ -49,12 +50,12 @@ export default function AppFeatures() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-purple-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -84,8 +85,8 @@ export default function AppFeatures() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Cohousy's app transforms single room PG in Kharadi Pune into a digital haven. Enjoy 100% 
-            paperless experience from check-in to payments. This app ensures frictionless living near 
+            Cohousy's app transforms single room PG in Kharadi Pune into a digital haven. Enjoy 100%
+            paperless experience from check-in to payments. This app ensures frictionless living near
             Eon IT Park Kharadi with comprehensive digital features.
           </motion.p>
         </motion.div>
@@ -112,7 +113,7 @@ export default function AppFeatures() {
                 <h3 className="text-xl font-bold text-black mb-4 group-hover:text-purple-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-4">
                   {feature.description}
                 </p>
@@ -139,7 +140,7 @@ export default function AppFeatures() {
               Why Our App Makes the Difference
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              This app streamlines life for busy professionals at Eon IT Park Kharadi, 
+              This app streamlines life for busy professionals at Eon IT Park Kharadi,
               reducing friction with comprehensive features that traditional PGs simply can't offer.
             </p>
           </div>
@@ -177,9 +178,16 @@ export default function AppFeatures() {
             <p className="text-gray-600 mb-4">
               Perfect for IT professionals who value efficiency and digital convenience
             </p>
-            <button className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Download Cohousy App Today
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300">
+                  Get App
+                </button>
+              }
+              title="Get Cohousy App"
+              description="Download our app for seamless booking and management of your PG accommodation."
+              serviceType="App Download"
+            />
           </div>
         </motion.div>
       </div>

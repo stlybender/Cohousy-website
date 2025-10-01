@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Users, Wifi, Zap, Coffee, Dumbbell, Briefcase } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const comfortFeatures = [
   {
@@ -50,12 +51,12 @@ export default function MaleProfessionalsComfort() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-blue-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -85,14 +86,14 @@ export default function MaleProfessionalsComfort() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Men seeking hassle-free stays find our single room PG in Kharadi Pune for male ideal. 
-            Tailored amenities support busy schedules near WTC Kharadi. This setup promotes focus 
+            Men seeking hassle-free stays find our single room PG in Kharadi Pune for male ideal.
+            Tailored amenities support busy schedules near WTC Kharadi. This setup promotes focus
             and networking in Pune's IT scene.
           </motion.p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Visual Section */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -156,7 +157,7 @@ export default function MaleProfessionalsComfort() {
                     <h3 className="text-lg font-bold text-black mb-2">
                       {feature.title}
                     </h3>
-                    
+
                     <p className="text-gray-600 leading-relaxed mb-2">
                       {feature.description}
                     </p>
@@ -181,7 +182,7 @@ export default function MaleProfessionalsComfort() {
           <h3 className="text-2xl font-bold text-black mb-6 text-center">
             Why IT Professionals Choose Single Rooms
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -211,12 +212,26 @@ export default function MaleProfessionalsComfort() {
               Interested in upgrading your stay? Contact us via WhatsApp for quick details on availability.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                WhatsApp for Male PG Details
-              </button>
-              <button className="px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300">
-                Schedule Visit
-              </button>
+              <ContactFormDialog
+                trigger={
+                  <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                    WhatsApp for Male PG Details
+                  </button>
+                }
+                title="WhatsApp for Male PG Details"
+                description="Get instant details about our male PG accommodations and availability via WhatsApp."
+                serviceType="Male PG WhatsApp"
+              />
+              <ContactFormDialog
+                trigger={
+                  <button className="px-8 py-3 border-2 border-blue-600 text-blue-600 font-semibold rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300">
+                    Schedule Visit
+                  </button>
+                }
+                title="Schedule Male PG Visit"
+                description="Book a personalized visit to see our single room PG facilities for male professionals."
+                serviceType="Male PG Visit"
+              />
             </div>
           </div>
         </motion.div>

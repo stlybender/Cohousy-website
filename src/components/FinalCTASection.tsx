@@ -121,10 +121,16 @@ export default function FinalCTASection() {
                 </button>
               }
             />
-            <button className="inline-flex items-center gap-3 px-8 py-4 border-2 border-white text-white text-lg font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-300">
-              <Download size={20} />
-              Download App
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300">
+                  Get App
+                </button>
+              }
+              title="Get Cohousy App"
+              description="Download our app for seamless booking and management of your PG accommodation."
+              serviceType="App Download"
+            />
           </motion.div>
 
           {/* Promo Code */}
@@ -218,7 +224,7 @@ export default function FinalCTASection() {
               className="inline-flex items-center gap-2 text-accent font-semibold hover:text-white transition-colors duration-300"
             >
               <Phone size={18} />
-             +91 8908903900
+              +91 8908903900
             </a>
             <div className="hidden sm:block w-px h-6 bg-white/20" />
             <a

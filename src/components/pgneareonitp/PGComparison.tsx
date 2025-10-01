@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Zap, Clock, DollarSign, Shield, Users, Home } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const comparisonData = [
   {
@@ -49,12 +50,12 @@ export default function PGComparison() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -84,8 +85,8 @@ export default function PGComparison() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            To showcase our edge, here's how Cohousy stacks up against traditional PG hostels 
-            in Kharadi Pune. See why modern professionals choose our digitally-enhanced 
+            To showcase our edge, here's how Cohousy stacks up against traditional PG hostels
+            in Kharadi Pune. See why modern professionals choose our digitally-enhanced
             accommodation over conventional options.
           </motion.p>
         </motion.div>
@@ -145,7 +146,7 @@ export default function PGComparison() {
             <Clock size={32} className="text-orange-600 mb-4" />
             <h3 className="text-xl font-bold text-black mb-3">Time Savings</h3>
             <p className="text-gray-600 text-sm">
-              Save 2-3 hours daily on commute. More time for career growth, 
+              Save 2-3 hours daily on commute. More time for career growth,
               fitness, and exploring Kharadi's vibrant ecosystem.
             </p>
           </div>
@@ -154,7 +155,7 @@ export default function PGComparison() {
             <DollarSign size={32} className="text-orange-600 mb-4" />
             <h3 className="text-xl font-bold text-black mb-3">Cost Efficiency</h3>
             <p className="text-gray-600 text-sm">
-              All-inclusive pricing eliminates hidden costs. Better value 
+              All-inclusive pricing eliminates hidden costs. Better value
               than separate rent, utilities, and amenity charges.
             </p>
           </div>
@@ -163,7 +164,7 @@ export default function PGComparison() {
             <Zap size={32} className="text-orange-600 mb-4" />
             <h3 className="text-xl font-bold text-black mb-3">Digital Advantage</h3>
             <p className="text-gray-600 text-sm">
-              24/7 app support, digital payments, and seamless management 
+              24/7 app support, digital payments, and seamless management
               designed for tech-savvy professionals.
             </p>
           </div>
@@ -180,15 +181,31 @@ export default function PGComparison() {
             Ready to Experience the Difference?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            This positions Cohousy as superior for modern needs near Kharadi IT Park. 
+            This positions Cohousy as superior for modern needs near Kharadi IT Park.
             Join hundreds of professionals who made the smart choice.
           </p>
-          <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300 mr-4">
-            Book Your Modern PG
-          </button>
-          <button className="px-8 py-3 border-2 border-orange-600 text-orange-600 font-semibold rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300">
-            Schedule Comparison Visit
-          </button>
+          <ContactFormDialog
+            trigger={
+              <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                Book Your Modern PG
+              </button>
+            }
+            title="Book Your Modern PG"
+            description="Reserve your spot in our modern PG accommodation near Eon IT Park with superior amenities."
+            serviceType="Modern PG Booking"
+          />
+          <div className='mt-2'>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 border-2 border-orange-600 text-orange-600 font-semibold rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300">
+                  Schedule Comparison Visit
+                </button>
+              }
+              title="Schedule Comparison Visit"
+              description="Visit our properties and see the difference between Cohousy and traditional PG accommodations."
+              serviceType="Comparison Visit"
+            />
+          </div>
         </motion.div>
       </div>
     </section>

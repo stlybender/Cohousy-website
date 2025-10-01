@@ -4,6 +4,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { useState, useRef } from 'react'
 import { Check, Star, Wifi, Home, Clock, Shield } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from './ContactFormDialog'
 
 const pricingData = [
   {
@@ -89,18 +90,18 @@ export default function PricingSection() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   })
-  
+
   const headerY = useTransform(scrollYProgress, [0, 0.3], [50, -50])
 
   return (
-    <section 
+    <section
       ref={containerRef}
-      id="pricing" 
+      id="pricing"
       className="py-section bg-white relative overflow-hidden"
     >
       {/* Subtle background pattern */}
@@ -142,7 +143,7 @@ export default function PricingSection() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Choose the perfect accommodation plan that fits your lifestyle and budget. 
+            Choose the perfect accommodation plan that fits your lifestyle and budget.
             All packages include premium amenities with no hidden costs.
           </motion.p>
         </motion.div>
@@ -160,11 +161,10 @@ export default function PricingSection() {
               variants={withMotion(fadeInUp)}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className={`relative bg-white border rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl ${
-                plan.popular 
-                  ? 'border-accent shadow-lg scale-105 ring-2 ring-accent/20' 
+              className={`relative bg-white border rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl ${plan.popular
+                  ? 'border-accent shadow-lg scale-105 ring-2 ring-accent/20'
                   : 'border-gray-200 hover:border-gray-300'
-              }`}
+                }`}
             >
               {/* Popular Badge */}
               {plan.popular && (
@@ -187,11 +187,11 @@ export default function PricingSection() {
                   <h3 className="text-2xl font-bold text-black mb-2">
                     {plan.option}
                   </h3>
-                  
+
                   <div className="text-sm text-gray-600 mb-4">
                     {plan.occupancy}
                   </div>
-                  
+
                   <p className="text-gray-600 mb-6 leading-relaxed">
                     {plan.description}
                   </p>
@@ -223,19 +223,24 @@ export default function PricingSection() {
                 </ul>
 
                 {/* Clean CTA Button */}
-                <button className={`w-full py-4 cursor-pointer font-semibold rounded-lg transition-all duration-300 ${
-                  plan.popular
-                    ? 'bg-accent text-black hover:shadow-lg hover:scale-105'
-                    : 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg'
-                }`}>
-                  {plan.price === 'Contact for rates' ? 'Get Custom Quote' : 'Book Now'}
-                </button>
+                <ContactFormDialog
+                  trigger={
+                    <button className={`w-full py-4 cursor-pointer font-semibold rounded-lg transition-all duration-300 ${plan.popular
+                        ? 'bg-accent text-black hover:shadow-lg hover:scale-105'
+                        : 'bg-gray-900 text-white hover:bg-gray-800 hover:shadow-lg'
+                      }`}>
+                      {plan.price === 'Contact for rates' ? 'Get Custom Quote' : 'Book Now'}
+                    </button>
+                  }
+                  title={`Book ${plan.option}`}
+                  description={`Reserve your ${plan.option.toLowerCase()} accommodation with ${plan.occupancy.toLowerCase()} in Kharadi.`}
+                  serviceType={`${plan.option} Booking`}
+                />
               </div>
 
               {/* Subtle hover accent */}
-              <div className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-500 ${
-                hoveredIndex === index ? 'w-full' : 'w-0'
-              }`} />
+              <div className={`absolute bottom-0 left-0 h-1 bg-accent transition-all duration-500 ${hoveredIndex === index ? 'w-full' : 'w-0'
+                }`} />
             </motion.div>
           ))}
         </motion.div>
@@ -273,8 +278,8 @@ export default function PricingSection() {
               Why Choose Cohousy?
             </h3>
             <p className="text-gray-700 mb-6 max-w-3xl mx-auto leading-relaxed">
-              Unlike competitors like Stanza Living or Zolo, we offer transparent pricing 
-              with no hidden fees, premium locations near Eon IT Park, and a comprehensive 
+              Unlike competitors like Stanza Living or Zolo, we offer transparent pricing
+              with no hidden fees, premium locations near Eon IT Park, and a comprehensive
               mobile app for seamless living experience.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

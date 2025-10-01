@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Wifi, Home, Utensils, Dumbbell, Shield, Car, Coffee, Zap } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const amenities = [
   {
@@ -131,8 +132,8 @@ export default function TopAmenities() {
               key={category}
               onClick={() => setActiveCategory(category)}
               className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 ${activeCategory === category
-                  ? 'bg-purple-600 text-white shadow-sm'
-                  : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50 border border-purple-200'
+                ? 'bg-purple-600 text-white shadow-sm'
+                : 'text-gray-600 hover:text-purple-600 hover:bg-purple-50 border border-purple-200'
                 }`}
             >
               {category}
@@ -234,9 +235,16 @@ export default function TopAmenities() {
             <p className="text-gray-600 mb-4">
               These amenities exceed standard PG hostels, with AC options and post-pandemic hygiene protocols
             </p>
-            <button className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Book Single Room with Premium Amenities
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Book Single Room with Premium Amenities
+                </button>
+              }
+              title="Book Single Room with Premium Amenities"
+              description="Reserve your private single room with all premium amenities in Kharadi."
+              serviceType="Premium Single Room Booking"
+            />
           </div>
         </motion.div>
       </div>

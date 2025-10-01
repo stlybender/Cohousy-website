@@ -218,7 +218,7 @@ export default function OffersSection() {
           <p className="text-gray-600 mb-4">
             Ready to experience premium living in Kharadi's tech hub?
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex  sm:flex-row gap-4 justify-center">
             <ContactFormDialog
               title="Schedule a Visit"
               description="Book a visit to see the property in person."
@@ -231,11 +231,11 @@ export default function OffersSection() {
                 </div>
               }
             />
-            <Link href="/brochure">
+            {/* <Link href="/brochure">
               <button className="px-8 py-3 border-2 cursor-pointer border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
                 Download Brochure
               </button>
-            </Link>
+            </Link> */}
           </div>
         </motion.div>
       </div>

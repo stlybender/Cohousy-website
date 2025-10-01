@@ -164,9 +164,16 @@ export default function ShortTermFAQ() {
                 </div>
               }
             />
-            <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-              Call for Same-day
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                  Call for Same-day
+                </button>
+              }
+              title="Same-day Booking Support"
+              description="Get immediate assistance for same-day accommodation and urgent booking needs."
+              serviceType="Same-day Booking"
+            />
           </div>
         </motion.div>
       </div>

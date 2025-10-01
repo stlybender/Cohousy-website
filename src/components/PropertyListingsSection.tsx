@@ -4,6 +4,8 @@ import { useRef, useState } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from './ContactFormDialog'
+import Link from 'next/link'
 
 const properties = [
   {
@@ -149,8 +151,8 @@ export default function PropertyListingsSection() {
               key={filter}
               onClick={() => setActiveFilter(filter)}
               className={`px-6 py-2 text-sm font-medium cursor-pointer rounded-full transition-all duration-300 ${activeFilter === filter
-                  ? 'bg-gray-900 text-white shadow-sm'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 border border-gray-200'
+                ? 'bg-gray-900 text-white shadow-sm'
+                : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 border border-gray-200'
                 }`}
             >
               {filter}
@@ -197,9 +199,17 @@ export default function PropertyListingsSection() {
                 {/* Clean hover overlay */}
                 <div className={`absolute inset-0 bg-black/20 transition-opacity duration-500 flex items-center justify-center ${hoveredProperty === property.id ? 'opacity-100' : 'opacity-0'
                   }`}>
-                  <button className="bg-white cursor-pointer text-black px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-                    View Details
-                  </button>
+                  <ContactFormDialog
+                    trigger={
+                      <button className="bg-white cursor-pointer text-black px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
+                        View Details
+                      </button>
+                    }
+                    title="Property Inquiry"
+                    description="Get detailed information about this property and schedule a tour."
+                    serviceType="Property Inquiry"
+                    propertyName={property.title}
+                  />
                 </div>
               </div>
 
@@ -248,12 +258,28 @@ export default function PropertyListingsSection() {
 
                 {/* Clean CTA Buttons */}
                 <div className="flex gap-3">
-                  <button className="flex-1 cursor-pointer py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300">
-                    Book Tour
-                  </button>
-                  <button className="flex-1 cursor-pointer py-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all duration-300">
-                    Learn More
-                  </button>
+                  <ContactFormDialog
+                    trigger={
+                      <button className="flex-1 cursor-pointer py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300">
+                        Book Tour
+                      </button>
+                    }
+                    title="Schedule Property Tour"
+                    description="Book a personalized tour of this property at your convenience."
+                    serviceType="Property Tour"
+                    propertyName={property.title}
+                  />
+                  <ContactFormDialog
+                    trigger={
+                      <button className="flex-1 cursor-pointer py-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-gray-300 hover:bg-gray-50 transition-all duration-300">
+                        Learn More
+                      </button>
+                    }
+                    title="Get Property Details"
+                    description="Get comprehensive information about amenities, pricing, and availability."
+                    serviceType="Property Information"
+                    propertyName={property.title}
+                  />
                 </div>
               </div>
 
@@ -292,12 +318,14 @@ export default function PropertyListingsSection() {
               </p>
 
               <div className="flex gap-4">
-                <button className="bg-accent cursor-pointer text-black px-8 py-3 font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                  View All Locations
-                </button>
-                <button className="border-2 cursor-pointer border-white text-white px-8 py-3 font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-300">
+                <Link href='/explore'>
+                  <button className="bg-accent cursor-pointer text-black px-8 py-3 font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                    View All Locations
+                  </button>
+                </Link>
+                {/* <button className="border-2 cursor-pointer border-white text-white px-8 py-3 font-semibold rounded-lg hover:bg-white hover:text-black transition-all duration-300">
                   Download Map
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

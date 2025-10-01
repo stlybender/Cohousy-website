@@ -5,6 +5,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { Home, Calendar, Shield, Star } from 'lucide-react'
 import { staggerContainer, fadeInUp, splitLineReveal, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const stats = [
   { value: '6+', label: 'Months Average Stay', icon: Calendar },
@@ -16,16 +17,16 @@ const stats = [
 export default function LongTermHero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInView = useInView(containerRef, { once: true })
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
   })
-  
+
   const imageY = useTransform(scrollYProgress, [0, 1], [0, -100])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative pt-36 pb-16 lg:pb-24 bg-white overflow-hidden"
     >
@@ -43,7 +44,7 @@ export default function LongTermHero() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          
+
           {/* Content Section */}
           <motion.div
             variants={withMotion(staggerContainer)}
@@ -92,13 +93,13 @@ export default function LongTermHero() {
               <p className="text-xl leading-relaxed text-gray-700">
                 Choose our premium{' '}
                 <span className="text-accent font-semibold">1RK or 1BHK accommodations</span>{' '}
-                for extended stays in Kharadi. Perfect for IT professionals seeking stability 
+                for extended stays in Kharadi. Perfect for IT professionals seeking stability
                 with the flexibility of modern living near{' '}
                 <span className="text-black font-medium">Eon IT Park and WTC</span>.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed">
-                All utilities, premium amenities, and community access included—no hidden costs, 
+                All utilities, premium amenities, and community access included—no hidden costs,
                 no security deposits hassles. Just move in and focus on what matters most.
               </p>
             </motion.div>
@@ -108,12 +109,26 @@ export default function LongTermHero() {
               variants={withMotion(fadeInUp)}
               className="flex flex-col sm:flex-row gap-4 mt-8"
             >
-              <button className="px-8 py-4 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                View Available Rooms
-              </button>
-              <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-                Schedule Visit
-              </button>
+              <ContactFormDialog
+                trigger={
+                  <button className="px-8 py-4 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                    View Available Rooms
+                  </button>
+                }
+                title="View Available Rooms"
+                description="Explore our available long-term rental rooms and find the perfect space for your extended stay."
+                serviceType="Available Rooms Inquiry"
+              />
+              <ContactFormDialog
+                trigger={
+                  <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                    Schedule Visit
+                  </button>
+                }
+                title="Schedule Property Visit"
+                description="Book a personalized visit to see our long-term rental properties and amenities."
+                serviceType="Property Visit"
+              />
             </motion.div>
           </motion.div>
 

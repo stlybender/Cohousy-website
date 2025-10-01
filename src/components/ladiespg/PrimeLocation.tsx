@@ -138,7 +138,7 @@ export default function PrimeLocation() {
           {/* Interactive Location Map */}
           <motion.div
             variants={withMotion(fadeInUp)}
-            className="relative md:aspect-[2/1] aspect-[1/2]  bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-lg"
+            className="relative md:aspect-[1/1] aspect-[1/2]  bg-white rounded-2xl overflow-hidden border border-gray-200 shadow-lg"
           >
             {/* Google Maps Embed */}
             <iframe

@@ -5,6 +5,7 @@ import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 import { Calendar, Zap, Shield, Star } from 'lucide-react'
 import { staggerContainer, fadeInUp, splitLineReveal, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const stats = [
   { value: '0', label: 'Lock-in Period', icon: Zap },
@@ -107,12 +108,26 @@ export default function ShortTermHero() {
               variants={withMotion(fadeInUp)}
               className="flex flex-col sm:flex-row gap-4 mt-8"
             >
-              <button className="px-8 py-4 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-                Check Availability
-              </button>
-              <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-                View Rooms
-              </button>
+              <ContactFormDialog
+                trigger={
+                  <button className="px-8 py-4 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                    Check Availability
+                  </button>
+                }
+                title="Check Availability"
+                description="Check real-time availability for short-term accommodations for your desired dates."
+                serviceType="Availability Check"
+              />
+              <ContactFormDialog
+                trigger={
+                  <button className="px-8 py-4 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                    View Rooms
+                  </button>
+                }
+                title="View Available Rooms"
+                description="Explore our available short-term rental rooms and find the perfect space for your stay."
+                serviceType="Room Viewing"
+              />
             </motion.div>
           </motion.div>
 

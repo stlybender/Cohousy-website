@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Phone, Calendar, Zap, Clock, Star, MapPin } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const quickStats = [
   { icon: Zap, value: '0', label: 'Lock-in Period' },
@@ -17,7 +18,7 @@ export default function ShortTermCTA() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
@@ -33,7 +34,7 @@ export default function ShortTermCTA() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        
+
         {/* Main CTA Section */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -49,14 +50,14 @@ export default function ShortTermCTA() {
               <span className="w-2 h-2 bg-accent rounded-full inline-block mr-2 animate-pulse" />
               BOOK INSTANTLY - NO WAITING
             </span>
-            
+
             <h2 className="text-display-lg font-bold text-black mb-6">
               Need Flexible Stay
               <span className="text-accent"> Right Now?</span>
             </h2>
 
             <p className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto mb-8">
-              Don't let accommodation hunt slow you down. Book our flexible short-term rentals 
+              Don't let accommodation hunt slow you down. Book our flexible short-term rentals
               in Kharadi and focus on what truly matters - your work, projects, and goals.
             </p>
           </motion.div>
@@ -66,16 +67,30 @@ export default function ShortTermCTA() {
             variants={withMotion(fadeInUp)}
             className="flex flex-col sm:flex-row gap-6 justify-center mb-12"
           >
-            <button className="group relative px-12 py-4 bg-accent text-black font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <Calendar size={20} className="inline mr-3" />
-              Check Availability Now
-              <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
-            
-            <button className="group relative px-12 py-4 border-3 border-gray-900 text-gray-900 font-bold text-lg rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-105">
-              <Phone size={20} className="inline mr-3" />
-              Call for Same-day
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="group relative px-12 py-4 bg-accent text-black font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <Calendar size={20} className="inline mr-3" />
+                  Check Availability Now
+                  <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </button>
+              }
+              title="Check Availability Now"
+              description="Check real-time availability for your short-term stay in Kharadi."
+              serviceType="Availability Check"
+            />
+
+            <ContactFormDialog
+              trigger={
+                <button className="group relative px-12 py-4 border-3 border-gray-900 text-gray-900 font-bold text-lg rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300 transform hover:scale-105">
+                  <Phone size={20} className="inline mr-3" />
+                  Call for Same-day
+                </button>
+              }
+              title="Same-day Booking"
+              description="Get immediate assistance for same-day accommodation needs."
+              serviceType="Same-day Booking"
+            />
           </motion.div>
 
           {/* Quick Stats */}
@@ -122,9 +137,16 @@ export default function ShortTermCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Instant Book</h3>
             <p className="text-sm text-gray-600 mb-4">Available rooms, immediate confirmation</p>
-            <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
-              Book Online
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
+                  Book Online
+                </button>
+              }
+              title="Instant Online Booking"
+              description="Get immediate confirmation for available rooms with instant booking."
+              serviceType="Instant Booking"
+            />
           </div>
 
           {/* Call Option */}
@@ -134,9 +156,16 @@ export default function ShortTermCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Call & Book</h3>
             <p className="text-sm text-gray-600 mb-4">24/7 support for urgent needs</p>
-            <button className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
-              Call Now
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
+                  Call Now
+                </button>
+              }
+              title="24/7 Urgent Booking Support"
+              description="Get immediate phone assistance for your urgent accommodation needs."
+              serviceType="Urgent Call Support"
+            />
           </div>
 
           {/* WhatsApp Option */}
@@ -146,9 +175,16 @@ export default function ShortTermCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">WhatsApp</h3>
             <p className="text-sm text-gray-600 mb-4">Quick booking via message</p>
-            <button className="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300">
-              Message Us
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300">
+                  Message Us
+                </button>
+              }
+              title="WhatsApp Quick Booking"
+              description="Get instant responses and quick booking assistance via WhatsApp."
+              serviceType="WhatsApp Booking"
+            />
           </div>
 
           {/* Visit Option */}
@@ -158,9 +194,16 @@ export default function ShortTermCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Walk-in</h3>
             <p className="text-sm text-gray-600 mb-4">Direct visit, subject to availability</p>
-            <button className="w-full py-2 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300">
-              Get Directions
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-all duration-300">
+                  Get Directions
+                </button>
+              }
+              title="Walk-in Directions"
+              description="Get directions for direct walk-in booking at our Kharadi properties."
+              serviceType="Walk-in Directions"
+            />
           </div>
         </motion.div>
 
@@ -174,7 +217,7 @@ export default function ShortTermCTA() {
           <h3 className="text-2xl font-bold text-black mb-6 text-center">
             Why Choose Short-term with Cohousy?
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: '⚡', title: 'Zero Lock-in', subtitle: 'Book for days, weeks, months' },

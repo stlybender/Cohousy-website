@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Home, CheckCircle, Users, MapPin } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const roomTypes = [
   {
@@ -59,12 +60,12 @@ export default function RoomTypesAndPricing() {
   const [hoveredRoom, setHoveredRoom] = useState<number | null>(null)
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-gray-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -94,8 +95,8 @@ export default function RoomTypesAndPricing() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            Cohousy provides flexible room options in our male PG accommodations. We cater to single 
-            occupancy for privacy or double sharing for affordability, all within walking distance of 
+            Cohousy provides flexible room options in our male PG accommodations. We cater to single
+            occupancy for privacy or double sharing for affordability, all within walking distance of
             Eon IT Park Kharadi and WTC, designed exclusively for male residents.
           </motion.p>
         </motion.div>
@@ -113,11 +114,10 @@ export default function RoomTypesAndPricing() {
               variants={withMotion(fadeInUp)}
               onMouseEnter={() => setHoveredRoom(index)}
               onMouseLeave={() => setHoveredRoom(null)}
-              className={`relative bg-white border-2 rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl ${
-                room.popular 
-                  ? 'border-blue-600 shadow-lg scale-105' 
-                  : 'border-blue-100 hover:border-blue-200'
-              }`}
+              className={`relative bg-white border-2 rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-xl ${room.popular
+                ? 'border-blue-600 shadow-lg scale-105'
+                : 'border-blue-100 hover:border-blue-200'
+                }`}
             >
               {/* Popular Badge */}
               {room.popular && (
@@ -131,7 +131,7 @@ export default function RoomTypesAndPricing() {
                 <div className="mb-8">
                   <h3 className="text-2xl font-bold text-black mb-2">{room.title}</h3>
                   <p className="text-gray-600 mb-4">{room.type}</p>
-                  
+
                   {/* Pricing */}
                   <div className="flex items-center space-x-2 mb-2">
                     <span className="text-4xl font-bold text-black">{room.price}</span>
@@ -141,7 +141,7 @@ export default function RoomTypesAndPricing() {
                     <span className="text-sm text-gray-400 line-through">{room.originalPrice}</span>
                     <span className="text-sm text-green-600 font-semibold">Save {room.savings}</span>
                   </div>
-                  
+
                   <p className="text-sm text-blue-600 font-medium">{room.properties}</p>
                 </div>
 
@@ -156,19 +156,24 @@ export default function RoomTypesAndPricing() {
                 </ul>
 
                 {/* CTA Button */}
-                <button className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 ${
-                  room.popular
-                    ? 'bg-blue-600 text-white hover:shadow-lg'
-                    : 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
-                }`}>
-                  Book This Room Type
-                </button>
+                <ContactFormDialog
+                  trigger={
+                    <button className={`w-full py-3 font-semibold rounded-lg transition-all duration-300 ${room.popular
+                      ? 'bg-blue-600 text-white hover:shadow-lg'
+                      : 'border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
+                      }`}>
+                      Book This Room Type
+                    </button>
+                  }
+                  title={`Book ${room.title}`}
+                  description={`Reserve your ${room.type.toLowerCase()} accommodation for male professionals in Kharadi.`}
+                  serviceType={`${room.title} Booking`}
+                />
               </div>
 
               {/* Hover Accent */}
-              <div className={`absolute bottom-0 left-0 h-1 bg-blue-600 transition-all duration-500 ${
-                hoveredRoom === index ? 'w-full' : 'w-0'
-              }`} />
+              <div className={`absolute bottom-0 left-0 h-1 bg-blue-600 transition-all duration-500 ${hoveredRoom === index ? 'w-full' : 'w-0'
+                }`} />
             </motion.div>
           ))}
         </motion.div>
@@ -185,7 +190,7 @@ export default function RoomTypesAndPricing() {
               Our Male-Only Properties in Kharadi
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              All Cohousy properties are designed exclusively for male residents, 
+              All Cohousy properties are designed exclusively for male residents,
               ensuring a focused and comfortable environment for working professionals.
             </p>
           </div>
@@ -214,7 +219,7 @@ export default function RoomTypesAndPricing() {
           <h3 className="text-2xl font-bold text-black mb-6 text-center">
             Why Our Pricing Beats the Competition
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">₹0</div>
@@ -237,9 +242,16 @@ export default function RoomTypesAndPricing() {
             <p className="text-gray-600 mb-4">
               Better value than Zolo Stays or Stanza Living with app-integrated services
             </p>
-            <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Calculate Your Monthly Savings
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Calculate Your Monthly Savings
+                </button>
+              }
+              title="Calculate Your Monthly Savings"
+              description="Get a personalized cost comparison showing how much you can save with Cohousy male PG accommodation."
+              serviceType="Savings Calculator"
+            />
           </div>
         </motion.div>
       </div>

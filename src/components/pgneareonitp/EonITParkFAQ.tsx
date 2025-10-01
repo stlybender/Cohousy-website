@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Plus, Minus, HelpCircle } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const faqs = [
   {
@@ -54,12 +55,12 @@ export default function EonITParkFAQ() {
   }
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-orange-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -89,8 +90,8 @@ export default function EonITParkFAQ() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Get answers to the most important questions about our PG accommodation near Eon IT Park. 
-            We understand the specific needs of IT professionals and address all concerns about 
+            Get answers to the most important questions about our PG accommodation near Eon IT Park.
+            We understand the specific needs of IT professionals and address all concerns about
             location, amenities, community, and convenience.
           </motion.p>
         </motion.div>
@@ -123,7 +124,7 @@ export default function EonITParkFAQ() {
                   )}
                 </div>
               </button>
-              
+
               <motion.div
                 initial={false}
                 animate={{
@@ -151,18 +152,32 @@ export default function EonITParkFAQ() {
           <h3 className="text-2xl font-bold text-black mb-4">
             Still Have Questions About Our Location?
           </h3>
-       <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Our support team understands the specific location advantages and needs of 
-            professionals working at Eon IT Park and nearby companies. We're available 
+          <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            Our support team understands the specific location advantages and needs of
+            professionals working at Eon IT Park and nearby companies. We're available
             24/7 to help with any queries about proximity, transport, and convenience.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Chat with Current Residents
-            </button>
-            <button className="px-8 py-3 border-2 border-orange-600 text-orange-600 font-semibold rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300">
-              Schedule Location Visit
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Chat with Current Residents
+                </button>
+              }
+              title="Connect with Current Residents"
+              description="Chat with our current residents to learn about their experience living near Eon IT Park."
+              serviceType="Resident Chat"
+            />
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 border-2 border-orange-600 text-orange-600 font-semibold rounded-lg hover:bg-orange-600 hover:text-white transition-all duration-300">
+                  Schedule Location Visit
+                </button>
+              }
+              title="Schedule Location Visit"
+              description="Visit our PG near Eon IT Park to see the prime location and proximity advantages firsthand."
+              serviceType="Location Visit"
+            />
           </div>
         </motion.div>
       </div>

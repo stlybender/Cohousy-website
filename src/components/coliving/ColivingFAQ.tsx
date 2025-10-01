@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Plus, Minus, HelpCircle } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const faqs = [
   {
@@ -50,12 +51,12 @@ export default function ColivingFAQ() {
   }
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-gray-50 relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -85,7 +86,7 @@ export default function ColivingFAQ() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Find answers to common questions about co-living in Kharadi with Cohousy. 
+            Find answers to common questions about co-living in Kharadi with Cohousy.
             Still have questions? Our support team is here to help 24/7.
           </motion.p>
         </motion.div>
@@ -118,7 +119,7 @@ export default function ColivingFAQ() {
                   )}
                 </div>
               </button>
-              
+
               <motion.div
                 initial={false}
                 animate={{
@@ -147,16 +148,30 @@ export default function ColivingFAQ() {
             Still Have Questions?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Our support team is available 24/7 via the Cohousy app or phone to help 
+            Our support team is available 24/7 via the Cohousy app or phone to help
             you with any questions about co-living in Kharadi.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Chat with Support
-            </button>
-            <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
-              Schedule a Call
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 bg-accent text-black font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
+                  Chat with Support
+                </button>
+              }
+              title="Chat with Support"
+              description="Get instant help from our dedicated support team available 24/7."
+              serviceType="Support Chat"
+            />
+            <ContactFormDialog
+              trigger={
+                <button className="px-8 py-3 border-2 border-gray-900 text-gray-900 font-semibold rounded-lg hover:bg-gray-900 hover:text-white transition-all duration-300">
+                  Schedule a Call
+                </button>
+              }
+              title="Schedule a Support Call"
+              description="Book a personalized call with our support specialists at your convenience."
+              serviceType="Support Call"
+            />
           </div>
         </motion.div>
       </div>

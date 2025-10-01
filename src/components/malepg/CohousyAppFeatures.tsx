@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Smartphone, Zap, Users, Shield, CreditCard, Settings } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const appFeatures = [
   {
@@ -49,12 +50,12 @@ export default function CohousyAppFeatures() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
       <div className="container mx-auto px-6">
-        
+
         {/* Section Header */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -84,8 +85,8 @@ export default function CohousyAppFeatures() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto"
           >
-            What sets Cohousy apart as the best PG in Kharadi Pune for males is our innovative mobile app. 
-            This tenant smart app transforms your stay into a frictionless, digital experience, 
+            What sets Cohousy apart as the best PG in Kharadi Pune for males is our innovative mobile app.
+            This tenant smart app transforms your stay into a frictionless, digital experience,
             especially useful for busy professionals near Eon IT Park Kharadi.
           </motion.p>
         </motion.div>
@@ -112,7 +113,7 @@ export default function CohousyAppFeatures() {
                 <h3 className="text-xl font-bold text-black mb-4 group-hover:text-blue-600 transition-colors duration-300">
                   {feature.title}
                 </h3>
-                
+
                 <p className="text-gray-600 leading-relaxed mb-4">
                   {feature.description}
                 </p>
@@ -139,8 +140,8 @@ export default function CohousyAppFeatures() {
               Perfect for IT Professionals
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              The app's hybrid AI-human support ensures you're never alone in our male PG. 
-              For example, if you're facing a maintenance issue after hours at WTC Kharadi, 
+              The app's hybrid AI-human support ensures you're never alone in our male PG.
+              For example, if you're facing a maintenance issue after hours at WTC Kharadi,
               the Property Captain resolves it promptly.
             </p>
           </div>
@@ -168,10 +169,17 @@ export default function CohousyAppFeatures() {
             </div>
           </div>
 
-       <div className="text-center mt-8">
-            <button className="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:shadow-lg transition-all duration-300">
-              Download Cohousy App
-            </button>
+          <div className="text-center mt-8">
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
+                  Download Cohousy App
+                </button>
+              }
+              title="Download Cohousy App"
+              description="Get the Cohousy mobile app for seamless co-living management and community features."
+              serviceType="App Download"
+            />
           </div>
         </motion.div>
       </div>

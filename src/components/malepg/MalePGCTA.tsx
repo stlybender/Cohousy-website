@@ -5,6 +5,7 @@ import { motion, useInView } from 'framer-motion'
 import { Phone, Calendar, Users, MapPin, Star, Home } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
+import ContactFormDialog from '../ContactFormDialog'
 
 const quickStats = [
   { icon: Users, value: '100%', label: 'Male Only' },
@@ -17,7 +18,7 @@ export default function MalePGCTA() {
   const isInView = useInView(containerRef, { once: true, margin: "-10%" })
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="py-section bg-white relative overflow-hidden"
     >
@@ -33,7 +34,7 @@ export default function MalePGCTA() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        
+
         {/* Main CTA Section */}
         <motion.div
           variants={withMotion(staggerContainer)}
@@ -49,16 +50,16 @@ export default function MalePGCTA() {
               <span className="w-2 h-2 bg-blue-600 rounded-full inline-block mr-2 animate-pulse" />
               BOOK YOUR PROFESSIONAL HOME TODAY
             </span>
-            
+
             <h2 className="text-display-lg font-bold text-black mb-6">
               Ready to Experience Premium
               <span className="text-blue-600"> Male PG Living?</span>
             </h2>
 
             <p className="text-xl text-gray-600 font-light tracking-wide max-w-4xl mx-auto mb-8">
-              Ready to experience the ultimate boys accommodation in Kharadi Pune? Cohousy invites you to 
-              book your spot in our premium male PG near Eon IT Park Kharadi. With affordable pricing, 
-              top-tier amenities, and the innovative Cohousy app, your search for the perfect professional 
+              Ready to experience the ultimate boys accommodation in Kharadi Pune? Cohousy invites you to
+              book your spot in our premium male PG near Eon IT Park Kharadi. With affordable pricing,
+              top-tier amenities, and the innovative Cohousy app, your search for the perfect professional
               home ends here.
             </p>
           </motion.div>
@@ -68,16 +69,30 @@ export default function MalePGCTA() {
             variants={withMotion(fadeInUp)}
             className="flex flex-col sm:flex-row gap-6 justify-center mb-12"
           >
-            <button className="group relative px-12 py-4 bg-blue-600 text-white font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              <Calendar size={20} className="inline mr-3" />
-              Book Boys Accommodation Now
-              <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </button>
-            
-            <button className="group relative px-12 py-4 border-3 border-blue-600 text-blue-600 font-bold text-lg rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105">
-              <Phone size={20} className="inline mr-3" />
-              Call for Property Visit
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="group relative px-12 py-4 bg-blue-600 text-white font-bold text-lg rounded-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <Calendar size={20} className="inline mr-3" />
+                  Book Boys Accommodation Now
+                  <div className="absolute inset-0 bg-black/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </button>
+              }
+              title="Book Boys Accommodation"
+              description="Reserve your spot in our premium male PG accommodation near Eon IT Park."
+              serviceType="Boys Accommodation Booking"
+            />
+
+            <ContactFormDialog
+              trigger={
+                <button className="group relative px-12 py-4 border-3 border-blue-600 text-blue-600 font-bold text-lg rounded-lg hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-105">
+                  <Phone size={20} className="inline mr-3" />
+                  Call for Property Visit
+                </button>
+              }
+              title="Schedule Property Visit"
+              description="Book a personalized visit to see our male PG facilities and amenities."
+              serviceType="Property Visit"
+            />
           </motion.div>
 
           {/* Quick Stats */}
@@ -124,9 +139,16 @@ export default function MalePGCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Call & Book</h3>
             <p className="text-sm text-gray-600 mb-4">Speak with our male residents</p>
-            <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
-              Call Now
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
+                  Call Now
+                </button>
+              }
+              title="Connect with Male Residents"
+              description="Speak with our current male residents and get firsthand insights."
+              serviceType="Resident Connection"
+            />
           </div>
 
           {/* WhatsApp Option */}
@@ -136,9 +158,16 @@ export default function MalePGCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">WhatsApp</h3>
             <p className="text-sm text-gray-600 mb-4">Quick booking and queries</p>
-            <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
-              Message Us
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-all duration-300">
+                  Message Us
+                </button>
+              }
+              title="WhatsApp Support"
+              description="Get instant responses to your queries via WhatsApp for quick booking."
+              serviceType="WhatsApp Support"
+            />
           </div>
 
           {/* Visit Option */}
@@ -148,9 +177,16 @@ export default function MalePGCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Property Visit</h3>
             <p className="text-sm text-gray-600 mb-4">See the male PG yourself</p>
-            <button className="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300">
-              Schedule Visit
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-all duration-300">
+                  Schedule Visit
+                </button>
+              }
+              title="Schedule Property Visit"
+              description="Book a personal tour of our male PG facilities and meet the community."
+              serviceType="Property Visit"
+            />
           </div>
 
           {/* Virtual Tour Option */}
@@ -160,9 +196,16 @@ export default function MalePGCTA() {
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Virtual Tour</h3>
             <p className="text-sm text-gray-600 mb-4">Explore rooms online</p>
-            <button className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
-              Start Tour
-            </button>
+            <ContactFormDialog
+              trigger={
+                <button className="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all duration-300">
+                  Start Tour
+                </button>
+              }
+              title="Virtual Property Tour"
+              description="Take a virtual tour of our male PG accommodations from anywhere."
+              serviceType="Virtual Tour"
+            />
           </div>
         </motion.div>
 
@@ -176,7 +219,7 @@ export default function MalePGCTA() {
           <h3 className="text-2xl font-bold text-black mb-6 text-center">
             Join the Community of Thriving Professionals
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               { icon: '💼', title: 'Career Growth', subtitle: '500+ IT professionals network' },
@@ -194,7 +237,7 @@ export default function MalePGCTA() {
                 </div>
                 <div className="text-sm text-gray-600">
                   {benefit.subtitle}
-                  </div>
+                </div>
               </div>
             ))}
           </div>
