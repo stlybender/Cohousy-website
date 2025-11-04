@@ -20,7 +20,6 @@ import {
 import { Button } from '@/components/ui/button'
 import { format } from 'date-fns'
 import { cn } from '@/lib/utils'
-import router from 'next/router'
 
 interface ContactFormData {
   name: string
@@ -78,9 +77,9 @@ export default function ContactFormDialog({
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError('');
+    e.preventDefault()
+    setLoading(true)
+    setError('')
   
     try {
       const response = await fetch('/api/contact', {
@@ -92,21 +91,36 @@ export default function ContactFormDialog({
           ...formData,
           preferredDate: formData.preferredDate ? formData.preferredDate.toISOString() : undefined
         }),
-      });
+      })
   
       if (!response.ok) {
-        throw new Error('Failed to send message');
+        throw new Error('Failed to send message')
       }
   
-      // ✅ Redirect to thank-you page
-      router.push('/thank-you');
+      setSuccess(true)
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        serviceType,
+        propertyName: propertyName || ''
+      })
+  
+      // ✅ Wait 3 seconds, close dialog, then redirect
+      setTimeout(() => {
+        setOpen(false)
+        setSuccess(false)
+        window.location.href = '/thank-you'
+      }, 3000)
   
     } catch (error) {
-      setError('Failed to send message. Please try again.');
+      setError('Failed to send message. Please try again.')
     } finally {
-      setLoading(false);
+      setLoading(false)
     }
-  };
+  }
+  
 
   const resetForm = () => {
     setFormData({
