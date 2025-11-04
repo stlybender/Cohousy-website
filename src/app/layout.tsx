@@ -1,4 +1,4 @@
-// ... existing code ...
+// ... existing imports ...
 import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
@@ -14,10 +14,7 @@ const spaceGrotesk = Space_Grotesk({
   display: 'swap',
 })
 
-
-
-
-// SEO: Core metadata for all pages
+// SEO metadata
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.cohousy.com'),
   title: 'Premium Co-living & PG in Kharadi Pune | Near Eon IT Park & WTC',
@@ -62,11 +59,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        {/* Google Fonts */}
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
+
+        {/* ✅ Base Google Ads Tag (no conversion here) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17638552425"
+        />
+        <Script id="google-ads-base" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17638552425');
+          `}
+        </Script>
       </head>
+
       <body className="min-h-screen bg-white text-gray-900 antialiased montserrat selection:bg-blue-100 selection:text-blue-900">
         <div
           aria-hidden="true"
@@ -79,12 +92,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           className="pointer-events-none fixed inset-0 z-[1] bg-gradient-to-br from-blue-50/30 via-transparent to-cyan-50/30"
         />
 
-        {/* Navigation */}
+        {/* Navbar */}
         <Navbar />
 
         <div className="relative z-[2]">{children}</div>
+
         {/* Footer */}
         <Footer />
+
         {/* JSON-LD: LocalBusiness */}
         <Script id="ld-localbusiness" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
@@ -103,61 +118,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             },
             areaServed: 'Pune',
             telephone: '+918908903900',
-            sameAs: [
-              'https://www.facebook.com/',
-              'https://www.instagram.com/',
-              'https://www.linkedin.com/',
-            ],
-          })}
-        </Script>
-
-        {/* JSON-LD: SoftwareApplication (App) */}
-        <Script id="ld-softwareapp" type="application/ld+json" strategy="afterInteractive">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'SoftwareApplication',
-            name: 'Cohousy App',
-            operatingSystem: 'iOS, Android',
-            applicationCategory: 'LifestyleApplication',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'INR',
-            },
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: '4.8',
-              reviewCount: '120',
-            },
-            url: 'https://www.cohousy.com',
-          })}
-        </Script>
-
-        {/* JSON-LD: Product (Rooms) */}
-        <Script id="ld-product" type="application/ld+json" strategy="afterInteractive">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Product',
-            name: 'Cohousy Co-living & PG Rooms',
-            description:
-              'Premium co-living and PG accommodation in Kharadi Pune near Eon IT Park & WTC.',
-            brand: { '@type': 'Brand', name: 'Cohousy' },
-            offers: [
-              {
-                '@type': 'Offer',
-                price: '8000',
-                priceCurrency: 'INR',
-                url: 'https://www.cohousy.com',
-                availability: 'https://schema.org/InStock',
-              },
-              {
-                '@type': 'Offer',
-                price: '18000',
-                priceCurrency: 'INR',
-                url: 'https://www.cohousy.com',
-                availability: 'https://schema.org/InStock',
-              },
-            ],
           })}
         </Script>
       </body>
