@@ -6,6 +6,7 @@ import { Sora, Inter } from 'next/font/google'
 import Navbar from '@/components/Navbar'
 import { Space_Grotesk } from 'next/font/google'
 import Footer from '@/components/Footer'
+import WhatsAppButton from '@/components/ui/WhatsAppButton'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -46,8 +47,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.cohousy.com',
   },
   icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
+    icon: '/logo.png',
+    apple: '/logo.png',
   },
 }
 
@@ -100,6 +101,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Footer */}
         <Footer />
 
+        {/* Whatapp Floting Button*/}
+        <WhatsAppButton/>
+    
         {/* JSON-LD: LocalBusiness */}
         <Script id="ld-localbusiness" type="application/ld+json" strategy="afterInteractive">
           {JSON.stringify({
