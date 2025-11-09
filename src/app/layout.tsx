@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.cohousy.com',
   },
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: '/white.png',
+    apple:'/white.png',
   },
 }
 
