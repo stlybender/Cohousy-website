@@ -15,6 +15,7 @@ const mainNavItems = [
 ]
 
 const accommodationItems = [
+  { title: 'Property Management', href: '/property-management-india' },
   { title: 'Ladies PG in Kharadi', href: '/ladies-pg-kharadi' },
   { title: 'Male PG in Kharadi', href: '/male-pg-kharadi' },
   { title: 'Long-term Rentals', href: '/long-term-rentals' },
