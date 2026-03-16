@@ -33,6 +33,8 @@ const faqs = [
   },
   {
     question: 'Are there any restrictions on visitors or timings?',
+    answer: 'We have a guest-friendly policy with visitors allowed in common areas during daytime hours. Our 24/7 security ensures a safe environment while maintaining a comfortable and social atmosphere for all residents.'
+  }
 ]
 
 export default function MalePGFAQ() {
