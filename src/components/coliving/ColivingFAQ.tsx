@@ -8,10 +8,6 @@ import ContactFormDialog from '../ContactFormDialog'
 
 const faqs = [
   {
-    question: 'Is food included in the rent?',
-    answer: 'Yes, we offer daily meals with vegetarian & non-vegetarian options, customizable via the in-app food menu. Our meals are prepared with hygiene standards and cater to diverse preferences of residents from different regions.'
-  },
-  {
     question: 'Can I book short-term stays?',
     answer: 'Absolutely—perfect for project-based assignments or internships near Kharadi IT Park. We offer flexible stay options ranging from a few days to several months, with competitive rates for short-term residents.'
   },
@@ -21,7 +17,7 @@ const faqs = [
   },
   {
     question: 'What\'s included in the rent?',
-    answer: 'Rent covers Wi-Fi, housekeeping, maintenance, utilities, power backup, gym access, and all listed amenities—no surprises. We also include tenant insurance, meals, and access to community events.'
+    answer: 'Rent covers Wi-Fi, housekeeping, maintenance, utilities, power backup, gym access, and all listed amenities—no surprises. We also include tenant insurance and access to community events.'
   },
   {
     question: 'How does the app enhance community building?',
@@ -33,7 +29,7 @@ const faqs = [
   },
   {
     question: 'Are there any hidden charges?',
-    answer: 'No hidden charges at all. Our transparent pricing includes all utilities, amenities, housekeeping, meals, security, and maintenance. What you see is what you pay—no surprise bills or additional costs.'
+    answer: 'No hidden charges at all. Our transparent pricing includes all utilities, amenities, housekeeping, security, and maintenance. What you see is what you pay—no surprise bills or additional costs.'
   },
   {
     question: 'How is the security at Cohousy properties?',

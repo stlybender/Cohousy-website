@@ -32,8 +32,8 @@ const appFeatures = [
   },
   {
     icon: Utensils,
-    title: 'In-App Food Menu',
-    description: 'View daily menus and plan meals conveniently, enhancing the community dining experience.',
+    title: 'In-App Services',
+    description: 'Manage all services conveniently, enhancing the community living experience.',
     color: 'from-red-50 to-red-100'
   },
   {

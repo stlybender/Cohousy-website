@@ -33,8 +33,8 @@ const amenities = [
   },
   {
     icon: Utensils,
-    title: 'Hygienic Kitchen & Healthy Meals',
-    description: 'Clean, well-maintained kitchen with healthy meal options. Special dietary accommodations for women\'s health needs.',
+    title: 'Hygienic Kitchen & Facilities',
+    description: 'Clean, well-maintained kitchen with modern appliances. Shared facilities for meal preparation.',
     category: 'Dining',
     image: '/PG/Kitchen& Dining.jpg',
     femaleSpecific: true

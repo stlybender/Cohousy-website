@@ -55,7 +55,7 @@ export default function DualMarquee({
 
     return (
       <div 
-        className="relative overflow-hidden group " // Added background for debugging
+        className="relative overflow-hidden group"
         style={{ height: rowHeight }}
         onMouseEnter={() => onHover(true)}
         onMouseLeave={() => onHover(false)}
@@ -75,9 +75,7 @@ export default function DualMarquee({
             gap: `${gap}px`,
             width: 'max-content',
             willChange: 'transform',
-            // Ensure the animation starts immediately
-            animationDelay: '0s',
-            animationFillMode: 'both'
+            backfaceVisibility: 'hidden',
           }}
         >
           {duplicatedImages.map((image, index) => {
@@ -137,10 +135,9 @@ export default function DualMarquee({
       initial={{ opacity: 0 }}
       animate={isInView ? { opacity: 1 } : { opacity: 0 }}
       transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-      className={`relative bg-white overflow-hidden border-2 border-red-200 ${className}`} // Added debug border
+      className={`relative bg-white overflow-hidden ${className}`}
       style={{ 
-        minHeight: (rowHeight * 2) + gap + 40, // Extra padding for debugging
-        padding: '20px' // Add padding to see the container clearly
+        minHeight: (rowHeight * 2) + gap + 40,
       }}
     >
       {/* Container debug info */}

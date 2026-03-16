@@ -16,7 +16,6 @@ const pricingPlans = [
     popular: false,
     features: [
       'Shared room with female roommate',
-      'All meals (veg/non-veg options)',
       'High-speed Wi-Fi',
       'Daily housekeeping',
       'Access to all women-only amenities',
@@ -35,7 +34,6 @@ const pricingPlans = [
     features: [
       'Private single room',
       'Attached washroom',
-      'All meals + healthy options',
       'Premium Wi-Fi',
       'Daily housekeeping',
       'All women-centric amenities',
@@ -53,7 +51,6 @@ const pricingPlans = [
     features: [
       'AC private room with premium furnishing',
       'Attached washroom with geyser',
-      'Customized meal plans',
       'Dedicated workspace',
       'Priority housekeeping',
       'All luxury amenities',
@@ -114,7 +111,7 @@ export default function LadiesPGPricing() {
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
             Our pricing starts at ₹8,000 per month for shared rooms, up to ₹15,000 for single room
-            ladies PG with AC and premium amenities. All packages include meals, Wi-Fi, and housekeeping
+            ladies PG with AC and premium amenities. All packages include Wi-Fi and housekeeping
             with no brokerage fees - designed specifically for women's comfort and budget.
           </motion.p>
         </motion.div>

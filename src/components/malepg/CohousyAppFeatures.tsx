@@ -27,8 +27,8 @@ const appFeatures = [
   },
   {
     icon: Settings,
-    title: 'In-App Food Menu & Amenities Access',
-    description: 'View daily menus, book gym slots, or request laundry directly from your phone—manage everything digitally.',
+    title: 'In-App Amenities Access',
+    description: 'Book gym slots or request laundry directly from your phone—manage everything digitally.',
     highlight: 'Everything in one app'
   },
   {
@@ -153,7 +153,6 @@ export default function CohousyAppFeatures() {
                 <li>• Quick maintenance requests during work hours</li>
                 <li>• Digital rent payment with reward points</li>
                 <li>• Gym slot booking for early morning workouts</li>
-                <li>• Food menu checking for healthy meal planning</li>
                 <li>• Instant property captain chat support</li>
               </ul>
             </div>

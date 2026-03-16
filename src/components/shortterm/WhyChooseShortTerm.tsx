@@ -21,7 +21,7 @@ const benefits = [
   {
     icon: Shield,
     title: 'All-Inclusive Rates',
-    description: 'No hidden charges. Electricity, Wi-Fi, housekeeping, meals, and all amenities included in transparent pricing.',
+    description: 'No hidden charges. Electricity, Wi-Fi, housekeeping, and all amenities included in transparent pricing.',
     highlight: 'No hidden costs'
   },
   {

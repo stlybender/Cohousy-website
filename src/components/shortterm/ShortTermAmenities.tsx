@@ -22,10 +22,10 @@ const amenities = [
     image: '/short/High-Speed Internet.jpg'
   },
   {
-    icon: Utensils,
-    title: 'Meals Included',
-    description: 'Daily breakfast, lunch, and dinner with vegetarian and non-vegetarian options.',
-    category: 'Dining',
+    icon: Coffee,
+    title: 'Common Kitchen Access',
+    description: 'Shared kitchen facilities with refrigerator and cooking essentials for meal preparation.',
+    category: 'Kitchen',
     image: '/short/Common  Kitchen Access.jpg'
   },
   {

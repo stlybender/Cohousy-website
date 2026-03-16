@@ -16,7 +16,6 @@ const roomTypes = [
     popular: true,
     features: [
       'Shared room with male roommate',
-      'All meals included',
       'High-speed Wi-Fi',
       'Daily housekeeping',
       'Access to all amenities',
@@ -36,7 +35,6 @@ const roomTypes = [
     features: [
       'Complete privacy with attached washroom',
       'Modern furnishings & balcony',
-      'All meals + premium options',
       'High-speed Wi-Fi',
       'Daily housekeeping',
       'Access to all premium amenities',
@@ -229,7 +227,7 @@ export default function RoomTypesAndPricing() {
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">All-In</div>
               <div className="font-semibold text-black mb-2">Inclusive Pricing</div>
-              <p className="text-sm text-gray-600">Wi-Fi, meals, housekeeping, power backup included</p>
+              <p className="text-sm text-gray-600">Wi-Fi, housekeeping, power backup included</p>
             </div>
             <div className="text-center">
               <div className="text-3xl font-bold text-blue-600 mb-2">30%</div>

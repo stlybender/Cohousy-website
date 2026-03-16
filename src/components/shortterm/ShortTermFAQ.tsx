@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     question: 'What is included in the short-term rental price?',
-    answer: 'Everything! Your stay includes fully furnished accommodation, all meals (breakfast, lunch, dinner), high-speed Wi-Fi, housekeeping, power backup, security, and access to all amenities like gym and common areas.'
+    answer: 'Everything! Your stay includes fully furnished accommodation, high-speed Wi-Fi, housekeeping, power backup, security, and access to all amenities like gym and common areas.'
   },
   {
     question: 'Is there a cancellation policy?',

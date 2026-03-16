@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     question: 'How does the Cohousy app enhance single room living?',
-    answer: 'Our app provides complete digital experience: 30-second check-in, 24/7 support, digital payments with rewards, complaint tracking, food menu access, and amenity booking. Everything managed from your smartphone for ultimate convenience.'
+    answer: 'Our app provides complete digital experience: 30-second check-in, 24/7 support, digital payments with rewards, complaint tracking, and amenity booking. Everything managed from your smartphone for ultimate convenience.'
   },
   {
     question: 'Can I move between different Cohousy properties?',
@@ -41,7 +41,7 @@ const faqs = [
   },
   {
     question: 'What\'s included in the ₹18,000 monthly rent?',
-    answer: 'Everything! Your rent includes AC room, attached washroom, high-speed WiFi, daily meals, housekeeping, power backup, gym access, all utilities, security, and 24/7 app support. No hidden charges or surprise bills - completely transparent pricing.'
+    answer: 'Everything! Your rent includes AC room, attached washroom, high-speed WiFi, housekeeping, power backup, gym access, all utilities, security, and 24/7 app support. No hidden charges or surprise bills - completely transparent pricing.'
   }
 ]
 

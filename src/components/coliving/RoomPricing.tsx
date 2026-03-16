@@ -39,7 +39,6 @@ const includedFeatures = [
   'All utilities (electricity, water, maintenance)',
   'High-speed Wi-Fi',
   'Daily housekeeping',
-  'Vegetarian/Non-vegetarian meals',
   'Gym and recreational facilities',
   'Power backup',
   '24/7 security',
@@ -193,7 +192,7 @@ export default function RoomPricing() {
               Everything Included in Your Rent
             </h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Pricing includes all amenities, meals, and utilities—no hidden fees.
+              Pricing includes all amenities and utilities—no hidden fees.
               This transparency beats competitors, making Cohousy the best value for co-living in Kharadi.
             </p>
           </div>

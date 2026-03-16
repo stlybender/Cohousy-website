@@ -28,16 +28,12 @@ const faqs = [
     answer: "We offer flexible stay options: daily stays from 1 night for business travelers, monthly packages for professionals, and long-term rentals with 3-month minimum stays. All options include flexible exit policies."
   },
   {
-    question: "Are meal plans available?",
-    answer: "Yes, we offer flexible meal plans through our in-app ordering system. Choose from daily meal plans, à la carte options, or use our fully equipped common kitchens. All meals are prepared fresh with dietary preferences accommodated."
-  },
-  {
     question: "What makes Cohousy different from other PG providers?",
     answer: "Our unique combination of strategic IT park locations, comprehensive mobile app, transparent pricing with zero brokerage, premium amenities, and strong community focus sets us apart from traditional PG providers."
   },
   {
     question: "Is there parking available?",
-    answer: "Yes, all our properties offer dedicated parking spaces for residents. We also provide electric vehicle charging stations at select locations and secure bike parking areas."
+    answer: "Yes, all our properties offer dedicated parking spaces for residents."
   }
 ]
 

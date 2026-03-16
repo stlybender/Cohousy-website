@@ -8,12 +8,8 @@ import ContactFormDialog from '../ContactFormDialog'
 
 const faqs = [
   {
-    question: 'Is this a completely male-only PG accommodation?',
-    answer: 'Yes, absolutely! All Cohousy properties for male PG in Kharadi are exclusively designed for men. All residents are male professionals, ensuring a comfortable and focused environment for working and studying.'
-  },
-  {
     question: 'What are the room options and pricing for male PG?',
-    answer: 'We offer flexible options: Double sharing at ₹10,000/month per person and Single rooms at ₹18,000/month. All prices include meals, Wi-Fi, housekeeping, power backup, and access to all amenities with no hidden charges or brokerage fees.'
+    answer: 'We offer flexible options: Double sharing at ₹10,000/month per person and Single rooms at ₹18,000/month. All prices include Wi-Fi, housekeeping, power backup, and access to all amenities with no hidden charges or brokerage fees.'
   },
   {
     question: 'How close is the PG to major IT companies in Kharadi?',
@@ -29,7 +25,7 @@ const faqs = [
   },
   {
     question: 'How does the Cohousy app help with daily living?',
-    answer: 'The app provides 100% digital experience: instant onboarding, 24/7 property captain support, digital payments with rewards, complaint resolution tracking, food menu access, amenity bookings, and tenant insurance. Everything managed from your phone.'
+    answer: 'The app provides 100% digital experience: instant onboarding, 24/7 property captain support, digital payments with rewards, complaint resolution tracking, amenity bookings, and tenant insurance. Everything managed from your phone.'
   },
   {
     question: 'What is the community like in your male PG?',
@@ -37,12 +33,6 @@ const faqs = [
   },
   {
     question: 'Are there any restrictions on visitors or timings?',
-    answer: 'Visitors are allowed in common areas during reasonable hours with proper registration. We maintain a professional environment while being flexible for genuine needs. No restrictions on entry/exit timings for residents as we understand the demands of IT work schedules.'
-  },
-  {
-    question: 'How do you ensure quality of food and hygiene?',
-    answer: 'We maintain strict hygiene standards with regular kitchen inspections, quality ingredients, and varied menu options. The in-app food menu lets you check daily meals and provide feedback. We accommodate dietary preferences and offer healthy options for fitness-conscious residents.'
-  }
 ]
 
 export default function MalePGFAQ() {

@@ -32,7 +32,7 @@ const amenities = [
   {
     icon: Utensils,
     title: 'Kitchen & Dining Essentials',
-    description: 'Fully equipped shared kitchen, common fridge, floor-wise water purifier, and in-app food menu for nutritious meals.',
+    description: 'Fully equipped shared kitchen, common fridge, and floor-wise water purifier for convenient meal preparation.',
     category: 'Dining',
     image: '/PG/Kitchen& Dining.jpg'
   },

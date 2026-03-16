@@ -43,7 +43,7 @@ const testimonials = [
     image: '/ladies/Testimonial 4.jpg',
 
     rating: 5,
-    text: 'As someone who values health and fitness, the ladies-only gym hours are fantastic! The healthy meal options and wellness sessions help maintain work-life balance. The location near WTC makes my commute stress-free.',
+    text: 'As someone who values health and fitness, the ladies-only gym hours are fantastic! The wellness sessions help maintain work-life balance. The location near WTC makes my commute stress-free.',
     highlight: 'Perfect wellness facilities'
   },
 ]

@@ -20,10 +20,6 @@ const faqs = [
     answer: 'Yes! We offer both shared (twin sharing) and single room options. Single rooms come with attached washrooms, balconies, and premium furnishing. This is perfect for professional women who value privacy while still enjoying the community benefits.'
   },
   {
-    question: 'How do you ensure the food is hygienic and suitable for women?',
-    answer: 'Our kitchen maintains the highest hygiene standards with female staff supervision. We offer both vegetarian and non-vegetarian options, accommodate dietary restrictions, and provide healthy meal choices. We also consider women\'s nutritional needs and offer special provisions during health requirements.'
-  },
-  {
     question: 'Can my family visit and stay overnight?',
     answer: 'Yes, we welcome family visits and have guest accommodation arrangements. We have a proper visitor management system with advance notification requirements. Female family members can stay overnight with prior approval, and we provide comfortable guest facilities.'
   },

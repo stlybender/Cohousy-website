@@ -28,7 +28,7 @@ const testimonials = [
     role: 'Product Manager',
     company: 'Tata Communications',
     rating: 5,
-    text: 'The digital-first approach is exactly what I needed. From booking to payments, everything is seamless. The housekeeping and meal services save me so much time to focus on my career.',
+    text: 'The digital-first approach is exactly what I needed. From booking to payments, everything is seamless. The housekeeping services save me so much time to focus on my career.',
     image: '/Co-living/Testimonial 3.jpg'
   },
   {

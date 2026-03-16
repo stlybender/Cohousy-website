@@ -34,7 +34,7 @@ const appFeatures = [
   {
     icon: Bell,
     title: 'Smart Notifications',
-    description: 'Safety alerts, visitor notifications, meal reminders, and wellness session alerts customized for women.',
+    description: 'Safety alerts, visitor notifications, and wellness session alerts customized for women.',
     highlight: 'Personalized for women'
   },
   {

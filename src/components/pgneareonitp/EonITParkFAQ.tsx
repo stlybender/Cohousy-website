@@ -8,10 +8,6 @@ import ContactFormDialog from '../ContactFormDialog'
 
 const faqs = [
   {
-    question: 'Is food included in the PG near Eon IT Park?',
-    answer: 'Yes, absolutely! Daily vegetarian and non-vegetarian meal options are included in your rent. You can check the daily menu through our app and even provide feedback on food quality. We accommodate dietary preferences and restrictions.'
-  },
-  {
     question: 'Are short-term stays available for internships or project assignments?',
     answer: 'Yes, we offer flexible short-term stays through CohousyStay for internships, training programs, or temporary assignments. This is perfect for students from Symbiosis International University or professionals on short-term projects at Eon IT Park companies.'
   },
@@ -21,7 +17,7 @@ const faqs = [
   },
   {
     question: 'What exactly is included in the rent amount?',
-    answer: 'Everything! Your rent includes all amenities, utilities, Wi-Fi, housekeeping, meals, power backup, gym access, common area usage, and 24/7 app support. No hidden charges or brokerage fees—completely transparent pricing.'
+    answer: 'Everything! Your rent includes all amenities, utilities, Wi-Fi, housekeeping, power backup, gym access, common area usage, and 24/7 app support. No hidden charges or brokerage fees—completely transparent pricing.'
   },
   {
     question: 'How close is the PG to Eon IT Park exactly?',
@@ -33,7 +29,7 @@ const faqs = [
   },
   {
     question: 'How does the Cohousy app help with daily living?',
-    answer: 'Our tenant smart app provides 100% digital experience: instant check-in, 24/7 property captain support, complaint tracking, digital payments with rewards, food menu access, amenity booking, and exclusive tenant membership benefits. Everything managed from your phone!'
+    answer: 'Our tenant smart app provides 100% digital experience: instant check-in, 24/7 property captain support, complaint tracking, digital payments with rewards, amenity booking, and exclusive tenant membership benefits. Everything managed from your phone!'
   },
   {
     question: 'Can I move between different Cohousy properties?',

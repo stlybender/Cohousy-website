@@ -72,7 +72,7 @@ const benefits = [
   {
     icon: Wifi,
     title: 'All-Inclusive',
-    description: 'Utilities, Wi-Fi, and meals included'
+    description: 'Utilities and Wi-Fi included'
   },
   {
     icon: Clock,

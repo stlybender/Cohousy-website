@@ -18,7 +18,6 @@ const propertyDetails = [
       'Furnished with bed, wardrobe, study table',
       'High-speed Wi-Fi included',
       'Daily housekeeping service',
-      'All meals included (veg/non-veg)',
       'Access to gym and common areas',
       'Power backup and AC'
     ],
@@ -36,7 +35,6 @@ const propertyDetails = [
       'Modern furnishing and storage',
       'High-speed internet connectivity',
       'Regular cleaning and maintenance',
-      'Nutritious meal options',
       'Community access and amenities'
     ],
     highlight: 'Perfect for young professionals'
@@ -53,7 +51,6 @@ const propertyDetails = [
       'Balcony access in select rooms',
       'High-end furnishing package',
       'Dedicated study/work area',
-      'Premium meal options',
       'Enhanced security features'
     ],
     highlight: 'Luxury living experience'
@@ -71,7 +68,6 @@ const inclusiveFeatures = [
   'No hidden fees or brokerage charges',
   'All utilities included in rent',
   'High-speed Wi-Fi and power backup',
-  'Daily meals with variety',
   'Housekeeping and laundry services',
   'Access to gym and recreational facilities',
   'Security and maintenance included',

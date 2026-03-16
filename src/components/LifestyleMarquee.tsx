@@ -7,14 +7,13 @@ import { fadeInUp, staggerContainer, withMotion } from '@/lib/motion'
 
 // Professional lifestyle images with proper context
 const topMarqueeImages = [
-  { src: '/a.jpg', alt: 'Modern professionals at Cohousy Kharadi', width: 400, height: 280 },
   { src: '/b.jpg', alt: 'Co-working spaces near Eon IT Park', width: 380, height: 280 },
   { src: '/c.jpg', alt: 'Community kitchen interactions', width: 420, height: 280 },
   { src: '/d.jpg', alt: 'Kharadi skyline from rooftop terrace', width: 360, height: 280 },
   { src: '/e.jpg', alt: 'Premium single room interiors', width: 400, height: 280 },
   { src: '/z.jpg', alt: 'Fitness facilities for residents', width: 380, height: 280 },
-    { src: '/i.jpg', alt: 'Fitness facilities for residents', width: 380, height: 280 },
-      { src: '/h.jpg', alt: 'Fitness facilities for residents', width: 380, height: 280 },
+  { src: '/i.jpg', alt: 'Fitness facilities for residents', width: 380, height: 280 },
+  { src: '/h.jpg', alt: 'Fitness facilities for residents', width: 380, height: 280 },
 ]
 
 const bottomMarqueeImages = [

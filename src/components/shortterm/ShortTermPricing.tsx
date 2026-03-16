@@ -16,7 +16,6 @@ const pricingPlans = [
     popular: false,
     features: [
       'Fully furnished single room',
-      'All meals included',
       'High-speed Wi-Fi',
       'Daily housekeeping',
       'All amenities access',
@@ -35,7 +34,6 @@ const pricingPlans = [
     popular: true,
     features: [
       'Choice of single/shared rooms',
-      'All meals + snacks',
       'Premium Wi-Fi',
       'Weekly deep cleaning',
       'All amenities + co-working',
@@ -54,7 +52,6 @@ const pricingPlans = [
     popular: false,
     features: [
       'Premium room selection',
-      'Customized meal plans',
       'Dedicated workspace',
       'Bi-weekly housekeeping',
       'All premium amenities',
@@ -233,7 +230,7 @@ export default function ShortTermPricing() {
               <div className="p-4 bg-white rounded-lg">
                 <div className="text-red-600 font-semibold mb-1">Hotel</div>
                 <div className="text-2xl font-bold text-black">₹21,000</div>
-                <div className="text-xs text-gray-500">Room only, meals extra</div>
+                <div className="text-xs text-gray-500">Room only</div>
               </div>
               <div className="p-4 bg-white rounded-lg">
                 <div className="text-orange-600 font-semibold mb-1">Serviced Apartment</div>

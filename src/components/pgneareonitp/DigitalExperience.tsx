@@ -33,8 +33,8 @@ const appFeatures = [
   },
   {
     icon: Settings,
-    title: 'In-App Food Menu & Amenities Access',
-    description: 'Plan meals, check daily menus, or book gym slots effortlessly. Everything managed from your smartphone.',
+    title: 'In-App Amenities Access',
+    description: 'Book gym slots or manage services effortlessly. Everything managed from your smartphone.',
     highlight: 'Total lifestyle management'
   },
   {
@@ -153,7 +153,7 @@ export default function DigitalExperience() {
                 <li>• 24/7 AI-human hybrid support system</li>
                 <li>• Automated complaint tracking & resolution</li>
                 <li>• Digital payments with rewards & insurance</li>
-                <li>• In-app food menu & amenity booking</li>
+                <li>• In-app amenity booking</li>
                 <li>• Flexible property transfers within network</li>
                 <li>• Management escalation features</li>
                 <li>• Real-time updates & notifications</li>

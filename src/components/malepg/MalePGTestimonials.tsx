@@ -43,7 +43,7 @@ const testimonials = [
     image: '/male/Testimonial 4.jpg',
 
     rating: 5,
-    text: 'The community aspect is fantastic. We have weekend badminton sessions and gaming tournaments that help us unwind. The location near WTC is perfect, and the food quality is consistently good. It truly feels like a home away from home.',
+    text: 'The community aspect is fantastic. We have weekend badminton sessions and gaming tournaments that help us unwind. The location near WTC is perfect. It truly feels like a home away from home.',
     highlight: 'Amazing community vibes'
   },
 

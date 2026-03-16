@@ -40,7 +40,7 @@ const benefits = [
   {
     icon: Heart,
     title: 'Wellness-Focused Living',
-    description: 'On-site gym, healthy meal options, mental wellness support, and spaces designed for work-life balance.',
+    description: 'On-site gym, mental wellness support, and spaces designed for work-life balance.',
     highlight: 'Holistic well-being approach'
   }
 ]
@@ -156,7 +156,6 @@ export default function WhyChooseLadiesPG() {
                 <li>• Single rooms available with attached washrooms</li>
                 <li>• Digital app for all services and payments</li>
                 <li>• Regular community events & wellness programs</li>
-                <li>• Flexible meal plans & dietary accommodations</li>
                 <li>• Professional networking opportunities</li>
                 <li>• Transparent pricing with no hidden charges</li>
               </ul>
@@ -171,7 +170,6 @@ export default function WhyChooseLadiesPG() {
                 <li>• Mostly shared rooms with common washrooms</li>
                 <li>• Manual processes for complaints and payments</li>
                 <li>• Limited social activities or community building</li>
-                <li>• Fixed meal timings with no customization</li>
                 <li>• Lack of professional networking opportunities</li>
                 <li>• Hidden charges and unclear pricing structure</li>
               </ul>

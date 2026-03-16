@@ -11,7 +11,7 @@ const roomOptions = [
     {
         type: '1BHK Units',
         properties: 'Cohousy 1 & 3',
-        singlePrice: '₹18,000',
+        singlePrice: '₹21,000',
         doublePrice: '₹10,000',
         features: [
             'Private 1BHK apartment setup',
@@ -20,14 +20,13 @@ const roomOptions = [
             'Furnished with bed, wardrobe, study table',
             'High-speed Wi-Fi included',
             'Daily housekeeping service',
-            'All meals included (veg/non-veg)',
             'Access to all common amenities'
         ]
     },
     {
         type: '1RK Units',
         properties: 'Cohousy 2',
-        singlePrice: '₹18,000',
+        singlePrice: '₹21,000',
         doublePrice: '₹10,000',
         features: [
             'Compact 1RK with efficient layout',
@@ -36,7 +35,6 @@ const roomOptions = [
             'Modern furnishing and storage',
             'High-speed internet connectivity',
             'Regular cleaning and maintenance',
-            'Nutritious meal options',
             'Community access and amenities'
         ]
     },
@@ -52,7 +50,6 @@ const roomOptions = [
             'Budget-friendly pricing',
             'Flexible lease terms',
             'Basic furnishing included',
-            'Meal plans available',
             'Community living experience'
         ]
     }
@@ -62,7 +59,6 @@ const inclusiveFeatures = [
     'No hidden charges or brokerage fees',
     'All utilities included in rent',
     'Wi-Fi and power backup covered',
-    'Daily meals with variety',
     'Housekeeping and laundry services',
     'Access to gym and common areas',
     'Security and maintenance included',
@@ -208,7 +204,7 @@ export default function FlexibleRoomOptions() {
                                 <tr className="border-b border-gray-100">
                                     <td className="py-3 px-4">1BHK (Cohousy 1 & 3)</td>
                                     <td className="text-center py-3 px-4">Single</td>
-                                    <td className="text-right py-3 px-4 font-semibold">₹18,000</td>
+                                    <td className="text-right py-3 px-4 font-semibold">₹21,000</td>
                                 </tr>
                                 <tr className="border-b border-gray-100">
                                     <td className="py-3 px-4">1BHK (Cohousy 1 & 3)</td>
@@ -218,7 +214,7 @@ export default function FlexibleRoomOptions() {
                                 <tr className="border-b border-gray-100">
                                     <td className="py-3 px-4">1RK (Cohousy 2)</td>
                                     <td className="text-center py-3 px-4">Single</td>
-                                    <td className="text-right py-3 px-4 font-semibold">₹18,000</td>
+                                    <td className="text-right py-3 px-4 font-semibold">₹21,000</td>
                                 </tr>
                                 <tr className="border-b border-gray-100">
                                     <td className="py-3 px-4">1RK (Cohousy 2)</td>
@@ -261,7 +257,7 @@ export default function FlexibleRoomOptions() {
 
                     <div className="text-center">
                         <p className="text-gray-600 mb-4">
-                            Includes meals, Wi-Fi, housekeeping—no hidden fees. Better value than competitors!
+                            Includes Wi-Fi, housekeeping—no hidden fees. Better value than competitors!
                         </p>
 
                         {/* Single Room CTA */}
