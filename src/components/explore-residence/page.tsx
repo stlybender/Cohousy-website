@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import Image from 'next/image'
 import HeroSection from '@/components/HeroSection'
 import PropertyCard from '@/components/PropertyCard'
 import MapView from '@/components/MapView'
@@ -55,18 +54,6 @@ const properties = [
   // Add more properties...
 ]
 
-const heroSlides = [
-  {
-    title: "Your Home Away from Home!",
-    description: "Looking for a comfortable and affordable Co-Living? We offer private and shared spaces with top-notch amenities like air-conditioned rooms, personal storage, CCTV security, and a dedicated support team. Live comfortably without breaking the bank!",
-    image: "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/Welcome-to-Cohousy-a-place-you-will-never-forget-min.jpg"
-  },
-  {
-    title: "Modern Amenities & Vibrant Communities",
-    description: "Say goodbye to the stress of house hunting! Our co-living spaces come with fully furnished rooms, power backup, laundry services, a fully equipped kitchen, and a welcoming community. Enjoy a hassle-free lifestyle with everything you need under one roof.",
-    image: "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/Hero-Section-1-min.jpg"
-  }
-]
 
 export default function ExploreResidence() {
   const [hoveredProperty, setHoveredProperty] = useState<number>(0)
@@ -86,7 +73,7 @@ export default function ExploreResidence() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <HeroSection slides={heroSlides} />
+      <HeroSection />
 
       {/* Properties Section */}
       <section className="py-16 bg-gray-50">

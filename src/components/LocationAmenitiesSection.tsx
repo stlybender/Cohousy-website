@@ -3,7 +3,6 @@
 import { useRef, useState } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { MapPin, Building2, Train, ShoppingBag, Wifi, Dumbbell, Coffee, Shield, Car, Utensils, Laptop, Users } from 'lucide-react'
-import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 import ContactFormDialog from './ContactFormDialog'
 
@@ -319,19 +318,10 @@ export default function LocationAmenitiesSection() {
                   onMouseLeave={() => setHoveredItem(null)}
                   className="group bg-white border border-gray-100 rounded-2xl overflow-hidden hover:border-gray-200 transition-all duration-500 hover:shadow-lg"
                 >
-                  {/* Amenity Image */}
-                  <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image
-                      src={amenity.image}
-                      alt={amenity.alt}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    />
-
-                    {/* Icon Overlay */}
-                    <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-sm">
-                      <IconComponent size={24} className="text-gray-700" strokeWidth={1.5} />
+                  {/* Icon Header */}
+                  <div className={`flex items-center justify-center aspect-[4/3] bg-gray-50 transition-colors duration-300 ${hoveredItem === index ? 'bg-accent/10' : ''}`}>
+                    <div className={`p-5 rounded-2xl transition-all duration-300 ${hoveredItem === index ? 'bg-accent text-black' : 'bg-white text-gray-700 shadow-sm'}`}>
+                      <IconComponent size={40} strokeWidth={1.5} />
                     </div>
                   </div>
 
