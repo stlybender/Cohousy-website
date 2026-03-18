@@ -11,7 +11,7 @@ const communityFeatures = [
     icon: Calendar,
     title: 'Wellness Sessions',
     description: 'Join yoga classes in the common gym or meditation sessions to maintain work-life balance.',
-    image: '/Co-living/yoga.jpg'
+    image: '/Cohome-Images/Wellness Session.jpg'
   },
   {
     icon: Coffee,
@@ -23,13 +23,13 @@ const communityFeatures = [
     icon: Dumbbell,
     title: 'Badminton Tournaments',
     description: 'Regular sports tournaments encouraging teamwork among peers from IT companies.',
-    image: '/Co-living/badminton.jpeg'
+    image: '/Cohome-Images/Badminton Tournament.jpg'
   },
   {
     icon: Music,
     title: 'Social Gatherings',
     description: 'Evening meetups and cultural events to foster connections and combat urban isolation.',
-    image: '/Co-living/gathering.jpg'
+    image: '/Cohome-Images/Social Gatherings.jpg'
   }
 ]
 

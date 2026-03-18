@@ -3,7 +3,6 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Star, ChevronLeft, ChevronRight, Quote, MapPin } from 'lucide-react'
-import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 
 const testimonials = [
@@ -11,17 +10,14 @@ const testimonials = [
     name: 'Priya Sharma',
     role: 'Software Engineer at Credit Suisse',
     location: 'From Delhi, Living since 8 months',
-    image: '/ladies/Testimonial 1.jpg',
     rating: 5,
-    text: 'Moving to Pune as a single woman was scary, but Cohousy made it feel like home from day one. The 24/7 female security and women-only environment gave my parents complete peace of mind. The location is perfect - just 5 minutes walk to my office at Eon IT Park!',
+    text: 'Moving to Pune as a single woman was scary, but Cohousy made it feel like home from day one. The 24/7 security and women-only environment gave my parents complete peace of mind. The location is perfect - just 5 minutes walk to my office at Eon IT Park!',
     highlight: 'Perfect for professional women'
   },
   {
     name: 'Sneha Patel',
     role: 'Business Analyst at Barclays',
     location: 'From Gujarat, Living since 1 year',
-     image: '/ladies/Testimonial 2.jpg',
-
     rating: 5,
     text: 'What I love most is the supportive community of women here. We have regular networking sessions, and I\'ve made lifelong friendships. The single room with attached washroom gives me the privacy I need, while common areas help me socialize when I want to.',
     highlight: 'Amazing female community'
@@ -30,8 +26,6 @@ const testimonials = [
     name: 'Ananya Reddy',
     role: 'Project Manager at TCS',
     location: 'From Hyderabad, Living since 6 months',
-    image: '/ladies/Testimonial 3.jpg',
-
     rating: 5,
     text: 'The safety features are incredible - panic buttons, family location sharing, and the app makes everything so convenient. My parents get regular safety updates, which keeps them happy. The hygiene standards are exceptional, especially important for women.',
     highlight: 'Outstanding safety measures'
@@ -40,8 +34,6 @@ const testimonials = [
     name: 'Kavya Nair',
     role: 'Data Scientist at Honeywell',
     location: 'From Kerala, Living since 4 months',
-    image: '/ladies/Testimonial 4.jpg',
-
     rating: 5,
     text: 'As someone who values health and fitness, the ladies-only gym hours are fantastic! The wellness sessions help maintain work-life balance. The location near WTC makes my commute stress-free.',
     highlight: 'Perfect wellness facilities'
@@ -112,22 +104,15 @@ export default function LadiesPGTestimonials() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto mb-12"
         >
-          <div className="bg-white rounded-2xl border border-pink-200 shadow-lg overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="bg-white rounded-2xl border border-pink-200 shadow-lg p-8 lg:p-12">
+            <div className="flex flex-col">
               
               {/* Testimonial Content */}
-              <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <div className="mb-6">
-                  <Quote size={32} className="text-pink-600 mb-4" />
-                  <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                    {activeTestimonial.text}
-                  </p>
-                  <div className="inline-block px-3 py-1 bg-pink-100 text-pink-600 text-sm font-semibold rounded-full">
-                    {activeTestimonial.highlight}
+              <div className="mb-6">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center text-2xl font-bold text-pink-600">
+                    {activeTestimonial.name.charAt(0)}
                   </div>
-                </div>
-
-                <div className="flex items-center justify-between">
                   <div>
                     <h3 className="font-bold text-black text-lg">{activeTestimonial.name}</h3>
                     <p className="text-pink-600 font-medium mb-1">{activeTestimonial.role}</p>
@@ -136,32 +121,21 @@ export default function LadiesPGTestimonials() {
                       {activeTestimonial.location}
                     </div>
                   </div>
+                </div>
 
-                  <div className="flex items-center space-x-1">
-                    {[...Array(activeTestimonial.rating)].map((_, i) => (
-                      <Star key={i} size={18} className="fill-pink-600 text-pink-600" />
-                    ))}
-                  </div>
+                <Quote size={32} className="text-pink-600 mb-4" />
+                <p className="text-lg leading-relaxed text-gray-700 mb-6">
+                  {activeTestimonial.text}
+                </p>
+                <div className="inline-block px-3 py-1 bg-pink-100 text-pink-600 text-sm font-semibold rounded-full mb-6">
+                  {activeTestimonial.highlight}
                 </div>
               </div>
 
-              {/* Profile Image */}
-              <div className="relative aspect-[4/5] lg:aspect-auto">
-                <Image
-                  src={activeTestimonial.image || '/skyline.avif'}
-                  alt={`${activeTestimonial.name} - Professional woman at Cohousy ladies PG`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                
-                {/* Overlay Badge */}
-                <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-sm">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-pink-600">4.9★</div>
-                    <div className="text-xs text-gray-600">Safety Rating</div>
-                  </div>
-                </div>
+              <div className="flex items-center space-x-1">
+                {[...Array(activeTestimonial.rating)].map((_, i) => (
+                  <Star key={i} size={18} className="fill-pink-600 text-pink-600" />
+                ))}
               </div>
             </div>
           </div>

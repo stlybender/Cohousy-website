@@ -2,8 +2,7 @@
 
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react'
-import Image from 'next/image'
+import { Star, Quote, ChevronLeft, ChevronRight, User } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 
 const testimonials = [
@@ -12,32 +11,28 @@ const testimonials = [
     role: 'IT Professional',
     company: 'Eon IT Park Kharadi',
     rating: 5,
-    text: 'Cohousy gave me the perfect blend of privacy and community. The location is unbeatable, and the amenities are top-notch. The app makes everything so easy—I\'ve made great friends through the events!',
-    image: '/Co-living/Testimonial 1.jpg'
+    text: 'Cohousy gave me the perfect blend of privacy and community. The location is unbeatable, and the amenities are top-notch. The app makes everything so easy—I\'ve made great friends through the events!'
   },
   {
     name: 'Rahul K.',
     role: 'Software Engineer',
     company: 'Synechron',
     rating: 5,
-    text: 'As a newcomer to Pune, Cohousy\'s co-living in Kharadi helped me settle quickly. The security and proximity to WTC made it a no-brainer. The community events helped me network professionally too.',
-    image: '/Co-living/Testimonial 2.jpg'
+    text: 'As a newcomer to Pune, Cohousy\'s co-living in Kharadi helped me settle quickly. The security and proximity to WTC made it a no-brainer. The community events helped me network professionally too.'
   },
   {
     name: 'Sneha M.',
     role: 'Product Manager',
     company: 'Tata Communications',
     rating: 5,
-    text: 'The digital-first approach is exactly what I needed. From booking to payments, everything is seamless. The housekeeping services save me so much time to focus on my career.',
-    image: '/Co-living/Testimonial 3.jpg'
+    text: 'The digital-first approach is exactly what I needed. From booking to payments, everything is seamless. The housekeeping services save me so much time to focus on my career.'
   },
   {
     name: 'Arjun P.',
     role: 'Data Analyst',
     company: 'UBS',
     rating: 5,
-    text: 'Moving from another city was stressful, but Cohousy made it smooth. The 5-minute walk to office is amazing, and the community here feels like family. Best co-living experience in Pune!',
-        image: '/Co-living/Testimonial 4.jpg'
+    text: 'Moving from another city was stressful, but Cohousy made it smooth. The 5-minute walk to office is amazing, and the community here feels like family. Best co-living experience in Pune!'
   }
 ]
 
@@ -102,22 +97,23 @@ export default function ResidentTestimonials() {
           transition={{ duration: 0.8, delay: 0.3 }}
           className="relative bg-gray-50 rounded-2xl border border-gray-100 overflow-hidden mb-12"
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+          <div className="p-12 flex flex-col justify-center max-w-4xl mx-auto">
+            <Quote size={40} className="text-accent mb-6" />
             
-            {/* Testimonial Content */}
-            <div className="p-12 flex flex-col justify-center">
-              <Quote size={40} className="text-accent mb-6" />
-              
-              <blockquote className="text-xl leading-relaxed text-gray-700 mb-6">
-                "{testimonials[activeTestimonial].text}"
-              </blockquote>
+            <blockquote className="text-xl leading-relaxed text-gray-700 mb-6">
+              "{testimonials[activeTestimonial].text}"
+            </blockquote>
 
-              <div className="flex items-center mb-4">
-                {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
-                  <Star key={i} size={20} className="text-yellow-400 fill-current" />
-                ))}
+            <div className="flex items-center mb-4">
+              {[...Array(testimonials[activeTestimonial].rating)].map((_, i) => (
+                <Star key={i} size={20} className="text-yellow-400 fill-current" />
+              ))}
+            </div>
+
+            <div className="flex items-center gap-4 mb-8">
+              <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center text-2xl font-bold text-black">
+                {testimonials[activeTestimonial].name.charAt(0)}
               </div>
-
               <div>
                 <div className="font-bold text-black text-lg">
                   {testimonials[activeTestimonial].name}
@@ -126,47 +122,36 @@ export default function ResidentTestimonials() {
                   {testimonials[activeTestimonial].role} at {testimonials[activeTestimonial].company}
                 </div>
               </div>
-
-              {/* Navigation */}
-              <div className="flex items-center justify-between mt-8">
-                <div className="flex space-x-2">
-                  {testimonials.map((_, index) => (
-                    <button
-                      key={index}
-                      onClick={() => setActiveTestimonial(index)}
-                      className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                        activeTestimonial === index ? 'bg-accent' : 'bg-gray-300'
-                      }`}
-                    />
-                  ))}
-                </div>
-
-                <div className="flex space-x-2">
-                  <button
-                    onClick={prevTestimonial}
-                    className="p-2 rounded-lg bg-white border border-gray-200 hover:border-gray-300 transition-colors duration-300"
-                  >
-                    <ChevronLeft size={20} className="text-gray-600" />
-                  </button>
-                  <button
-                    onClick={nextTestimonial}
-                    className="p-2 rounded-lg bg-white border border-gray-200 hover:border-gray-300 transition-colors duration-300"
-                  >
-                    <ChevronRight size={20} className="text-gray-600" />
-                  </button>
-                </div>
-              </div>
             </div>
 
-            {/* Testimonial Image */}
-            <div className="relative aspect-[4/5] lg:aspect-auto">
-              <Image
-                src={testimonials[activeTestimonial].image}
-                alt={`${testimonials[activeTestimonial].name} - Cohousy resident`}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
+            {/* Navigation */}
+            <div className="flex items-center justify-between">
+              <div className="flex space-x-2">
+                {testimonials.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setActiveTestimonial(index)}
+                    className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                      activeTestimonial === index ? 'bg-accent' : 'bg-gray-300'
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <div className="flex space-x-2">
+                <button
+                  onClick={prevTestimonial}
+                  className="p-2 rounded-lg bg-white border border-gray-200 hover:border-gray-300 transition-colors duration-300"
+                >
+                  <ChevronLeft size={20} className="text-gray-600" />
+                </button>
+                <button
+                  onClick={nextTestimonial}
+                  className="p-2 rounded-lg bg-white border border-gray-200 hover:border-gray-300 transition-colors duration-300"
+                >
+                  <ChevronRight size={20} className="text-gray-600" />
+                </button>
+              </div>
             </div>
           </div>
         </motion.div>
@@ -190,14 +175,8 @@ export default function ResidentTestimonials() {
               }`}
             >
               <div className="flex items-center space-x-3 mb-4">
-                <div className="relative w-12 h-12 overflow-hidden rounded-full">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    fill
-                    className="object-cover"
-                    sizes="48px"
-                  />
+                <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-lg font-bold text-black">
+                  {testimonial.name.charAt(0)}
                 </div>
                 <div>
                   <div className="font-semibold text-black">{testimonial.name}</div>

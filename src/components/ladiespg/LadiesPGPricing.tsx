@@ -19,7 +19,7 @@ const pricingPlans = [
       'High-speed Wi-Fi',
       'Daily housekeeping',
       'Access to all women-only amenities',
-      '24/7 female security',
+      '24/7 security',
       'Power backup',
       'Common washroom access'
     ]

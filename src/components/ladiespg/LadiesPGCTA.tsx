@@ -220,7 +220,7 @@ export default function LadiesPGCTA() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: '🛡️', title: 'Guaranteed Safety', subtitle: '24/7 female security & monitoring' },
+              { icon: '🛡️', title: 'Guaranteed Safety', subtitle: '24/7 security & monitoring' },
               { icon: '👩‍💼', title: 'Professional Network', subtitle: 'Connect with 250+ women professionals' },
               { icon: '🏠', title: 'Home-like Comfort', subtitle: 'Privacy with community support' },
               { icon: '📱', title: 'Smart Features', subtitle: 'Women-centric app with safety tools' }

@@ -20,7 +20,7 @@ const amenities = [
     title: 'Common Gym & Badminton Courts',
     description: 'On-site fitness to unwind after long days, with modern equipment and recreational spaces for active lifestyle.',
     category: 'Fitness',
-    image: '/PG/Ladies-Only Gym.jpg'
+    image: '/PG/Common Gym.jpg'
   },
   {
     icon: Home,

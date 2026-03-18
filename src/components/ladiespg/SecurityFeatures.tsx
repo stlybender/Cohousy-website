@@ -15,8 +15,8 @@ const securityFeatures = [
   },
   {
     icon: Shield,
-    title: 'Female Security Personnel',
-    description: 'Trained female security guards during night shifts, ensuring comfortable interaction and immediate response.',
+    title: 'Security Personnel',
+    description: 'Trained security guards during night shifts, ensuring comfortable interaction and immediate response.',
     highlight: 'Women-only night security'
   },
   {
@@ -47,7 +47,7 @@ const securityFeatures = [
 
 const safetyStats = [
   { value: '0', label: 'Security Incidents', period: 'Since Inception' },
-  { value: '24/7', label: 'Female Security', period: 'Available Always' },
+  { value: '24/7', label: 'Security', period: 'Available Always' },
   { value: '100%', label: 'Background Verified', period: 'All Residents' },
   { value: '<60s', label: 'Emergency Response', period: 'Average Time' }
 ]
@@ -159,7 +159,7 @@ export default function SecurityFeatures() {
                 <Shield size={20} className="text-green-600" />
                 <span className="font-semibold text-black">Women-Safe Zone</span>
               </div>
-              <div className="text-sm text-gray-600">24/7 Female Security</div>
+              <div className="text-sm text-gray-600">24/7 Security</div>
             </div>
 
             <div className="absolute bottom-6 right-6 bg-pink-600/95 backdrop-blur-sm text-white p-4 rounded-xl shadow-lg">

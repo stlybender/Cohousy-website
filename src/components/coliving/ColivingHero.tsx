@@ -132,7 +132,7 @@ export default function ColivingHero() {
             className="relative aspect-[4/5] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/Co-living/Hero.jpg"
+              src="/Co-Living/Hero.jpg"
               alt="Co-living community spaces at Cohousy Kharadi"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"

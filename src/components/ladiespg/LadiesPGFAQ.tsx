@@ -9,11 +9,11 @@ import ContactFormDialog from '../ContactFormDialog'
 const faqs = [
   {
     question: 'Is this a completely women-only PG accommodation?',
-    answer: 'Yes, absolutely! Cohousy\'s ladies PG in Kharadi is exclusively designed for women. All residents are female, and we have female security personnel, especially during night shifts. Our staff is trained to understand and address women\'s specific needs and concerns.'
+    answer: 'Yes, absolutely! Cohousy\'s ladies PG in Kharadi is exclusively designed for women. All residents are female, and we have security personnel, especially during night shifts. Our staff is trained to understand and address women\'s specific needs and concerns.'
   },
   {
     question: 'What safety measures do you have specifically for women?',
-    answer: 'We have comprehensive women-focused safety features including 24/7 CCTV surveillance, female security guards, biometric access control, panic buttons in rooms, family location sharing through our app, direct connection to women\'s helpline, and thorough background verification of all residents.'
+    answer: 'We have comprehensive women-focused safety features including 24/7 CCTV surveillance, security guards, biometric access control, panic buttons in rooms, family location sharing through our app, direct connection to women\'s helpline, and thorough background verification of all residents.'
   },
   {
     question: 'Do you have single room options available for women?',

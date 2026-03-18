@@ -3,7 +3,6 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Star, ChevronLeft, ChevronRight, Quote, MapPin } from 'lucide-react'
-import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 
 const testimonials = [
@@ -11,7 +10,6 @@ const testimonials = [
     name: 'Rahul Sharma',
     role: 'Software Engineer at Barclays',
     location: 'From Delhi, Living since 1 year',
-    image: '/male/Testimonial 1.jpg',
     rating: 5,
     text: 'Moving to Pune for my job at Eon IT Park was stressful, but Cohousy made it incredibly smooth. The 5-minute walk to office saves me so much time and the community here is amazing. I\'ve made great friends who are also in IT, and we often collaborate on projects.',
     highlight: 'Perfect location for IT professionals'
@@ -20,8 +18,6 @@ const testimonials = [
     name: 'Amit Patel',
     role: 'Data Analyst at Credit Suisse',
     location: 'From Gujarat, Living since 8 months',
-     image: '/male/Testimonial 2.jpg',
-
     rating: 5,
     text: 'The single room option gave me the privacy I needed while the common areas helped me network with other professionals. The app is incredibly convenient - from paying rent to booking gym slots, everything is digital. The pricing is transparent with no hidden costs.',
     highlight: 'Great value and transparency'
@@ -30,8 +26,6 @@ const testimonials = [
     name: 'Vikash Kumar',
     role: 'Project Manager at TCS',
     location: 'From Bihar, Living since 6 months',
-    image: '/male/Testimonial 3.jpg',
-
     rating: 5,
     text: 'What I love most is the professional environment. Everyone here is career-focused and supportive. The amenities are top-notch - high-speed Wi-Fi is perfect for my work from home days, and the gym helps me stay fit despite long work hours.',
     highlight: 'Professional environment'
@@ -40,8 +34,6 @@ const testimonials = [
     name: 'Arjun Reddy',
     role: 'DevOps Engineer at Honeywell',
     location: 'From Hyderabad, Living since 10 months',
-    image: '/male/Testimonial 4.jpg',
-
     rating: 5,
     text: 'The community aspect is fantastic. We have weekend badminton sessions and gaming tournaments that help us unwind. The location near WTC is perfect. It truly feels like a home away from home.',
     highlight: 'Amazing community vibes'
@@ -112,22 +104,15 @@ export default function MalePGTestimonials() {
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto mb-12"
         >
-          <div className="bg-white rounded-2xl border border-blue-200 shadow-lg overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="bg-white rounded-2xl border border-blue-200 shadow-lg p-8 lg:p-12">
+            <div className="flex flex-col">
               
               {/* Testimonial Content */}
-              <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <div className="mb-6">
-                  <Quote size={32} className="text-blue-600 mb-4" />
-                  <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                    {activeTestimonial.text}
-                  </p>
-                  <div className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-semibold rounded-full">
-                    {activeTestimonial.highlight}
+              <div className="mb-6">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center text-2xl font-bold text-blue-600">
+                    {activeTestimonial.name.charAt(0)}
                   </div>
-                </div>
-
-                <div className="flex items-center justify-between">
                   <div>
                     <h3 className="font-bold text-black text-lg">{activeTestimonial.name}</h3>
                     <p className="text-blue-600 font-medium mb-1">{activeTestimonial.role}</p>
@@ -136,32 +121,21 @@ export default function MalePGTestimonials() {
                       {activeTestimonial.location}
                     </div>
                   </div>
+                </div>
 
-                  <div className="flex items-center space-x-1">
-                    {[...Array(activeTestimonial.rating)].map((_, i) => (
-                      <Star key={i} size={18} className="fill-blue-600 text-blue-600" />
-                    ))}
-                  </div>
+                <Quote size={32} className="text-blue-600 mb-4" />
+                <p className="text-lg leading-relaxed text-gray-700 mb-6">
+                  {activeTestimonial.text}
+                </p>
+                <div className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-sm font-semibold rounded-full mb-6">
+                  {activeTestimonial.highlight}
                 </div>
               </div>
 
-              {/* Profile Image */}
-              <div className="relative aspect-[4/5] lg:aspect-auto">
-                <Image
-                  src={activeTestimonial.image || '/skyline.avif'}
-                  alt={`${activeTestimonial.name} - IT professional at Cohousy male PG`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-                
-                {/* Overlay Badge */}
-                <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm p-3 rounded-xl shadow-sm">
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-600">4.8★</div>
-                    <div className="text-xs text-gray-600">Professional Rating</div>
-                  </div>
-                </div>
+              <div className="flex items-center space-x-1">
+                {[...Array(activeTestimonial.rating)].map((_, i) => (
+                  <Star key={i} size={18} className="fill-blue-600 text-blue-600" />
+                ))}
               </div>
             </div>
           </div>

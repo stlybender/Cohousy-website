@@ -17,10 +17,10 @@ const amenities = [
   },
   {
     icon: Shield,
-    title: 'CCTV + 24/7 Female Security',
-    description: 'Round-the-clock monitoring with female security personnel during night shifts for added comfort and safety.',
+    title: 'CCTV + 24/7 Security',
+    description: 'Round-the-clock monitoring with security personnel during night shifts for added comfort and safety.',
     category: 'Security',
-    image: '/Co-living/Peace of Mind Guaranteed.jpg',
+    image: '/ladies/CCTV.jpg',
     femaleSpecific: true
   },
   {
