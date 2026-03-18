@@ -14,7 +14,7 @@ const properties = [
         name: "Common 01",
         location: "Kharadi",
         type: "Unisex",
-        image: "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/1-min.jpg",
+        image: "/Cohome-Images/Common 01.jpeg",
         description: "Single Private Room with Attached Balcony",
         price: "18,000",
         mapCoords: { lat: 18.54780768255096, lng: 73.94594957519239 },
@@ -26,8 +26,8 @@ const properties = [
             features: ["Fully Furnished", "24/7 Security", "Power Backup", "Housekeeping"],
             nearbyPlaces: ["EON IT Park - 2km", "Seasons Mall - 1.5km", "Kharadi Metro - 1km"],
             images: [
-                "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/1-min.jpg",
-                "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/2-min.jpg"
+                "/Cohome-Images/Common 01.jpeg",
+                "/Cohome-Images/Common 01.jpeg"
             ]
         }
     },
