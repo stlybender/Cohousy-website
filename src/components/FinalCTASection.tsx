@@ -228,10 +228,10 @@ export default function FinalCTASection() {
             </a>
             <div className="hidden sm:block w-px h-6 bg-white/20" />
             <a
-              href="mailto:support@cohousy.com"
+              href="mailto:info.cohousy@gmail.com"
               className="text-gray-300 hover:text-accent transition-colors duration-300"
             >
-              support@cohousy.com
+              info.cohousy@gmail.com
             </a>
           </div>
         </motion.div>

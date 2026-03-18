@@ -10,8 +10,8 @@ const pricingPlans = [
   {
     title: 'Shared Room',
     type: 'Twin Sharing',
-    price: '₹8,000',
-    originalPrice: '₹10,000',
+    price: '₹10,000',
+    originalPrice: '₹12,000',
     savings: '₹2,000/month',
     popular: false,
     features: [
@@ -27,8 +27,8 @@ const pricingPlans = [
   {
     title: 'Single Room Standard',
     type: 'Private Room',
-    price: '₹12,000',
-    originalPrice: '₹15,000',
+    price: '₹18,000',
+    originalPrice: '₹21,000',
     savings: '₹3,000/month',
     popular: true,
     features: [
@@ -44,8 +44,8 @@ const pricingPlans = [
   {
     title: 'Single Room Premium',
     type: 'AC Private Room',
-    price: '₹15,000',
-    originalPrice: '₹18,000',
+    price: '₹20,000',
+    originalPrice: '₹23,000',
     savings: '₹3,000/month',
     popular: false,
     features: [

@@ -12,7 +12,7 @@ const pricingData = [
     type: '1BHK',
     rooms: [
       { occupancy: 'Single', price: '₹18,000', period: '/month', popular: true },
-      { occupancy: 'Double', price: '₹10,000', period: '/month', popular: false }
+      { occupancy: 'Double', price: 'Starting from ₹10,000', period: '/month', popular: false }
     ],
     features: ['Attached washroom', 'Balcony', 'Modern furnishing', 'AC available']
   },
@@ -21,7 +21,7 @@ const pricingData = [
     type: '1RK',
     rooms: [
       { occupancy: 'Single', price: '₹18,000', period: '/month', popular: false },
-      { occupancy: 'Double', price: '₹10,000', period: '/month', popular: true }
+      { occupancy: 'Double', price: 'Starting from ₹10,000', period: '/month', popular: true }
     ],
     features: ['Compact design', 'Attached washroom', 'Modern amenities', 'Efficient layout']
   },

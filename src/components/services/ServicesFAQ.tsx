@@ -145,7 +145,7 @@ export default function ServicesFAQ() {
             We're here to help. Reach out and we'll be happy to discuss your specific situation.
           </p>
           <a
-            href="mailto:support@cohousy.com"
+            href="mailto:info.cohousy@gmail.com"
             className="inline-block px-6 py-3 bg-accent text-black font-semibold rounded-lg hover:bg-orange-600 transition-colors duration-300"
           >
             Contact Support

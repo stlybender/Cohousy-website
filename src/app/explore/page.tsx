@@ -36,7 +36,7 @@ const properties = [
         name: "Cohome 1",
         location: "Kharadi",
         type: "Unisex",
-        image: "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/3-min.jpg",
+        image: "/Cohome-Images/Cohome 01.jpeg",
         description: "Fully furnished with all facilities",
         price: "21,000",
         mapCoords: { lat: 18.553232182546683, lng: 73.93313217519245 },
@@ -48,8 +48,8 @@ const properties = [
             features: ["Shared Kitchen", "Common Areas", "24/7 Support", "Flexible Lease"],
             nearbyPlaces: ["World Trade Center - 3km", "Phoenix Mall - 2km", "Bus Stop - 500m"],
             images: [
-                "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/3-min.jpg",
-                "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/4-min.jpg"
+                "/Cohome-Images/Cohome 01.jpeg",
+                "/Cohome-Images/Common 01.jpeg"
             ]
         }
     },
@@ -58,7 +58,7 @@ const properties = [
         name: "Cohome 2",
         location: "Kharadi",
         type: "Unisex",
-        image: "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/Hero-Section-1-min.jpg",
+        image: "/Cohome-Images/Cohome 02.jpeg",
         description: "Fully furnished with all facilities",
         price: "21,000",
         mapCoords: { lat: 18.5511645825483, lng: 73.94186017519239 },
@@ -70,8 +70,8 @@ const properties = [
             features: ["Modern Interiors", "High-Speed Wi-Fi", "24/7 Support", "Cleaning Service"],
             nearbyPlaces: ["Zensar Tech Park - 1.5km", "Kharadi Railway Station - 2km", "D-Mart - 800m"],
             images: [
-                "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/Hero-Section-1-min.jpg",
-                "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/3-min.jpg"
+                "/Cohome-Images/Cohome 02.jpeg",
+                "/Cohome-Images/Common 01.jpeg"
             ]
         }
     },
@@ -80,7 +80,7 @@ const properties = [
         name: "Cohome 3",
         location: "Kharadi",
         type: "Unisex",
-        image: "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/Hero-section-2.jpg",
+        image: "/Cohome-Images/Cohome 03.jpeg",
         description: "Fully furnished with all facilities",
         price: "21,000",
         mapCoords: { lat: 18.565566099999998, lng: 73.9100897 },
@@ -92,8 +92,8 @@ const properties = [
             features: ["Community Kitchen", "Study Rooms", "Entertainment Area", "Laundry Facility"],
             nearbyPlaces: ["Magarpatta City - 3km", "Amanora Mall - 2.5km", "Hadapsar Railway Station - 4km"],
             images: [
-                "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/Hero-section-2.jpg",
-                "https://cohousy.frutigerindia.com/wp-content/uploads/2025/03/1-min.jpg"
+                "/Cohome-Images/Cohome 03.jpeg",
+                "/Cohome-Images/Common 01.jpeg"
             ]
         }
     }
