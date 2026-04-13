@@ -3,10 +3,8 @@ import './globals.css'
 import type { Metadata, Viewport } from 'next'
 import Script from 'next/script'
 import { Sora, Inter } from 'next/font/google'
-import Navbar from '@/components/Navbar'
 import { Space_Grotesk } from 'next/font/google'
-import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/ui/WhatsAppButton'
+import LayoutShell from '@/components/LayoutShell'
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ['latin'],
@@ -107,16 +105,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           className="pointer-events-none fixed inset-0 z-[1] bg-gradient-to-br from-blue-50/30 via-transparent to-cyan-50/30"
         />
 
-        {/* Navbar */}
-        <Navbar />
-
-        <div className="relative z-[2]">{children}</div>
-
-        {/* Footer */}
-        <Footer />
-
-        {/* Whatapp Floting Button*/}
-        <WhatsAppButton/>
+        <LayoutShell>{children}</LayoutShell>
     
         {/* JSON-LD: LocalBusiness */}
         <Script id="ld-localbusiness" type="application/ld+json" strategy="afterInteractive">
