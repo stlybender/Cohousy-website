@@ -29,6 +29,12 @@ async function submitToApi(payload: Record<string, string>) {
   if (!res.ok) throw new Error('Failed to send');
 }
 
+const WA_NUMBER = '918908903900';
+function openWA(message: string) {
+  const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
+}
+
 export default function GoogleAdsLanding() {
   const router = useRouter();
 
