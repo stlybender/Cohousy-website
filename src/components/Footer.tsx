@@ -55,7 +55,7 @@ const footerLinks = {
   'Services': [
     { title: 'Digital Onboarding', href: '/digital-onboarding' },
     { title: 'Community Events', href: '/community-events' },
-    { title: 'Property Management', href: '/property-management' },
+    { title: 'Property Management', href: '/property-management-pune' },
     { title: 'Maintenance Services', href: '/maintenance-services' },
     { title: 'Security Services', href: '/security-services' },
     { title: 'Tenant Support', href: '/tenant-support' }

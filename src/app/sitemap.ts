@@ -37,6 +37,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 0.9,
     },
+    // Property management (B2B / homeowners)
+    {
+      url: `${baseUrl}/property-management-pune`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
     // Rental services
     {
       url: `${baseUrl}/long-term-rentals`,
