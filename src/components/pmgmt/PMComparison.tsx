@@ -76,7 +76,7 @@ export default function PMComparison() {
                 <span className="md:hidden mb-2 block text-[10px] tracking-[0.3em] uppercase text-gray-400">
                   Usually
                 </span>
-                <p className="text-[15px] md:text-base text-gray-500 leading-relaxed line-through-soft">
+                <p className="text-[15px] md:text-base text-gray-700 leading-relaxed line-through-soft">
                   {row.before}
                 </p>
               </div>

@@ -8,10 +8,6 @@ export const FAQS: Array<{ q: string; a: string }> = [
     a: 'A broker finds a tenant once and disappears. We manage the home for the duration — the tenant, the rent, the maintenance, the paperwork, and the taxes.',
   },
   {
-    q: 'What does the 3% fee include?',
-    a: 'Everything above. No tenant-side commission. No hidden onboarding fee. Maintenance vendors are billed at cost, with no markup.',
-  },
-  {
     q: 'What if my tenant stops paying?',
     a: 'We handle the chase, the notice period, and (if it gets there) the legal escalation. Our verification is designed to make this rare.',
   },

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.cohousy.com'),
   title: 'Property Management in Pune | Cohousy',
   description:
-    "For homeowners in Pune. Tenants, rent, maintenance, taxes, paperwork — managed end-to-end. 3% all-in. Built by an operator who lives this every day.",
+    "For homeowners in Pune. Tenants, rent, maintenance, taxes, paperwork — managed end-to-end. Built by an operator who lives this every day.",
   alternates: {
     canonical: 'https://www.cohousy.com/property-management-pune',
   },
@@ -50,19 +50,7 @@ export default function PropertyManagementPuneLayout({
       name: 'Pune',
     },
     description:
-      'End-to-end property management for homeowners in Pune. Tenant sourcing, verification, lease, rent collection, maintenance, taxes, and a single point of contact. 3% all-in.',
-    offers: {
-      '@type': 'Offer',
-      price: '3',
-      priceCurrency: 'INR',
-      priceSpecification: {
-        '@type': 'UnitPriceSpecification',
-        priceType: 'Commission',
-        price: '3',
-        priceCurrency: 'INR',
-        unitText: '% of monthly rent',
-      },
-    },
+      'End-to-end property management for homeowners in Pune. Tenant sourcing, verification, lease, rent collection, maintenance, taxes, and a single point of contact.',
   }
 
   return (
