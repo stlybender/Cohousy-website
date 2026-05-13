@@ -9,6 +9,28 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://www.cohousy.com/property-management-pune',
   },
+  openGraph: {
+    type: 'website',
+    url: 'https://www.cohousy.com/property-management-pune',
+    title: 'Your home. Looked after. Always. — Property Management in Pune',
+    description:
+      "For homeowners in Pune. We find the right tenant, collect rent on time, and look after your home like it's ours.",
+    images: [
+      {
+        url: '/pmgmt/hero.jpg',
+        width: 1376,
+        height: 768,
+        alt: 'A beautifully kept Pune apartment in soft morning light — Cohousy property management',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Your home. Looked after. Always. — Property Management in Pune',
+    description:
+      "For homeowners in Pune. We find the right tenant, collect rent on time, and look after your home like it's ours.",
+    images: ['/pmgmt/hero.jpg'],
+  },
 }
 
 export default function PropertyManagementPuneLayout({
