@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Short-Term Rentals in Kharadi Pune | Flexible PG near Eon IT Park',
     description: 'Flexible short-term accommodation in Kharadi. Zero lock-in period, fully furnished rooms with premium amenities.',
-    images: ['/skyline.avif'],
+    images: ['/opengraph-image'],
   },
   alternates: {
     canonical: 'https://www.cohousy.com/short-term-rentals',

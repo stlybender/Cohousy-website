@@ -1,0 +1,40 @@
+# Cohousy
+
+> Cohousy is a co-living, PG (paying guest) and managed-rental operator in Kharadi, Pune, India. We house IT and corporate professionals within a 5–10 minute walk of Eon IT Park, World Trade Center Kharadi and Gera Commerzone — rooms from ₹10,000/month, fully furnished, all-inclusive, with zero brokerage. We also manage residential property end-to-end for owners and NRIs at 8–15% of monthly rent.
+
+Cohousy serves two distinct audiences.
+
+**Residents** — IT professionals, corporate employees and students who need furnished accommodation near Kharadi's tech corridor. Options run from twin-sharing PG at ₹10,000/month to executive 1BHK long-term rentals at ₹26,000/month, plus nightly short stays from ₹1,200. Rent is all-inclusive: Wi-Fi, electricity, water, housekeeping, power backup, gym, security and maintenance. There is no brokerage fee and no hidden charge. Onboarding is fully digital through the Cohousy app — KYC and check-in take under 5 minutes. Separate male-only, female-only and mixed properties are available.
+
+**Property owners and NRIs** — homeowners who want their Pune property tenanted, maintained and reported on without dealing with brokers. Cohousy sources tenants through its own co-living network rather than broker boards, handles screening, lease, rent collection, maintenance, GST/TDS coordination and monthly reporting, and offers a guaranteed-rent plan.
+
+Operating area: Kharadi, Pune, Maharashtra 411014, India.
+Contact: +91 8908903900 · info.cohousy@gmail.com
+
+## For Residents — Co-living & PG
+
+- [Co-living Spaces in Kharadi](https://www.cohousy.com/co-living): Community-focused co-living in 1BHK and 1RK units. Single ₹18,000/month, double from ₹10,000/month. Attached washroom, balcony, AC available, app-managed community events.
+- [Ladies PG in Kharadi Pune](https://www.cohousy.com/ladies-pg-kharadi): 100% women-only PG. Twin sharing ₹10,000/month, Single Standard ₹18,000/month, Single Premium (AC) ₹20,000/month. Biometric access, panic buttons, family location sharing, ladies-only gym hours, female property captain.
+- [Male PG in Kharadi Pune](https://www.cohousy.com/male-pg-kharadi): Men's PG for IT professionals. Double sharing ₹10,000/month, single sharing ₹18,000/month. 5 minutes' walk to Eon IT Park, 7 minutes to WTC Kharadi. 500+ member professional community.
+- [Single Room PG in Kharadi Pune](https://www.cohousy.com/single-room-pg-kharadi): Private single-occupancy rooms at ₹18,000/month, all-inclusive with AC and attached washroom. Double occupancy ₹10,000/month. Compares directly against Stanza Living, CoFynd and traditional PGs.
+- [PG near Eon IT Park](https://www.cohousy.com/pg-near-eon-it-park): Accommodation for employees of Barclays, Credit Suisse, Eaton, Synechron, UBS, Allstate, TCS, Infosys, Cognizant, Honeywell, Zensar and Tata Technologies. 5–10 minutes on foot; no commute or transport cost.
+
+## Rentals & Flats
+
+- [Long-Term Rentals in Kharadi](https://www.cohousy.com/long-term-rentals): Minimum 3-month stays. Essential 1RK ₹18,000/month, Premium 1BHK ₹21,000/month, Executive 1BHK Deluxe ₹26,000/month. Security deposit waived on stays of 6 months or longer.
+- [Short-Term Rentals in Kharadi](https://www.cohousy.com/short-term-rentals): No minimum stay — book from one night. Daily ₹1,500/night, weekly ₹1,300/night, monthly ₹1,200/night. Free cancellation up to 24 hours before check-in. Same-day booking subject to availability.
+- [1BHK & 1RK Flats in Kharadi](https://www.cohousy.com/1bhk-flats-in-kharadi-pune): Fully furnished ready-to-move flats. 1RK Studio ₹21,000/month, 1BHK Apartment ₹23,000/month. Zero brokerage, single monthly bill, instant move-in.
+
+## For Property Owners & NRIs
+
+- [Property Management in Pune](https://www.cohousy.com/property-management-pune): End-to-end management for owners who are not in the city — tenant sourcing and screening, lease, rent collection, maintenance, taxes and monthly reports through one point of contact. Cohousy recommends 24–36 month leases over the standard 11-month cycle.
+- [Owner Services & Pricing](https://www.cohousy.com/services): Standard Property Management 8–10% of monthly rent; Premium Assured Plan (guaranteed rent even if a tenant defaults) 12–15%; Vacant Home Care ₹1,500–₹3,000/month; NRI Tax Concierge ₹12,000–₹30,000/year. Vendor costs passed through without markup.
+
+## Full Content
+
+- [llms-full.txt](https://www.cohousy.com/llms-full.txt): Complete site content — every page, all room types and prices, and 76 frequently asked questions with answers.
+
+## Optional
+
+- [Explore Properties](https://www.cohousy.com/explore): Map-based browser for the four Kharadi properties — Common 01, Cohome 1, Cohome 2, Cohome 3.
+- [Homepage](https://www.cohousy.com/): Overview of all co-living, PG, rental and property-management offerings.

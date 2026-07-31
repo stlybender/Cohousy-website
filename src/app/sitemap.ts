@@ -1,146 +1,40 @@
 import { MetadataRoute } from 'next'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.cohousy.com'
-  const currentDate = new Date()
+const baseUrl = 'https://www.cohousy.com'
 
-  return [
-    // Homepage
-    {
-      url: baseUrl,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    // Main service pages - high priority
-    {
-      url: `${baseUrl}/ladies-pg-kharadi`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/male-pg-kharadi`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/single-room-pg-kharadi`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/pg-near-eon-it-park`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    // Property management (B2B / homeowners)
-    {
-      url: `${baseUrl}/property-management-pune`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    // Rental services
-    {
-      url: `${baseUrl}/long-term-rentals`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/short-term-rentals`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    // Co-living section (assuming it has subpages)
-    {
-      url: `${baseUrl}/co-living`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    // Property details page
-    {
-      url: `${baseUrl}/property-details`,
-      lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 0.8,
-    },
-    // Explore page
-    {
-      url: `${baseUrl}/explore`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    // Additional pages that might exist but not shown in structure
-    {
-      url: `${baseUrl}/about`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/amenities`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/gallery`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/pricing`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    // Location-specific pages
-    {
-      url: `${baseUrl}/kharadi`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    // Legal pages
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms-of-service`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/refund-policy`,
-      lastModified: currentDate,
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    // Support pages
-    {
-      url: `${baseUrl}/faq`,
-      lastModified: currentDate,
-      changeFrequency: 'monthly',
-      priority: 0.5,
-    },
-  ]
+/**
+ * Only routes that actually exist under src/app are listed here.
+ *
+ * Deliberately excluded:
+ *  - /thank-you             conversion confirmation page, noindex
+ *  - /property-details/[id] hydrates from sessionStorage, no crawlable URL
+ */
+const routes: Array<{
+  path: string
+  priority: number
+  changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']
+}> = [
+  { path: '', priority: 1, changeFrequency: 'weekly' },
+  { path: '/co-living', priority: 0.9, changeFrequency: 'weekly' },
+  { path: '/ladies-pg-kharadi', priority: 0.9, changeFrequency: 'weekly' },
+  { path: '/male-pg-kharadi', priority: 0.9, changeFrequency: 'weekly' },
+  { path: '/single-room-pg-kharadi', priority: 0.9, changeFrequency: 'weekly' },
+  { path: '/pg-near-eon-it-park', priority: 0.9, changeFrequency: 'weekly' },
+  { path: '/property-management-pune', priority: 0.9, changeFrequency: 'weekly' },
+  { path: '/services', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/long-term-rentals', priority: 0.8, changeFrequency: 'weekly' },
+  { path: '/short-term-rentals', priority: 0.8, changeFrequency: 'weekly' },
+  { path: '/1bhk-flats-in-kharadi-pune', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/explore', priority: 0.7, changeFrequency: 'weekly' },
+]
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  const lastModified = new Date()
+
+  return routes.map(({ path, priority, changeFrequency }) => ({
+    url: `${baseUrl}${path}`,
+    lastModified,
+    changeFrequency,
+    priority,
+  }))
 }

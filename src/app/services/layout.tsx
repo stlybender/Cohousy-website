@@ -7,15 +7,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Cohousy Property Management India | Rent, Tenants, Maintenance',
     description: 'Own a property in India but don\'t want the daily hassle? Cohousy handles tenants, rent, repairs, inspections & paperwork—end-to-end, with full transparency.',
-    images: ['/skyline.avif'],
     type: 'website',
     url: 'https://www.cohousy.com/services',
+    images: ['/opengraph-image'],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Cohousy Property Management India | Rent, Tenants, Maintenance',
     description: 'Own a property in India but don\'t want the daily hassle? Cohousy handles tenants, rent, repairs, inspections & paperwork—end-to-end, with full transparency.',
-    images: ['/skyline.avif'],
+    images: ['/opengraph-image'],
   },
   alternates: {
     canonical: 'https://www.cohousy.com/services',

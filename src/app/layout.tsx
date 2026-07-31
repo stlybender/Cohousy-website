@@ -22,24 +22,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: 'https://www.cohousy.com',
+    siteName: 'Cohousy',
+    locale: 'en_IN',
     title: 'Premium Co-living & PG in Kharadi Pune | Near Eon IT Park & WTC',
     description:
       'Luxury co-living spaces & PG accommodation in Kharadi for male/female professionals. Single rooms, shared accommodation near Eon IT Park. Book now!',
-    images: [
-      {
-        url: '/og/kharadi-skyline-og.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Cohousy co-living & PG in Kharadi Pune near Eon IT Park & WTC',
-      },
-    ],
+    // images intentionally omitted — src/app/opengraph-image.tsx supplies them
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Premium Co-living & PG in Kharadi Pune | Near Eon IT Park & WTC',
     description:
       'Luxury co-living spaces & PG accommodation in Kharadi for male/female professionals. Single rooms, shared accommodation near Eon IT Park. Book now!',
-    images: ['/og/kharadi-skyline-og.jpg'],
   },
   alternates: {
     canonical: 'https://www.cohousy.com',
@@ -52,6 +46,83 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: '#0B1220',
+}
+
+// Single canonical business entity, referenced by @id from other pages.
+const localBusinessJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': ['LocalBusiness', 'LodgingBusiness'],
+  '@id': 'https://www.cohousy.com/#organization',
+  name: 'Cohousy',
+  url: 'https://www.cohousy.com',
+  image: 'https://www.cohousy.com/opengraph-image',
+  logo: 'https://www.cohousy.com/logo.png',
+  description:
+    'Premium co-living and PG accommodation in Kharadi, Pune for male and female professionals, within walking distance of Eon IT Park and World Trade Center. Also offers end-to-end property management for owners and NRIs.',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Kharadi',
+    addressLocality: 'Pune',
+    addressRegion: 'Maharashtra',
+    postalCode: '411014',
+    addressCountry: 'IN',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 18.5478,
+    longitude: 73.9459,
+  },
+  areaServed: {
+    '@type': 'City',
+    name: 'Pune',
+  },
+  telephone: '+918908903900',
+  email: 'info.cohousy@gmail.com',
+  priceRange: '₹10,000 - ₹26,000',
+  currenciesAccepted: 'INR',
+  sameAs: [
+    'https://facebook.com/cohousy',
+    'https://instagram.com/cohousy',
+    'https://linkedin.com/company/cohousy',
+    'https://x.com/cohousy',
+  ],
+  makesOffer: [
+    {
+      '@type': 'Offer',
+      name: 'Twin sharing PG in Kharadi',
+      price: '10000',
+      priceCurrency: 'INR',
+      url: 'https://www.cohousy.com/co-living',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Single room PG in Kharadi',
+      price: '18000',
+      priceCurrency: 'INR',
+      url: 'https://www.cohousy.com/single-room-pg-kharadi',
+    },
+    {
+      '@type': 'Offer',
+      name: '1RK studio flat in Kharadi',
+      price: '21000',
+      priceCurrency: 'INR',
+      url: 'https://www.cohousy.com/1bhk-flats-in-kharadi-pune',
+    },
+    {
+      '@type': 'Offer',
+      name: '1BHK apartment in Kharadi',
+      price: '23000',
+      priceCurrency: 'INR',
+      url: 'https://www.cohousy.com/1bhk-flats-in-kharadi-pune',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Executive 1BHK long-term rental in Kharadi',
+      price: '26000',
+      priceCurrency: 'INR',
+      url: 'https://www.cohousy.com/long-term-rentals',
+    },
+  ],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -107,26 +178,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <LayoutShell>{children}</LayoutShell>
     
-        {/* JSON-LD: LocalBusiness */}
-        <Script id="ld-localbusiness" type="application/ld+json" strategy="afterInteractive">
-          {JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'LocalBusiness',
-            name: 'Cohousy',
-            url: 'https://www.cohousy.com',
-            image: 'https://www.cohousy.com/og/kharadi-skyline-og.jpg',
-            description:
-              'Luxury co-living spaces & PG accommodation in Kharadi for male/female professionals. Single rooms, shared accommodation near Eon IT Park. Book now!',
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: 'Kharadi',
-              addressRegion: 'Pune',
-              addressCountry: 'IN',
-            },
-            areaServed: 'Pune',
-            telephone: '+918908903900',
-          })}
-        </Script>
+        {/* JSON-LD: LocalBusiness — server-rendered so crawlers see it in the
+            initial HTML, without waiting for hydration. */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
       </body>
     </html>
   )

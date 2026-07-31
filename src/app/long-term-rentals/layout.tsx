@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Long-Term Rentals in Kharadi Pune | Extended Stay PG near Eon IT Park',
     description: 'Premium long-term rental accommodation in Kharadi. Fully furnished 1BHK & 1RK rooms with all utilities included.',
-    images: ['/skyline.avif'],
+    images: ['/opengraph-image'],
   },
   alternates: {
     canonical: 'https://www.cohousy.com/long-term-rentals',
