@@ -34,6 +34,7 @@ const XIcon = ({ size = 24, className }: { size?: number; className?: string }) 
   </svg>
 )
 
+// Every link here must point to a real route under src/app — no dead pages.
 const footerLinks = {
   'Accommodation': [
     { title: 'Co-living Spaces in Kharadi', href: '/co-living' },
@@ -42,31 +43,18 @@ const footerLinks = {
     { title: 'Male PG in Kharadi', href: '/male-pg-kharadi' },
     { title: 'Single Room PG', href: '/single-room-pg-kharadi' },
     { title: 'Long-term Rentals', href: '/long-term-rentals' },
-    { title: 'Short-term Stays', href: '/short-term-stays' }
-  ],
-  'Locations': [
-    { title: 'Properties in Kharadi', href: '/properties-kharadi' },
-    { title: 'Near WTC Kharadi', href: '/pg-near-wtc-kharadi' },
-    { title: 'EON IT Park Vicinity', href: '/accommodation-eon-it-park' },
-    { title: 'Gera Commerzone Area', href: '/pg-gera-commerzone' },
-    { title: 'Phoenix MarketCity', href: '/accommodation-phoenix-marketcity' },
-    { title: 'Kharadi Metro Station', href: '/pg-kharadi-metro' }
+    { title: 'Short-term Stays', href: '/short-term-rentals' }
   ],
   'Services': [
-    { title: 'Digital Onboarding', href: '/digital-onboarding' },
-    { title: 'Community Events', href: '/community-events' },
+    { title: 'Our Services', href: '/services' },
     { title: 'Property Management', href: '/property-management-pune' },
-    { title: 'Maintenance Services', href: '/maintenance-services' },
-    { title: 'Security Services', href: '/security-services' },
-    { title: 'Tenant Support', href: '/tenant-support' }
+    { title: 'Explore Residences', href: '/explore' },
+    { title: '1BHK Flats in Kharadi', href: '/1bhk-flats-in-kharadi-pune' }
   ],
   'Company': [
     { title: 'About Cohousy', href: '/about' },
     { title: 'Careers', href: '/careers' },
-    { title: 'Press & Media', href: '/press' },
-    { title: 'Partner with Us', href: '/partners' },
-    { title: 'Investor Relations', href: '/investors' },
-    { title: 'Sustainability', href: '/sustainability' }
+    { title: 'Partner with Us', href: '/partners' }
   ]
 }
 
@@ -80,7 +68,7 @@ const socialLinks = [
 const contactInfo = {
   address: 'Kharadi, Pune, Maharashtra 411014',
   phone: '+91 8908903900',
-  email: 'info.cohousy@gmail.com',
+  email: 'contact@cohousy.com',
   whatsapp: '+91 8908903900'
 }
 
@@ -171,7 +159,7 @@ export default function Footer() {
           </motion.div>
 
           {/* Main Footer Links Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
 
             {/* Brand Section */}
             <motion.div
@@ -305,7 +293,7 @@ export default function Footer() {
           >
             <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
               <div className="text-sm text-gray-400">
-                © 2025 Cohousy. All rights reserved. | Transforming urban living in Pune since 2024.
+                © 2026 Cohousy. All rights reserved. | Transforming urban living in Pune since 2020.
               </div>
 
               <div className="flex items-center space-x-6 text-sm">
@@ -315,13 +303,18 @@ export default function Footer() {
                 <Link href="/terms-of-service" className="text-gray-400 hover:text-accent transition-colors duration-300">
                   Terms of Service
                 </Link>
-                <Link href="/cookie-policy" className="text-gray-400 hover:text-accent transition-colors duration-300">
-                  Cookie Policy
-                </Link>
-                <Link href="/sitemap" className="text-gray-400 hover:text-accent transition-colors duration-300">
-                  Sitemap
-                </Link>
               </div>
+            </div>
+
+            {/* Owner cross-link — owner traffic hiding in tenant pages */}
+            <div className="mt-6 text-sm text-gray-400">
+              Own a flat in Pune?{' '}
+              <Link
+                href="/property-management-pune"
+                className="text-accent hover:underline"
+              >
+                We manage those too →
+              </Link>
             </div>
 
             {/* Additional SEO Links */}

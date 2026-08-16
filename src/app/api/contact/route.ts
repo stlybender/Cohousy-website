@@ -6,7 +6,9 @@ export async function POST(request: NextRequest) {
     const body = await request.json()
     const { name, email, phone, message, serviceType, preferredDate, propertyName } = body
 
-    if (!name || !email || !phone) {
+    // Email is optional: owner-page forms (callback request) only collect
+    // name + WhatsApp number. When email is present we still send the auto-reply.
+    if (!name || !phone) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
@@ -43,7 +45,7 @@ export async function POST(request: NextRequest) {
 
           <div style="display: grid; gap: 15px; margin: 20px 0;">
             <div><strong>Name:</strong> ${name}</div>
-            <div><strong>Email:</strong> <a href="mailto:${email}">${email}</a></div>
+            ${email ? `<div><strong>Email:</strong> <a href="mailto:${email}">${email}</a></div>` : ''}
             <div><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></div>
             <div><strong>Service:</strong> ${serviceType}</div>
             ${preferredDate ? `<div><strong>Preferred Date:</strong> ${new Date(preferredDate).toLocaleDateString()}</div>` : ''}
@@ -99,18 +101,20 @@ export async function POST(request: NextRequest) {
     // 4️⃣ SEND EMAIL TO ADMIN
     await transporter.sendMail({
       from: process.env.FROM_EMAIL,          // Contact@cohousy.com
-      to: process.env.ADMIN_EMAIL,           // info.cohousy@gmail.com
+      to: process.env.ADMIN_EMAIL,           // contact@cohousy.com
       subject: `New Contact Form Submission - ${serviceType}${propertyName ? ` - ${propertyName}` : ''}`,
       html: adminEmailHtml,
     })
 
-    // 5️⃣ SEND AUTO-REPLY TO USER
-    await transporter.sendMail({
-      from: process.env.FROM_EMAIL,          // Contact@cohousy.com
-      to: email,
-      subject: "Thank you for your inquiry - Cohousy",
-      html: userEmailHtml,
-    })
+    // 5️⃣ SEND AUTO-REPLY TO USER (only when they gave us an email)
+    if (email) {
+      await transporter.sendMail({
+        from: process.env.FROM_EMAIL,          // Contact@cohousy.com
+        to: email,
+        subject: "Thank you for your inquiry - Cohousy",
+        html: userEmailHtml,
+      })
+    }
 
     return NextResponse.json({ success: true })
 

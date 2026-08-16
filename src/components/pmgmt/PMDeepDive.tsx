@@ -39,7 +39,7 @@ const SERVICES = [
     n: '06',
     title: 'Tax & GST',
     body:
-      'We structure the lease through corporate tenants where eligible, handle 12% GST cleanly, and give you what you need for your filing.',
+      'We structure the lease through corporate tenants where eligible, handle 12% GST cleanly, and give you what you need for your filing. If none of this applies to your situation, we simply keep your paperwork clean for filing.',
   },
   {
     n: '07',
@@ -57,7 +57,7 @@ const SERVICES = [
 
 export default function PMDeepDive() {
   return (
-    <section className="relative bg-white py-24 md:py-36">
+    <section id="what-we-do" className="relative scroll-mt-24 bg-white py-24 md:py-36">
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

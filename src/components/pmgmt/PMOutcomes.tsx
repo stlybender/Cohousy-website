@@ -9,7 +9,7 @@ const OUTCOMES = [
   {
     n: '01',
     title: 'Rent that lands on the 7th. Like a salary.',
-    body: 'Predictable, on time, in your account. Without the chase.',
+    body: 'Collected from the tenant by the 5th. In your account by the 7th. Without the chase.',
   },
   {
     n: '02',

@@ -47,9 +47,14 @@ export default function PMTrust() {
               <em className="not-italic text-accent">We're operators.</em>
             </h2>
             <p className="mt-7 text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
-              We run Cohousy co-living homes in Kharadi. We handle tenants,
-              maintenance, taxes, paperwork, and a single number to call — every
-              day, for hundreds of residents.
+              We run Cohousy co-living homes in Kharadi — tenants, maintenance,
+              taxes, paperwork, and a single number to call, every day, for
+              hundreds of residents.
+            </p>
+            <p className="mt-5 text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
+              Most property managers manage from an office. We manage from
+              inside the buildings. When we say &ldquo;we&rsquo;ll handle the
+              plumber,&rdquo; it&rsquo;s because we handled three yesterday.
             </p>
             <p className="mt-5 text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
               Property management for individual owners is the same operation,

@@ -10,7 +10,7 @@ export default function PMFaq() {
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <section className="relative bg-white py-24 md:py-36">
+    <section id="faq" className="relative scroll-mt-24 bg-white py-24 md:py-36">
       <div className="mx-auto max-w-4xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}

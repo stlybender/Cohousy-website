@@ -11,19 +11,19 @@ const ctaLinks = [
     title: 'Ladies PG in Kharadi',
     subtitle: 'Safe accommodation for women professionals',
     icon: Shield,
-    href: '/ladies-pg'
+    href: '/ladies-pg-kharadi'
   },
   {
     title: 'Male PG in Kharadi',
     subtitle: 'Comfortable accommodation for men',
     icon: Users,
-    href: '/male-pg'
+    href: '/male-pg-kharadi'
   },
   {
     title: 'Single Room PG',
     subtitle: 'Private spaces for ultimate comfort',
     icon: Home,
-    href: '/single-rooms'
+    href: '/single-room-pg-kharadi'
   },
   {
     title: 'Co-living Spaces',
@@ -35,7 +35,7 @@ const ctaLinks = [
     title: 'Near Eon IT Park',
     subtitle: 'Walking distance to your workplace',
     icon: MapPin,
-    href: '/eon-it-park'
+    href: '/pg-near-eon-it-park'
   }
 ]
 
@@ -228,10 +228,10 @@ export default function FinalCTASection() {
             </a>
             <div className="hidden sm:block w-px h-6 bg-white/20" />
             <a
-              href="mailto:info.cohousy@gmail.com"
+              href="mailto:contact@cohousy.com"
               className="text-gray-300 hover:text-accent transition-colors duration-300"
             >
-              info.cohousy@gmail.com
+              contact@cohousy.com
             </a>
           </div>
         </motion.div>

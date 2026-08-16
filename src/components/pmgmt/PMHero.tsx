@@ -68,6 +68,18 @@ export default function PMHero() {
             WhatsApp us
           </a>
         </motion.div>
+
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.9, ease: EASE, delay: 1.85 }}
+          className="mt-7 text-[13px] tracking-wide text-gray-400"
+        >
+          {/* Client instruction: keep this count real and update it quarterly —
+              a live, honest number is a feature. Also update /about and /partners. */}
+          30+ owner homes under management · Operators of co-living homes in
+          Kharadi since 2020
+        </motion.p>
       </div>
 
       <motion.div

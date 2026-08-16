@@ -35,4 +35,14 @@ export const FAQS: Array<{ q: string; a: string }> = [
     q: 'How do I get started?',
     a: "One call. We'll walk through your property, the market, and what we'd handle. No obligation.",
   },
+  {
+    // TODO: replace with the actual percentage if the client agrees to publish
+    // pricing (see handoff doc §10 — published pricing filters tire-kickers).
+    q: 'What does it cost?',
+    a: "A simple percentage of monthly rent — no setup fee, no hidden charges, and you only pay when your home is earning. We'll give you the exact number on the first call, along with what your home should rent for.",
+  },
+  {
+    q: 'Do you manage homes outside Pune?',
+    a: "Not yet — and we won't until we can do it as well as we do it here. Mumbai is next. If your home is there (or anywhere else in India), join the waitlist below and you'll be first to know.",
+  },
 ]

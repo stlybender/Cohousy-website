@@ -77,7 +77,7 @@ const localBusinessJsonLd = {
     name: 'Pune',
   },
   telephone: '+918908903900',
-  email: 'info.cohousy@gmail.com',
+  email: 'contact@cohousy.com',
   priceRange: '₹10,000 - ₹26,000',
   currenciesAccepted: 'INR',
   sameAs: [

@@ -26,6 +26,11 @@ const routes: Array<{
   { path: '/short-term-rentals', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/1bhk-flats-in-kharadi-pune', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/explore', priority: 0.7, changeFrequency: 'weekly' },
+  { path: '/about', priority: 0.6, changeFrequency: 'monthly' },
+  { path: '/partners', priority: 0.6, changeFrequency: 'monthly' },
+  { path: '/careers', priority: 0.5, changeFrequency: 'monthly' },
+  { path: '/privacy-policy', priority: 0.3, changeFrequency: 'yearly' },
+  { path: '/terms-of-service', priority: 0.3, changeFrequency: 'yearly' },
 ]
 
 export default function sitemap(): MetadataRoute.Sitemap {

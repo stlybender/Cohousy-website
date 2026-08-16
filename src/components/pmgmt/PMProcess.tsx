@@ -34,7 +34,7 @@ const STEPS = [
 
 export default function PMProcess() {
   return (
-    <section className="relative bg-[#0F0E0C] py-24 md:py-36 text-white overflow-hidden">
+    <section id="how-it-works" className="relative scroll-mt-24 bg-[#0F0E0C] py-24 md:py-36 text-white overflow-hidden">
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid items-start gap-16 md:gap-20 lg:grid-cols-[1.1fr_1fr]">
           <div>

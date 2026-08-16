@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.cohousy.com'),
   title: 'Property Management in Pune | Cohousy',
   description:
-    "For homeowners in Pune. Tenants, rent, maintenance, taxes, paperwork — managed end-to-end. Built by an operator who lives this every day.",
+    'End-to-end property management for Pune homeowners. Tenant sourcing, rent by the 7th, maintenance, taxes, one number to call. NRI-friendly. Mumbai waitlist open.',
   alternates: {
     canonical: 'https://www.cohousy.com/property-management-pune',
   },
@@ -56,10 +56,11 @@ export default function PropertyManagementPuneLayout({
     '@type': 'Service',
     serviceType: 'Property Management',
     provider: {
-      '@type': 'LocalBusiness',
+      '@type': 'RealEstateAgent',
       name: 'Cohousy',
       url: 'https://www.cohousy.com',
       telephone: '+918908903900',
+      email: 'contact@cohousy.com',
       address: {
         '@type': 'PostalAddress',
         addressLocality: 'Kharadi',
