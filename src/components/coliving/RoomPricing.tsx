@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Home, Users, DollarSign, CheckCircle } from 'lucide-react'
+import Link from 'next/link'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 import ContactFormDialog from '../ContactFormDialog'
 
@@ -88,7 +89,12 @@ export default function RoomPricing() {
           >
             Flexibility is key in our co-living spaces, with options to suit various needs.
             Whether you're seeking privacy or affordability, our properties offer competitive
-            rates near WTC Kharadi with no hidden fees.
+            rates near WTC Kharadi with no hidden fees. Weighing co-living against a
+            traditional paying-guest set-up? Our{' '}
+            <Link href="/pg-kharadi" className="text-accent font-medium underline underline-offset-4 hover:opacity-80">
+              PG in Kharadi guide
+            </Link>{' '}
+            compares the two honestly, including where a PG works out cheaper.
           </motion.p>
         </motion.div>
 

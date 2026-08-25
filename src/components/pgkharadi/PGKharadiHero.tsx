@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { Home, IndianRupee, MapPin, Star } from 'lucide-react'
 import { staggerContainer, fadeInUp, splitLineReveal, withMotion } from '@/lib/motion'
 import ContactFormDialog from '../ContactFormDialog'
-import { GOOGLE_RATING } from './reviewsData'
+import { GOOGLE_RATING } from '@/lib/reviews'
 
 const stats = [
   { value: '₹10,000', label: 'All-inclusive, from', icon: IndianRupee },

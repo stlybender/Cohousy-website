@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { MapPin, Building2, Car, Coffee, Briefcase, ShoppingBag } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 
 const locationCategories = [
@@ -83,6 +84,11 @@ export default function LocationAdvantages() {
             Proximity is key for boys accommodation in Kharadi Pune. Cohousy's properties are ideally
             situated near major landmarks, making daily commutes effortless. Our male PG near Eon IT Park
             Kharadi puts you within walking distance of top companies, saving time and transport costs.
+            For exact walking routes and times from each building, see our{' '}
+            <Link href="/pg-near-eon-it-park" className="text-blue-600 font-medium underline underline-offset-4 hover:text-blue-700">
+              PG near Eon IT Park
+            </Link>{' '}
+            page.
           </motion.p>
         </motion.div>
 

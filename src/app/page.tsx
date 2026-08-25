@@ -10,7 +10,8 @@ import WhyChooseSection from '@/components/WhyChooseSection'
 import LocationAmenitiesSection from '@/components/LocationAmenitiesSection'
 import AppExperienceSection from '@/components/AppExperienceSection'
 import PricingSection from '@/components/PricingSection'
-import TestimonialsSection from '@/components/TestimonialsSection'
+import GoogleReviews from '@/components/GoogleReviews'
+import { LEAD_BY_PAGE } from '@/lib/reviews'
 import FAQSection from '@/components/FAQSection'
 import FinalCTASection from '@/components/FinalCTASection'
 
@@ -52,7 +53,11 @@ export default function Home() {
         <LocationAmenitiesSection />
         <AppExperienceSection />
         {/* <PricingSection /> */}
-        <TestimonialsSection />
+        <GoogleReviews
+          lead={LEAD_BY_PAGE.hub}
+          heading={<>4.9 Stars from<span className="text-accent"> 83 Google Reviews</span></>}
+          intro="Not testimonials we wrote — real reviews published on Google by people who live in our buildings, under their own names. Every one is clickable, so you can verify it yourself."
+        />
         <FAQSection />
         <FinalCTASection />
       </div>

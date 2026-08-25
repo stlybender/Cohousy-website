@@ -12,10 +12,20 @@
 //    caching Places content (other than place IDs) beyond 30 days. Re-run:
 //      python3 tools/gmb/fetch_place_reviews.py \
 //        --place-id ChIJmyEwvSzDwjsRj8_M90Ezwws --min-rating 4 \
+//        --download-photos "<repo>/public/reviews" \
 //        --out .tmp/reviews/cohousy-google-reviews.json
 //    then update REVIEWS, GOOGLE_RATING.count/value and pulledOn below.
 // 3. Attribution is required: author name, author photo, and a link back to
 //    Google must stay visible in the UI.
+// 4. NEVER add AggregateRating/Review schema for these. Google's structured-data
+//    policy forbids marking up third-party-platform reviews as first-party review
+//    data — it risks a manual action. The 4.9★ already surfaces through the
+//    Business Profile in the Local Pack. Display these for HUMAN trust only.
+//
+// The Places API returns a maximum of 5 reviews per place, so every page draws
+// from this same set of five. What varies per page is the ORDER — see
+// orderReviews() below. Nothing is filtered out; the most topically relevant
+// review simply leads.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface Review {
@@ -93,3 +103,40 @@ export const REVIEWS: Review[] = [
     authorUri: 'https://www.google.com/maps/contrib/116576215769650314475/reviews',
   },
 ]
+
+/**
+ * Returns all five reviews with the most topically relevant one first.
+ *
+ * This is ordering, not filtering — every page still shows every review, so a
+ * visitor never sees a curated subset that flatters one page. `lead` is matched
+ * against the reviewer's name; an unknown name just leaves the order untouched.
+ */
+export function orderReviews(lead?: string): Review[] {
+  if (!lead) return REVIEWS
+  const index = REVIEWS.findIndex((r) => r.name === lead)
+  if (index < 0) return REVIEWS
+  return [REVIEWS[index], ...REVIEWS.filter((_, i) => i !== index)]
+}
+
+/**
+ * Which review leads on which page, and why. Each pairing is grounded in what
+ * the reviewer actually wrote — not in what would be convenient for the page.
+ */
+export const LEAD_BY_PAGE = {
+  /** "great sense of community", 3.5-year stay — the hub's whole pitch. */
+  hub: 'Sugandh Gautam',
+  /** "co-housing experience... great sense of community". */
+  coliving: 'Sugandh Gautam',
+  /** Woman reviewer citing "peace, security n hygiene" — the ladies page's core concern. */
+  ladies: 'Sweta Roy',
+  /** "polite staff", "peaceful environment", names the founder. */
+  male: 'Hardik Sharma',
+  /** "rooms are clean, hygienic, and well-maintained" — the private-room promise. */
+  singleRoom: 'Harshit Dave',
+  /** Explicitly "walking distance from EON IT Park and WTC". */
+  eon: 'Sweta Roy',
+  /** Longest tenure on record: 3.5 years. */
+  longTerm: 'Sugandh Gautam',
+  /** Lists the practical kit — ironing, washing machine, fridge — that matters on a short stay. */
+  shortTerm: 'Sourav Bansal',
+} as const

@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Home, CheckCircle, Star, Users } from 'lucide-react'
+import Link from 'next/link'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 import ContactFormDialog from '../ContactFormDialog'
 
@@ -110,9 +111,14 @@ export default function LadiesPGPricing() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-600 font-light tracking-wide max-w-3xl mx-auto"
           >
-            Our pricing starts at ₹8,000 per month for shared rooms, up to ₹15,000 for single room
-            ladies PG with AC and premium amenities. All packages include Wi-Fi and housekeeping
+            Our pricing starts at ₹10,000 per month for twin sharing, ₹18,000 for a private single
+            room, and ₹20,000 for a single room with AC. All packages include Wi-Fi and housekeeping
             with no brokerage fees - designed specifically for women's comfort and budget.
+            For how this compares across every{' '}
+            <Link href="/pg-kharadi" className="text-pink-600 font-medium underline underline-offset-4 hover:text-pink-700">
+              PG in Kharadi
+            </Link>{' '}
+            — room types, deposits and what rent actually covers — read the full area guide.
           </motion.p>
         </motion.div>
 

@@ -9,7 +9,8 @@ import LuxuryAmenities from '@/components/pgneareonitp/LuxuryAmenities'
 import PGComparison from '@/components/pgneareonitp/PGComparison'
 import PGNearEonHero from '@/components/pgneareonitp/PGNearEonHero'
 import PrimeLocationBenefits from '@/components/pgneareonitp/PrimeLocationBenefits'
-import ResidentTestimonials from '@/components/pgneareonitp/ResidentTestimonials'
+import GoogleReviews from '@/components/GoogleReviews'
+import { LEAD_BY_PAGE } from '@/lib/reviews'
 import WhyChooseEonPG from '@/components/pgneareonitp/WhyChooseEonPG'
 import { useState, useEffect } from 'react'
 
@@ -32,7 +33,16 @@ export default function PGNearEonITParkPage() {
       <FlexibleRoomOptions />
       <PGComparison />
       <CommunityAndSafety />
-      <ResidentTestimonials />
+      <GoogleReviews
+        bg="bg-white"
+        lead={LEAD_BY_PAGE.eon}
+        accentText="text-orange-600"
+        accentBtn="bg-orange-600 text-white"
+        accentAvatar="bg-orange-600 text-white"
+        accentHover="hover:text-orange-600"
+        heading={<>What Residents Say<span className="text-orange-600"> on Google</span></>}
+        intro="Not testimonials we wrote — real Google reviews from people who live here and walk to Eon IT Park. Every one is clickable, so you can verify it yourself."
+      />
       <EonITParkFAQ />
       <BookNowCTA />
 

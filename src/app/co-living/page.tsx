@@ -7,7 +7,8 @@ import ColivingHero from '@/components/coliving/ColivingHero'
 import CommunityBuilding from '@/components/coliving/CommunityBuilding'
 import DigitalExperience from '@/components/coliving/DigitalExperience'
 import LocationAdvantage from '@/components/coliving/LocationAdvantage'
-import ResidentTestimonials from '@/components/coliving/ResidentTestimonials'
+import GoogleReviews from '@/components/GoogleReviews'
+import { LEAD_BY_PAGE } from '@/lib/reviews'
 import RoomPricing from '@/components/coliving/RoomPricing'
 import SafetySecurity from '@/components/coliving/SafetySecurity'
 import WhyChooseCohousy from '@/components/coliving/WhyChooseCohousy'
@@ -33,7 +34,11 @@ export default function ColivingPage() {
       <RoomPricing />
       <LocationAdvantage />
       <SafetySecurity />
-      <ResidentTestimonials />
+      <GoogleReviews
+        bg="bg-white"
+        lead={LEAD_BY_PAGE.coliving}
+        heading={<>What Residents Say<span className="text-accent"> About Co-living Here</span></>}
+      />
       <ColivingFAQ />
       <ColivingCTA />
 

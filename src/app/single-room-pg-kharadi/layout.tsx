@@ -2,12 +2,12 @@ import { Metadata } from 'next'
 import { FAQS } from '@/components/singleroomPG/faqData'
 
 export const metadata: Metadata = {
-  title: 'Single Room PG in Kharadi Pune | Private Accommodation Near Eon IT Park',
-  description: 'Discover private single room PG in Kharadi Pune with attached bathroom, AC, WiFi for male & female professionals. Near Eon IT Park & WTC. Book luxury single occupancy PG now!',
-  keywords: 'single room PG Kharadi, private accommodation Pune, single occupancy PG, AC PG Kharadi, female male single room',
+  title: 'Single Room PG in Kharadi, Pune — Private AC Rooms from ₹18,000',
+  description: 'Private single room PG in Kharadi from ₹18,000/mo, ₹20,000 with AC. Attached bathroom, WiFi and utilities included. 5 min from Eon IT Park. Zero brokerage.',
+  keywords: 'single room PG Kharadi, private room PG Kharadi, single sharing PG Kharadi, AC PG Kharadi, luxury PG Kharadi, single occupancy PG Pune',
   openGraph: {
-    title: 'Single Room PG in Kharadi Pune | Private Accommodation Near Eon IT Park',
-    description: 'Discover private single room PG in Kharadi Pune with attached bathroom, AC, WiFi for male & female professionals.',
+    title: 'Single Room PG in Kharadi, Pune — Private AC Rooms from ₹18,000',
+    description: 'Private single room PG in Kharadi from ₹18,000/month, or ₹20,000 with AC. Attached bathroom, WiFi and utilities included. Zero brokerage.',
     images: ['/opengraph-image'],
   },
   alternates: {

@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { MapPin, Clock, Users, Smartphone, Shield, DollarSign } from 'lucide-react'
+import Link from 'next/link'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 import ContactFormDialog from '../ContactFormDialog'
 
@@ -89,7 +90,12 @@ export default function WhyChooseEonPG() {
             Selecting the right PG near Eon IT Park Kharadi can transform your daily routine,
             and Cohousy sets the standard with a blend of location perks, luxury features,
             and tech-savvy management. Unlike aggregator platforms, our properties are
-            exclusively managed for quality and personalization.
+            exclusively managed for quality and personalization. Looking further afield than
+            Eon? Our{' '}
+            <Link href="/pg-kharadi" className="text-orange-600 font-medium underline underline-offset-4 hover:text-orange-700">
+              guide to PG in Kharadi
+            </Link>{' '}
+            covers every sub-locality, room type and price in the area.
           </motion.p>
         </motion.div>
 

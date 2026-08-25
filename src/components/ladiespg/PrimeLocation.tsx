@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { MapPin, Building2, Coffee, ShoppingBag, Briefcase, Car } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 
 const locationCategories = [
@@ -80,6 +81,11 @@ export default function PrimeLocation() {
             Location is everything when choosing a ladies PG in Kharadi Pune. Our strategic placement
             puts you at the center of convenience, safety, and professional opportunities. Just a short
             walk from Eon IT Park Kharadi, home to over 50 major companies employing thousands of women.
+            If your office is inside the park itself, see our{' '}
+            <Link href="/pg-near-eon-it-park" className="text-pink-600 font-medium underline underline-offset-4 hover:text-pink-700">
+              PG near Eon IT Park
+            </Link>{' '}
+            page for exact walking routes and times.
           </motion.p>
         </motion.div>
 

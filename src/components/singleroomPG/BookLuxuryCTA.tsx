@@ -241,6 +241,23 @@ export default function BookLuxuryCTA() {
             Also Explore Our Other Accommodation Options
           </h3>
 
+          {/* Parent hub — every PG page links up to this one */}
+          <Link
+            href="/pg-kharadi"
+            className="block p-6 mb-6 bg-purple-50 border border-purple-200 rounded-xl hover:border-purple-300 hover:shadow-sm transition-all duration-300"
+          >
+            <h4 className="text-lg font-bold text-purple-600 mb-2">
+              Every PG in Kharadi, compared
+            </h4>
+            <p className="text-gray-600 text-sm mb-3">
+              Prices by room type, walk times to Eon IT Park and WTC, food and deposit
+              rules, and honest answers on what fits your budget.
+            </p>
+            <div className="text-purple-600 text-sm font-semibold">
+              Read the full guide →
+            </div>
+          </Link>
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {relatedPages.map((page, index) => (
               <Link

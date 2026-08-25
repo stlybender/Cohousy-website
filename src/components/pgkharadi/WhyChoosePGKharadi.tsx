@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Building, Receipt, Smartphone, HeartHandshake } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
-import { GOOGLE_RATING } from './reviewsData'
+import { GOOGLE_RATING } from '@/lib/reviews'
 
 const REASONS = [
   {

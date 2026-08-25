@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { DollarSign, CheckCircle, Home, Users } from 'lucide-react'
+import Link from 'next/link'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 import ContactFormDialog from '../ContactFormDialog'
 
@@ -117,7 +118,11 @@ export default function PricingDetails() {
           >
             Transparency defines our pricing for single room PG in Kharadi Pune. Starting at Rs 18,000/month
             for single occupancy, it includes all utilities. No hidden fees or brokerage—direct bookings save money.
-            This value makes Cohousy the best PG in Kharadi Pune.
+            Weighing a private room against sharing? Our{' '}
+            <Link href="/pg-kharadi" className="text-purple-600 font-medium underline underline-offset-4 hover:text-purple-700">
+              full guide to PG in Kharadi
+            </Link>{' '}
+            compares every room type and what each one costs.
           </motion.p>
         </motion.div>
 

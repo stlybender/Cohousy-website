@@ -2,12 +2,12 @@ import { Metadata } from 'next'
 import { FAQS } from '@/components/pgneareonitp/faqData'
 
 export const metadata: Metadata = {
-  title: 'PG near Eon IT Park Kharadi | Walking Distance Accommodation',
-  description: 'PG accommodation within walking distance of Eon IT Park Kharadi. Single & shared rooms for male/female professionals. Book convenient PG now with amenities, security & app features!',
-  keywords: 'PG near Eon IT Park, Kharadi accommodation, walking distance PG, IT professionals accommodation, Eon IT Park PG',
+  title: 'PG Near Eon IT Park, Kharadi — 5-Min Walk, from ₹10,000',
+  description: 'A 5-minute walk to Eon IT Park. Furnished PG rooms in Kharadi from ₹10,000/month — WiFi, housekeeping and utilities included. Zero brokerage. Book a visit.',
+  keywords: 'PG near Eon IT Park Kharadi, PG near Kharadi Eon IT Park, PG in Kharadi near Eon IT Park, best PG near Eon IT Park, PG near WTC Kharadi',
   openGraph: {
-    title: 'PG near Eon IT Park Kharadi | Walking Distance Accommodation',
-    description: 'PG accommodation within walking distance of Eon IT Park Kharadi. Single & shared rooms for male/female professionals.',
+    title: 'PG Near Eon IT Park, Kharadi — 5-Min Walk, from ₹10,000',
+    description: 'A 5-minute walk to Eon IT Park. Furnished PG rooms in Kharadi from ₹10,000/month, all utilities included. Zero brokerage.',
     images: ['/opengraph-image'],
   },
   alternates: {

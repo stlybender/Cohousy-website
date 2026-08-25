@@ -8,7 +8,8 @@ import PGLocationAdvantage from '@/components/pgkharadi/PGLocationAdvantage'
 import PGSafetySegments from '@/components/pgkharadi/PGSafetySegments'
 import PGEverydayLiving from '@/components/pgkharadi/PGEverydayLiving'
 import PGComparison from '@/components/pgkharadi/PGComparison'
-import PGResidentTestimonials from '@/components/pgkharadi/PGResidentTestimonials'
+import GoogleReviews from '@/components/GoogleReviews'
+import { LEAD_BY_PAGE } from '@/lib/reviews'
 import PGKharadiFAQ from '@/components/pgkharadi/PGKharadiFAQ'
 import PGKharadiCTA from '@/components/pgkharadi/PGKharadiCTA'
 
@@ -23,7 +24,7 @@ export default function PGKharadiPage() {
       <PGSafetySegments />
       <PGEverydayLiving />
       <PGComparison />
-      <PGResidentTestimonials />
+      <GoogleReviews lead={LEAD_BY_PAGE.hub} />
       <PGKharadiFAQ />
       <PGKharadiCTA />
     </main>

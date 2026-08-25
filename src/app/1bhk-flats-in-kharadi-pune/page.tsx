@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
+import GoogleLogo from '@/components/GoogleLogo';
+import { orderReviews, GOOGLE_RATING } from '@/lib/reviews';
 
 // ─── Shared colour tokens ──────────────────────────────────────────────────
 const C = {
@@ -442,47 +444,69 @@ export default function GoogleAdsLanding() {
             <span className="font-bold tracking-widest text-sm mb-4 block uppercase" style={{ color: C.red }}>
               05 — Residents Say
             </span>
-            <h2 className="lp-hl text-4xl md:text-6xl mb-16" style={{ color: C.body }}>
+            <h2 className="lp-hl text-4xl md:text-6xl mb-4" style={{ color: C.body }}>
               Real People. Real Homes.
             </h2>
+
+            {/* Rating summary, attributed to Google. Reviews are pulled from the
+                Cohousy listing — see src/lib/reviews.ts. Never invent these. */}
+            <div className="flex flex-wrap items-center gap-4 mb-16">
+              <GoogleLogo size={28} />
+              <span className="text-3xl font-bold" style={{ color: C.body }}>
+                {GOOGLE_RATING.value}
+              </span>
+              <span className="text-lg" style={{ color: C.muted }}>
+                from {GOOGLE_RATING.count} Google reviews
+              </span>
+              <a
+                href={GOOGLE_RATING.mapsUri}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-bold underline underline-offset-4"
+                style={{ color: C.red }}
+              >
+                Read them all on Google
+              </a>
+            </div>
+
             <div className="flex flex-col md:flex-row gap-8">
-              {[
-                {
-                  text: '"Moving from Mumbai to Pune for my job at EON was stressful until I found Cohousy. The 1 RK is beautifully designed, and the zero brokerage policy saved me a lot of upfront cash."',
-                  name: 'Priya S.', role: 'Systems Engineer, Tata Communications',
-                  img: '/Co-Living/Testimonial 1.jpg', dark: false, cls: 'md:mt-12',
-                },
-                {
-                  text: '"The proximity to World Trade Center is unbeatable. I literally walk to work in 7 minutes. Housekeeping is timely, and the internet is actually fast enough for my late-night gaming."',
-                  name: 'Rahul M.', role: 'Product Designer, Zensar',
-                  img: '/Co-Living/Testimonial 2.jpg', dark: true, cls: 'md:-translate-y-6',
-                },
-                {
-                  text: '"I took the 1 BHK and the extra space is worth every rupee. The kitchen is fully set up, so I didn\'t have to buy a single appliance. Highly recommend for professionals in Kharadi."',
-                  name: 'Ananya K.', role: 'HR Lead, Barclays',
-                  img: '/Co-Living/Testimonial 3.jpg', dark: false, cls: 'md:mt-12',
-                },
-              ].map(t => (
-                <div
-                  key={t.name}
-                  className={`flex-1 p-10 rounded-2xl shadow-xl ${t.cls}`}
-                  style={{ backgroundColor: t.dark ? C.dark : 'white', color: t.dark ? 'white' : C.body }}
-                >
-                  <div className="mb-6">
-                    <span className="material-symbols-outlined" style={{ color: t.dark ? C.orange : C.red, fontSize: '28px' }}>format_quote</span>
-                  </div>
-                  <p className="text-lg leading-relaxed mb-8 italic">{t.text}</p>
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full overflow-hidden relative shrink-0">
-                      <Image src={t.img} alt={`Portrait of ${t.name}`} fill className="object-cover" />
+              {orderReviews('Sweta Roy').slice(0, 3).map((r, i) => {
+                const dark = i === 1
+                const cls = dark ? 'md:-translate-y-6' : 'md:mt-12'
+                return (
+                  <div
+                    key={r.authorUri}
+                    className={`flex-1 p-10 rounded-2xl shadow-xl ${cls}`}
+                    style={{ backgroundColor: dark ? C.dark : 'white', color: dark ? 'white' : C.body }}
+                  >
+                    <div className="mb-6 flex items-center gap-3">
+                      <GoogleLogo size={22} />
+                      <span className="text-sm font-bold" style={{ color: dark ? C.orange : C.red }}>
+                        {'★'.repeat(r.rating)}
+                      </span>
                     </div>
-                    <div>
-                      <p className="font-bold">{t.name}</p>
-                      <p className="text-xs" style={{ color: t.dark ? 'rgba(255,255,255,0.6)' : C.muted }}>{t.role}</p>
+                    <p className="text-lg leading-relaxed mb-8 italic">&ldquo;{r.text}&rdquo;</p>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full overflow-hidden relative shrink-0">
+                        <Image src={r.photo} alt={`${r.name}, Google reviewer`} fill className="object-cover" />
+                      </div>
+                      <div>
+                        <a
+                          href={r.authorUri}
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          className="font-bold underline underline-offset-4"
+                        >
+                          {r.name}
+                        </a>
+                        <p className="text-xs" style={{ color: dark ? 'rgba(255,255,255,0.6)' : C.muted }}>
+                          Google review · {r.when}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </section>

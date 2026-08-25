@@ -7,7 +7,8 @@ import MalePGAmenities from '@/components/malepg/MalePGAmenities'
 import MalePGCTA from '@/components/malepg/MalePGCTA'
 import MalePGFAQ from '@/components/malepg/MalePGFAQ'
 import MalePGHero from '@/components/malepg/MalePGHero'
-import MalePGTestimonials from '@/components/malepg/MalePGTestimonials'
+import GoogleReviews from '@/components/GoogleReviews'
+import { LEAD_BY_PAGE } from '@/lib/reviews'
 import RoomTypesAndPricing from '@/components/malepg/RoomTypesAndPricing'
 import WhyChooseMalePG from '@/components/malepg/WhyChooseMalePG'
 import { useState, useEffect } from 'react'
@@ -30,7 +31,15 @@ export default function MalePGPage() {
             <CohousyAppFeatures />
             <LocationAdvantages />
             <CommunityLifestyle />
-            <MalePGTestimonials />
+            <GoogleReviews
+              bg="bg-blue-50"
+              lead={LEAD_BY_PAGE.male}
+              accentText="text-blue-600"
+              accentBtn="bg-blue-600 text-white"
+              accentAvatar="bg-blue-600 text-white"
+              accentHover="hover:text-blue-600"
+              heading={<>What Residents Say<span className="text-blue-600"> on Google</span></>}
+            />
             <MalePGFAQ />
             <MalePGCTA />
 

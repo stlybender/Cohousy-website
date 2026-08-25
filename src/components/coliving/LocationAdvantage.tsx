@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { MapPin, Building2, Coffee, ShoppingBag, Dumbbell, Car } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 
 const locationCategories = [
@@ -86,7 +87,11 @@ export default function LocationAdvantage() {
           >
             Living in Cohousy's co-living Kharadi means everything is close by, enhancing your
             daily routine in Pune's IT heart. Our properties are ideally positioned for minimal
-            travel, with Eon IT Park just 5 mins away.
+            travel, with Eon IT Park just 5 mins away. Staying only a few months? Our{' '}
+            <Link href="/short-term-rentals" className="text-accent font-medium underline underline-offset-4 hover:opacity-80">
+              short-term rentals
+            </Link>{' '}
+            cover the same buildings without a long lock-in.
           </motion.p>
         </motion.div>
 

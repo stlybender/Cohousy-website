@@ -12,6 +12,8 @@ import SingleRoomFAQ from '@/components/singleroomPG/SingleRoomFAQ'
 import SingleRoomPGHero from '@/components/singleroomPG/SingleRoomPGHero'
 import TopAmenities from '@/components/singleroomPG/TopAmenities'
 import WhySingleRoom from '@/components/singleroomPG/WhySingleRoom'
+import GoogleReviews from '@/components/GoogleReviews'
+import { LEAD_BY_PAGE } from '@/lib/reviews'
 import { useState, useEffect } from 'react'
 
 export default function SingleRoomPGPage() {
@@ -34,6 +36,15 @@ export default function SingleRoomPGPage() {
       <AppFeatures />
       <SafetyMeasures />
       <CoLivingBlend />
+      <GoogleReviews
+        bg="bg-purple-50"
+        lead={LEAD_BY_PAGE.singleRoom}
+        accentText="text-purple-600"
+        accentBtn="bg-purple-600 text-white"
+        accentAvatar="bg-purple-600 text-white"
+        accentHover="hover:text-purple-600"
+        heading={<>What Residents Say<span className="text-purple-600"> on Google</span></>}
+      />
       <SingleRoomFAQ />
       <BookLuxuryCTA />
 

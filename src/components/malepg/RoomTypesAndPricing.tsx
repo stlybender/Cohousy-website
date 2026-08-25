@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Home, CheckCircle, Users, MapPin } from 'lucide-react'
+import Link from 'next/link'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 import ContactFormDialog from '../ContactFormDialog'
 
@@ -95,7 +96,12 @@ export default function RoomTypesAndPricing() {
           >
             Cohousy provides flexible room options in our male PG accommodations. We cater to single
             occupancy for privacy or double sharing for affordability, all within walking distance of
-            Eon IT Park Kharadi and WTC, designed exclusively for male residents.
+            Eon IT Park Kharadi and WTC, designed exclusively for male residents. Still comparing
+            options across the area? Our{' '}
+            <Link href="/pg-kharadi" className="text-blue-600 font-medium underline underline-offset-4 hover:text-blue-700">
+              PG in Kharadi guide
+            </Link>{' '}
+            lays out every room type, price and sub-locality side by side.
           </motion.p>
         </motion.div>
 

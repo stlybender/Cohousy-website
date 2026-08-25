@@ -7,7 +7,8 @@ import LongTermAmenities from '@/components/longterm/LongTermAmenities'
 import LongTermPricing from '@/components/longterm/LongTermPricing'
 import LongTermFAQ from '@/components/longterm/LongTermFAQ'
 import LongTermCTA from '@/components/longterm/LongTermCTA'
-import ResidentTestimonials from '@/components/coliving/ResidentTestimonials'
+import GoogleReviews from '@/components/GoogleReviews'
+import { LEAD_BY_PAGE } from '@/lib/reviews'
 import LocationAdvantage from '@/components/coliving/LocationAdvantage'
 import SafetySecurity from '@/components/coliving/SafetySecurity'
 
@@ -28,7 +29,12 @@ export default function LongTermRentalsPage() {
       <LongTermPricing />
       <LocationAdvantage />
       <SafetySecurity />
-      <ResidentTestimonials />
+      <GoogleReviews
+        bg="bg-white"
+        lead={LEAD_BY_PAGE.longTerm}
+        heading={<>What Long-Term Residents Say<span className="text-accent"> on Google</span></>}
+        intro="Not testimonials we wrote — real Google reviews, including one from a resident who has stayed three and a half years. Every one is clickable, so you can verify it yourself."
+      />
       <LongTermFAQ />
       <LongTermCTA />
 

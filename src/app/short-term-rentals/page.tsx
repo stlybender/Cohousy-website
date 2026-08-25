@@ -7,7 +7,8 @@ import ShortTermAmenities from '@/components/shortterm/ShortTermAmenities'
 import ShortTermPricing from '@/components/shortterm/ShortTermPricing'
 import ShortTermFAQ from '@/components/shortterm/ShortTermFAQ'
 
-import ResidentTestimonials from '@/components/coliving/ResidentTestimonials'
+import GoogleReviews from '@/components/GoogleReviews'
+import { LEAD_BY_PAGE } from '@/lib/reviews'
 import LocationAdvantage from '@/components/coliving/LocationAdvantage'
 import ShortTermCTA from '@/components/shortterm/ShortTermCTA'
 
@@ -27,7 +28,10 @@ export default function ShortTermRentalsPage() {
       <ShortTermAmenities />
       <ShortTermPricing />
       <LocationAdvantage />
-      <ResidentTestimonials />
+      <GoogleReviews
+        bg="bg-white"
+        lead={LEAD_BY_PAGE.shortTerm}
+      />
       <ShortTermFAQ />
       <ShortTermCTA />
 

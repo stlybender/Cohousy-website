@@ -6,7 +6,8 @@ import LadiesPGCTA from '@/components/ladiespg/LadiesPGCTA'
 import LadiesPGFAQ from '@/components/ladiespg/LadiesPGFAQ'
 import LadiesPGHero from '@/components/ladiespg/LadiesPGHero'
 import LadiesPGPricing from '@/components/ladiespg/LadiesPGPricing'
-import LadiesPGTestimonials from '@/components/ladiespg/LadiesPGTestimonials'
+import GoogleReviews from '@/components/GoogleReviews'
+import { LEAD_BY_PAGE } from '@/lib/reviews'
 import PrimeLocation from '@/components/ladiespg/PrimeLocation'
 import SecurityFeatures from '@/components/ladiespg/SecurityFeatures'
 import WhyChooseLadiesPG from '@/components/ladiespg/WhyChooseLadiesPG'
@@ -30,7 +31,15 @@ export default function LadiesPGPage() {
             <SecurityFeatures />
             <DigitalLiving />
             <LadiesPGPricing />
-            <LadiesPGTestimonials />
+            <GoogleReviews
+              bg="bg-pink-50"
+              lead={LEAD_BY_PAGE.ladies}
+              accentText="text-pink-600"
+              accentBtn="bg-pink-600 text-white"
+              accentAvatar="bg-pink-600 text-white"
+              accentHover="hover:text-pink-600"
+              heading={<>What Residents Say<span className="text-pink-600"> on Google</span></>}
+            />
             <LadiesPGFAQ />
             <LadiesPGCTA />
             {/* Scroll Progress Indicator */}

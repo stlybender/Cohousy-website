@@ -71,7 +71,7 @@ export default function PGNearEonHero() {
                 </div>
                 <div className="overflow-hidden">
                   <motion.span variants={withMotion(splitLineReveal)} className="block">
-                    <span className="text-orange-600">Eon IT Park</span>
+                    <span className="text-orange-600">Eon IT Park</span>, Kharadi
                   </motion.span>
                 </div>
               </motion.h1>

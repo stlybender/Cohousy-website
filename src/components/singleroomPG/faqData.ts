@@ -2,8 +2,8 @@
 // (for FAQPage JSON-LD) read from one source.
 export const FAQS: Array<{ question: string; answer: string }> = [
   {
-    question: 'What makes Cohousy the best PG in Kharadi Pune?',
-    answer: 'Our luxury amenities, app features, strategic location near Eon IT Park, and perfect blend of privacy with community set us apart. We offer single rooms with hotel-like amenities, transparent pricing, and 24/7 digital support that traditional PGs simply cannot match.'
+    question: 'Is a single room PG worth it over twin sharing in Kharadi?',
+    answer: 'It depends on what you value. A single room costs roughly Rs 8,000 more per month than a twin-sharing bed, and what you buy with it is a door you close: your own schedule, no roommate\'s alarm, and space to work from home. Professionals on client calls or odd shifts almost always find it worth the difference. If budget matters more than privacy, twin sharing in the same buildings starts far lower — compare both on our PG in Kharadi guide.'
   },
   {
     question: 'Is AC included in single room PG pricing?',
