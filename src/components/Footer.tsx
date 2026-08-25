@@ -37,6 +37,7 @@ const XIcon = ({ size = 24, className }: { size?: number; className?: string }) 
 // Every link here must point to a real route under src/app — no dead pages.
 const footerLinks = {
   'Accommodation': [
+    { title: 'PG in Kharadi', href: '/pg-kharadi' },
     { title: 'Co-living Spaces in Kharadi', href: '/co-living' },
     { title: 'PG near Eon IT Park', href: '/pg-near-eon-it-park' },
     { title: 'Ladies PG in Kharadi', href: '/ladies-pg-kharadi' },
@@ -317,14 +318,31 @@ export default function Footer() {
               </Link>
             </div>
 
-            {/* Additional SEO Links */}
+            {/* Additional SEO Links — real anchors to real routes, phrased as
+                the searches people actually type (GSC + autocomplete data) */}
             <div className="mt-6 pt-6 border-t border-gray-800">
               <div className="text-xs text-gray-500 leading-relaxed">
-                <strong>Popular Searches:</strong> PG in Kharadi Pune, Co-living spaces near Eon IT Park,
-                Ladies PG Kharadi, Male PG accommodation Kharadi, Single room PG near WTC Kharadi,
-                Shared accommodation IT professionals Pune, Premium PG with amenities Kharadi,
-                Safe accommodation for women Pune, Boys hostel near Eon IT Park,
-                Furnished rooms Kharadi Pune, Budget PG accommodation near IT companies.
+                <strong>Popular Searches:</strong>{' '}
+                {[
+                  { label: 'PG in Kharadi Pune', href: '/pg-kharadi' },
+                  { label: 'PG in Kharadi for female', href: '/ladies-pg-kharadi' },
+                  { label: 'PG in Kharadi for male', href: '/male-pg-kharadi' },
+                  { label: 'Single room PG in Kharadi with price', href: '/single-room-pg-kharadi' },
+                  { label: 'PG near Eon IT Park', href: '/pg-near-eon-it-park' },
+                  { label: 'Best PG in Kharadi', href: '/pg-kharadi' },
+                  { label: 'Co-living spaces in Pune', href: '/co-living' },
+                  { label: 'PG in Kharadi with food', href: '/pg-kharadi' },
+                  { label: '1BHK flats in Kharadi', href: '/1bhk-flats-in-kharadi-pune' },
+                  { label: 'Daily basis PG in Kharadi', href: '/short-term-rentals' },
+                  { label: 'Flats on rent in Kharadi', href: '/long-term-rentals' },
+                ].map((item, i, arr) => (
+                  <span key={item.label}>
+                    <Link href={item.href} className="hover:text-accent transition-colors duration-300">
+                      {item.label}
+                    </Link>
+                    {i < arr.length - 1 ? ', ' : '.'}
+                  </span>
+                ))}
               </div>
             </div>
           </motion.div>

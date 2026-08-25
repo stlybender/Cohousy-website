@@ -15,6 +15,7 @@ const routes: Array<{
   changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency']
 }> = [
   { path: '', priority: 1, changeFrequency: 'weekly' },
+  { path: '/pg-kharadi', priority: 0.95, changeFrequency: 'weekly' },
   { path: '/co-living', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/ladies-pg-kharadi', priority: 0.9, changeFrequency: 'weekly' },
   { path: '/male-pg-kharadi', priority: 0.9, changeFrequency: 'weekly' },
