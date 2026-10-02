@@ -32,7 +32,6 @@ export const twoBhk: FlatConfig = {
       { icon: 'rupee', title: 'Zero brokerage', desc: 'You rent directly from Cohousy. No broker, no fee.' },
     ],
   },
-  moveInZeroRows: ['Furniture, ACs, appliances'],
   galleryHeading: { title: 'Furnished and', accent: 'ready to live in' },
   photosAreReal: true,
   offerDescription:
@@ -83,7 +82,7 @@ export const twoBhk: FlatConfig = {
     },
     {
       q: 'How much is the security deposit?',
-      a: "One month's rent. For a ₹35,000 flat that's ₹35,000, and it's refundable when you move out.",
+      a: "Just one month's rent, and it's refundable when you move out.",
     },
     {
       q: 'Who can rent these 2BHK flats?',

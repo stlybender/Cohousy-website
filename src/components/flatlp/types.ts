@@ -58,8 +58,6 @@ export interface FlatConfig {
     intro: string
     items: IncludedItem[]
   }
-  /** Extra ₹0 lines in the move-in cost card, after deposit, first month and brokerage. */
-  moveInZeroRows: string[]
   galleryHeading: { title: string; accent: string }
   /** false = stock photos, shows "representative" labels. */
   photosAreReal: boolean

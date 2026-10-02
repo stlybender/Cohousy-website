@@ -267,39 +267,15 @@ export default function FlatLanding({ config }: { config: FlatConfig }) {
             })}
           </div>
 
-          {/* Move-in cost */}
-          <Reveal className="mx-auto mt-12 max-w-3xl rounded-2xl border border-gray-100 bg-gray-50 p-6 md:p-10">
-            <h3 className="mb-6 text-2xl font-bold text-black">What it costs to move in</h3>
-            <dl className="divide-y divide-gray-200">
-              {[
-                ['Security deposit (one month, refundable)', formatRupees(price)],
-                ['First month’s rent', formatRupees(price)],
-                ['Brokerage', '₹0'],
-                ...config.moveInZeroRows.map((r) => [r, '₹0']),
-              ].map(([k, v]) => (
-                <div key={k} className="flex justify-between gap-4 py-3">
-                  <dt className="text-gray-600">{k}</dt>
-                  <dd className="font-semibold text-black">{v}</dd>
-                </div>
-              ))}
-              <div className="flex justify-between gap-4 pt-4">
-                <dt className="font-bold text-black">Total to move in</dt>
-                <dd className="text-xl font-bold text-accent">{formatRupees(price * 2)}</dd>
-              </div>
-            </dl>
-            <p className="mt-4 text-sm text-gray-500">
-              Based on the starting rent of {formatRupees(price)}. Ask us for the exact price of the flat you like.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <button
-                onClick={scrollToForm}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-3 font-semibold text-black transition-all duration-300 hover:shadow-lg"
-              >
-                Check availability <ArrowRight size={18} />
-              </button>
-              <WhatsAppCta message={waIntro} label="Ask on WhatsApp" unit={unit} />
-            </div>
-          </Reveal>
+          <div className="mt-12 flex flex-col justify-center gap-3 sm:flex-row">
+            <button
+              onClick={scrollToForm}
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-8 py-3 font-semibold text-black transition-all duration-300 hover:shadow-lg"
+            >
+              Check availability <ArrowRight size={18} />
+            </button>
+            <WhatsAppCta message={waIntro} label="Ask on WhatsApp" unit={unit} />
+          </div>
         </div>
       </section>
 

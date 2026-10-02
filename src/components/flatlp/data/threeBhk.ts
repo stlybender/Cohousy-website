@@ -35,7 +35,6 @@ export const threeBhk: FlatConfig = {
       { icon: 'rupee', title: 'Zero brokerage', desc: 'You rent directly from Cohousy. No broker, no fee.' },
     ],
   },
-  moveInZeroRows: [],
   galleryHeading: { title: 'Bright rooms,', accent: 'open views' },
   photosAreReal: true,
   offerDescription:
@@ -90,7 +89,7 @@ export const threeBhk: FlatConfig = {
     },
     {
       q: 'How much is the security deposit?',
-      a: "One month's rent. For a ₹50,000 flat that's ₹50,000, and it's refundable when you move out.",
+      a: "Just one month's rent, and it's refundable when you move out.",
     },
     {
       q: 'Who can rent these 3BHK flats?',
