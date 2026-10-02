@@ -5,7 +5,13 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/ui/WhatsAppButton';
 
-const STANDALONE_PATHS = ['/1bhk-flats-in-kharadi-pune'];
+// Google Ads landing pages: no site nav/footer, each ships its own header,
+// footer and WhatsApp/call buttons.
+const STANDALONE_PATHS = [
+  '/1bhk-flats-in-kharadi-pune',
+  '/2bhk-flats-in-kharadi-pune',
+  '/3bhk-flats-in-kharadi-pune',
+];
 
 // Owner-facing pages ship their own header/footer (no tenant nav, no PG links)
 // but keep the WhatsApp float button.

@@ -50,7 +50,9 @@ const footerLinks = {
     { title: 'Our Services', href: '/services' },
     { title: 'Property Management', href: '/property-management-pune' },
     { title: 'Explore Residences', href: '/explore' },
-    { title: '1BHK Flats in Kharadi', href: '/1bhk-flats-in-kharadi-pune' }
+    { title: '1BHK Flats in Kharadi', href: '/1bhk-flats-in-kharadi-pune' },
+    { title: '2BHK Flats in Kharadi', href: '/2bhk-flats-in-kharadi-pune' },
+    { title: '3BHK Flats in Kharadi', href: '/3bhk-flats-in-kharadi-pune' }
   ],
   'Company': [
     { title: 'About Cohousy', href: '/about' },
@@ -333,6 +335,8 @@ export default function Footer() {
                   { label: 'Co-living spaces in Pune', href: '/co-living' },
                   { label: 'PG in Kharadi with food', href: '/pg-kharadi' },
                   { label: '1BHK flats in Kharadi', href: '/1bhk-flats-in-kharadi-pune' },
+                  { label: 'Furnished 2BHK for rent in Kharadi', href: '/2bhk-flats-in-kharadi-pune' },
+                  { label: 'Furnished 3BHK for rent in Kharadi', href: '/3bhk-flats-in-kharadi-pune' },
                   { label: 'Daily basis PG in Kharadi', href: '/short-term-rentals' },
                   { label: 'Flats on rent in Kharadi', href: '/long-term-rentals' },
                 ].map((item, i, arr) => (

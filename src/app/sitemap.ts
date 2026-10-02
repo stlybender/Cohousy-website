@@ -26,6 +26,8 @@ const routes: Array<{
   { path: '/long-term-rentals', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/short-term-rentals', priority: 0.8, changeFrequency: 'weekly' },
   { path: '/1bhk-flats-in-kharadi-pune', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/2bhk-flats-in-kharadi-pune', priority: 0.8, changeFrequency: 'monthly' },
+  { path: '/3bhk-flats-in-kharadi-pune', priority: 0.8, changeFrequency: 'monthly' },
   { path: '/explore', priority: 0.7, changeFrequency: 'weekly' },
   { path: '/about', priority: 0.6, changeFrequency: 'monthly' },
   { path: '/partners', priority: 0.6, changeFrequency: 'monthly' },

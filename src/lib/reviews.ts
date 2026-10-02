@@ -1,7 +1,7 @@
 // REAL Google reviews for the Cohousy listing in Kharadi.
 //
 // Source: Google Places API (New), place ID ChIJmyEwvSzDwjsRj8_M90Ezwws
-// Pulled 2026-08-24 with tools/gmb/fetch_place_reviews.py in the content workspace.
+// Pulled 2026-10-02 with tools/gmb/fetch_place_reviews.py in the content workspace.
 //
 // ── RULES ────────────────────────────────────────────────────────────────────
 // 1. DO NOT add invented reviews. Every entry must be a real, published Google
@@ -19,7 +19,7 @@
 //    Google must stay visible in the UI.
 // 4. NEVER add AggregateRating/Review schema for these. Google's structured-data
 //    policy forbids marking up third-party-platform reviews as first-party review
-//    data — it risks a manual action. The 4.9★ already surfaces through the
+//    data — it risks a manual action. The rating already surfaces through the
 //    Business Profile in the Local Pack. Display these for HUMAN trust only.
 //
 // The Places API returns a maximum of 5 reviews per place, so every page draws
@@ -45,10 +45,10 @@ export interface Review {
 }
 
 export const GOOGLE_RATING = {
-  value: 4.9,
-  count: 83,
+  value: 4.8,
+  count: 87,
   /** Last verified against the Places API. Refresh monthly — see rule 2 above. */
-  pulledOn: '2026-08-24',
+  pulledOn: '2026-10-02',
   placeId: 'ChIJmyEwvSzDwjsRj8_M90Ezwws',
   mapsUri: 'https://maps.google.com/?cid=847577513299070863',
   /** Deep link that opens the "write a review" dialog for this listing. */
@@ -61,7 +61,7 @@ export const REVIEWS: Review[] = [
     name: 'Sugandh Gautam',
     text: 'Having stayed here for 3.5 years, I can confidently say this property offers an exceptional, hassle-free co-housing experience with good amenities and a great sense of community.',
     rating: 5,
-    when: '2 weeks ago',
+    when: 'a month ago',
     publishedAt: '2026-08-04',
     photo: '/reviews/sugandh-gautam.jpg',
     authorUri: 'https://www.google.com/maps/contrib/102801596572121215776/reviews',
@@ -70,7 +70,7 @@ export const REVIEWS: Review[] = [
     name: 'Sweta Roy',
     text: 'Great place with comfort, sanitation, peace, security n hygiene with all required amenities. If you are looking for peace alongwith comfort after long tiring day at your workplace, then this is the only one stop solution… Also, for the IT professionals, one of the best places to stay in Kharadi as it is just nearby and walking distance from EON IT Park and WTC.',
     rating: 5,
-    when: '3 months ago',
+    when: '4 months ago',
     publishedAt: '2026-05-18',
     photo: '/reviews/sweta-roy.jpg',
     authorUri: 'https://www.google.com/maps/contrib/101655038422614425836/reviews',
@@ -79,7 +79,7 @@ export const REVIEWS: Review[] = [
     name: 'Harshit Dave',
     text: 'The rooms are clean, hygienic, and well-maintained. The location is perfect, with easy access to the market. The owner is very helpful, creating a warm, safe, and homely atmosphere. Highly recommended for working professionals!',
     rating: 5,
-    when: '6 months ago',
+    when: '8 months ago',
     publishedAt: '2026-02-01',
     photo: '/reviews/harshit-dave.jpg',
     authorUri: 'https://www.google.com/maps/contrib/107934827961179132970/reviews',
@@ -88,7 +88,7 @@ export const REVIEWS: Review[] = [
     name: 'Hardik Sharma',
     text: 'Good rooms, nice location, peaceful environment, polite staff. Special thanks to Santosh, great guy!',
     rating: 5,
-    when: '3 weeks ago',
+    when: '2 months ago',
     publishedAt: '2026-08-01',
     photo: '/reviews/hardik-sharma.jpg',
     authorUri: 'https://www.google.com/maps/contrib/105387262467913465438/reviews',
@@ -97,7 +97,7 @@ export const REVIEWS: Review[] = [
     name: 'Sourav Bansal',
     text: 'This place offers everything what a working professional require such as ironing, washing machine, fridge etc. Rooms are also perfect.',
     rating: 5,
-    when: '8 months ago',
+    when: '10 months ago',
     publishedAt: '2025-12-01',
     photo: '/reviews/sourav-bansal.jpg',
     authorUri: 'https://www.google.com/maps/contrib/116576215769650314475/reviews',
@@ -139,4 +139,6 @@ export const LEAD_BY_PAGE = {
   longTerm: 'Sugandh Gautam',
   /** Lists the practical kit — ironing, washing machine, fridge — that matters on a short stay. */
   shortTerm: 'Sourav Bansal',
+  /** 3.5-year stay: the closest match to someone renting a whole flat for the long term. */
+  flats: 'Sugandh Gautam',
 } as const

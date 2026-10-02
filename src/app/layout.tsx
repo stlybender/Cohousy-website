@@ -78,7 +78,7 @@ const localBusinessJsonLd = {
   },
   telephone: '+918908903900',
   email: 'contact@cohousy.com',
-  priceRange: '₹10,000 - ₹26,000',
+  priceRange: '₹10,000 - ₹50,000',
   currenciesAccepted: 'INR',
   sameAs: [
     'https://facebook.com/cohousy',
@@ -121,6 +121,20 @@ const localBusinessJsonLd = {
       price: '26000',
       priceCurrency: 'INR',
       url: 'https://www.cohousy.com/long-term-rentals',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Furnished 2BHK flat in Kharadi',
+      price: '35000',
+      priceCurrency: 'INR',
+      url: 'https://www.cohousy.com/2bhk-flats-in-kharadi-pune',
+    },
+    {
+      '@type': 'Offer',
+      name: 'Furnished 3BHK flat in Kharadi',
+      price: '50000',
+      priceCurrency: 'INR',
+      url: 'https://www.cohousy.com/3bhk-flats-in-kharadi-pune',
     },
   ],
 }
