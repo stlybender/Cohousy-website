@@ -20,6 +20,16 @@ export interface FaqItem {
 
 export type Audience = 'family' | 'couple' | 'sharing' | 'student'
 
+/** Icon keys for the "what's included" cards (mapped to lucide icons in FlatLanding). */
+export type IncludedIcon =
+  | 'sofa' | 'fan' | 'zap' | 'wifi' | 'wrench' | 'car' | 'shield' | 'rupee' | 'kitchen' | 'building'
+
+export interface IncludedItem {
+  icon: IncludedIcon
+  title: string
+  desc: string
+}
+
 export interface FlatConfig {
   /** Route path, e.g. '/2bhk-flats-in-kharadi-pune'. */
   path: string
@@ -32,8 +42,29 @@ export interface FlatConfig {
   area: string
   /** Hero eyebrow, e.g. 'Kharadi Bypass, Pune'. */
   eyebrow: string
+  /** H1 prefix, e.g. 'Fully Furnished' or 'Semi-Furnished'. */
+  furnishing: string
+  /** Short line after the price, e.g. 'Everything included.' */
+  priceNote: string
   /** Line under the H1. */
   heroSub: string
+  /** Four short ticks under the hero copy. */
+  heroChips: string[]
+  /** "What's included" section. */
+  included: {
+    eyebrow: string
+    title: string
+    accent: string
+    intro: string
+    items: IncludedItem[]
+  }
+  /** Extra ₹0 lines in the move-in cost card, after deposit, first month and brokerage. */
+  moveInZeroRows: string[]
+  galleryHeading: { title: string; accent: string }
+  /** false = stock photos, shows "representative" labels. */
+  photosAreReal: boolean
+  /** Description used in the Offer JSON-LD. */
+  offerDescription: string
   heroImage: FlatImage
   gallery: FlatImage[]
   /** One line per audience card, specific to this flat size. */

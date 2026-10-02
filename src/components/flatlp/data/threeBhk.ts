@@ -1,9 +1,10 @@
 import { LEAD_BY_PAGE } from '@/lib/reviews'
 import type { FlatConfig } from '../types'
 
-// Photos are Unsplash stock (free for commercial use) until the real flat is
-// shot. Swap the files in public/flats-3bhk/ and keep the "representative"
-// labels until then.
+// Real photos of the flat (Zen Elite), received 2026-10-02. They came
+// Gemini-enhanced; the visible Gemini mark was removed before upload.
+// The 3BHK is SEMI-furnished (client, 2026-10-02): modular kitchen with chimney
+// and hob, fans and lights. No beds, sofas, ACs or WiFi. Don't claim them.
 
 export const threeBhk: FlatConfig = {
   path: '/3bhk-flats-in-kharadi-pune',
@@ -12,26 +13,51 @@ export const threeBhk: FlatConfig = {
   price: 50000,
   area: 'EON IT Park Phase 2',
   eyebrow: 'Near EON IT Park Phase 2, Kharadi',
+  furnishing: 'Semi-Furnished',
+  priceNote: 'Electricity and maintenance included.',
   heroSub:
-    'Three bedrooms near EON IT Park Phase 2, ready to live in. Furniture, ACs, electricity and upkeep are all part of the rent. No brokerage.',
+    'Three bedrooms near EON IT Park Phase 2, with a modular kitchen, fans and lights already fitted. Electricity, society maintenance and parking are part of the rent. No brokerage.',
+  heroChips: ['Zero brokerage', '1 month deposit', 'Electricity included', 'Car parking'],
+  included: {
+    eyebrow: 'WHAT THE RENT COVERS',
+    title: 'Fewer bills,',
+    accent: 'less running around',
+    intro:
+      'The kitchen is fitted and the flat is ready for your own furniture. Electricity, society charges and repairs are part of the monthly rent.',
+    items: [
+      { icon: 'kitchen', title: 'Modular kitchen', desc: 'Fitted cabinets, chimney and hob, ready to cook on day one.' },
+      { icon: 'fan', title: 'Fans and lights', desc: 'Already fitted in every room.' },
+      { icon: 'zap', title: 'Electricity', desc: 'No separate bill at the end of the month.' },
+      { icon: 'building', title: 'Society maintenance', desc: 'Society charges are part of the rent. Nothing extra to pay.' },
+      { icon: 'wrench', title: 'Repairs and upkeep', desc: 'Something breaks? You call Cohousy, not the owner, and we fix it.' },
+      { icon: 'car', title: 'Car parking', desc: 'A parking slot comes with the flat.' },
+      { icon: 'shield', title: 'Gated society', desc: 'Security at the gate, lifts and power backup.' },
+      { icon: 'rupee', title: 'Zero brokerage', desc: 'You rent directly from Cohousy. No broker, no fee.' },
+    ],
+  },
+  moveInZeroRows: [],
+  galleryHeading: { title: 'Bright rooms,', accent: 'open views' },
+  photosAreReal: true,
+  offerDescription:
+    'Starting monthly rent. Semi-furnished with a modular kitchen, fans and lights. Electricity, society maintenance, repairs and car parking included. Zero brokerage, one month deposit.',
   heroImage: {
-    src: '/flats-3bhk/living-room.jpg',
-    alt: 'Furnished living room in a 3BHK flat for rent in Kharadi, Pune',
-    label: 'Living room',
+    src: '/flats/3bhk/balcony-view.jpg',
+    alt: 'View from the balcony of a 3BHK flat for rent near EON IT Park Phase 2, Kharadi',
+    label: 'View from the balcony',
   },
   gallery: [
-    { src: '/flats-3bhk/living-room-2.jpg', alt: 'Spacious furnished living room in a Kharadi 3BHK', label: 'Living room' },
-    { src: '/flats-3bhk/master-bedroom.jpg', alt: 'Furnished master bedroom in a 3BHK flat, Kharadi', label: 'Master bedroom' },
-    { src: '/flats-3bhk/kids-bedroom.jpg', alt: "Children's bedroom in a furnished 3BHK near EON IT Park", label: "Kids' room" },
-    { src: '/flats-3bhk/third-bedroom.jpg', alt: 'Third bedroom with a study desk in a 3BHK flat, Pune', label: 'Third bedroom' },
-    { src: '/flats-3bhk/dining.jpg', alt: 'Kitchen and dining area in a 3BHK flat for rent in Kharadi', label: 'Kitchen and dining' },
-    { src: '/flats-3bhk/living-room.jpg', alt: 'Family sitting area in a furnished 3BHK in Kharadi', label: 'Family sitting area' },
+    { src: '/flats/3bhk/bedroom-river-view.jpg', alt: 'Bedroom with a river view in a 3BHK flat near EON IT Park, Kharadi', label: 'Bedroom with river view' },
+    { src: '/flats/3bhk/kitchen.jpg', alt: 'Modular kitchen with chimney and hob in a semi-furnished 3BHK, Kharadi', label: 'Modular kitchen' },
+    { src: '/flats/3bhk/kitchen-2.jpg', alt: 'Fitted L-shaped kitchen in a 3BHK flat for rent in Pune', label: 'Kitchen' },
+    { src: '/flats/3bhk/bedroom-1.jpg', alt: 'Large bedroom with full-width window in a Kharadi 3BHK', label: 'Bedroom 1' },
+    { src: '/flats/3bhk/bedroom-2.jpg', alt: 'Bedroom with balcony door in a 3BHK near EON IT Park Phase 2', label: 'Bedroom 2' },
+    { src: '/flats/3bhk/living-room.jpg', alt: 'Living room of a semi-furnished 3BHK flat in Kharadi, Pune', label: 'Living room' },
   ],
   audienceCopy: {
     family: 'Three bedrooms, so the kids get their own room or your parents can stay with you.',
     couple: 'Plenty of space for a home office, a guest room and everything else.',
-    sharing: "Split it three ways and it's about {perPerson} each, with every bill already included.",
-    student: 'Share with two friends. Nothing to buy and no bills to split at the end of the month.',
+    sharing: "Split it three ways and it's about {perPerson} each, with electricity and maintenance already included.",
+    student: 'Share with two friends and split one rent. Electricity and society charges are already in it.',
   },
   location: {
     heading: 'Near EON IT Park Phase 2',
@@ -52,7 +78,11 @@ export const threeBhk: FlatConfig = {
   faqs: [
     {
       q: 'What does the ₹50,000 rent include?',
-      a: "The flat comes fully furnished, with ACs, electricity, WiFi, repairs and upkeep, and a car parking slot. You don't get separate bills for any of these. ₹50,000 is the starting rent, and the exact price depends on the flat.",
+      a: 'Electricity, society maintenance, repairs and upkeep, and a car parking slot. The flat comes with a fitted modular kitchen, chimney, hob, fans and lights. ₹50,000 is the starting rent, and the exact price depends on the flat.',
+    },
+    {
+      q: 'Is the 3BHK furnished?',
+      a: "It's semi-furnished. The kitchen is fully fitted and every room has fans and lights, but there are no beds, sofas or ACs, so you can set it up with your own furniture.",
     },
     {
       q: 'Do I have to pay brokerage?',
@@ -64,7 +94,7 @@ export const threeBhk: FlatConfig = {
     },
     {
       q: 'Who can rent these 3BHK flats?',
-      a: 'Families, couples, working professionals and students. If three of you share the flat, it works out to about ₹16,700 each, with everything included.',
+      a: 'Families, couples, working professionals and students. If three of you share the flat, it works out to about ₹16,700 each, with electricity and maintenance included.',
     },
     {
       q: 'Where exactly is the flat?',
@@ -76,7 +106,7 @@ export const threeBhk: FlatConfig = {
     },
     {
       q: 'How soon can I move in?',
-      a: "The flats are already furnished. Once you've paid the deposit and first month's rent and signed the agreement, you can move in. Tell us your date when you enquire.",
+      a: "Once you've paid the deposit and first month's rent and signed the agreement, the flat is yours to move into. Tell us your date when you enquire.",
     },
     {
       q: 'Who do I call if something stops working?',
@@ -85,7 +115,7 @@ export const threeBhk: FlatConfig = {
   ],
   reviewLead: LEAD_BY_PAGE.flats,
   related: [
-    { label: '2BHK flats in Kharadi', href: '/2bhk-flats-in-kharadi-pune' },
+    { label: 'Furnished 2BHK flats in Kharadi', href: '/2bhk-flats-in-kharadi-pune' },
     { label: '1BHK and 1RK flats in Kharadi', href: '/1bhk-flats-in-kharadi-pune' },
     { label: 'Long-term rentals in Kharadi', href: '/long-term-rentals' },
   ],

@@ -131,7 +131,7 @@ const localBusinessJsonLd = {
     },
     {
       '@type': 'Offer',
-      name: 'Furnished 3BHK flat in Kharadi',
+      name: 'Semi-furnished 3BHK flat in Kharadi',
       price: '50000',
       priceCurrency: 'INR',
       url: 'https://www.cohousy.com/3bhk-flats-in-kharadi-pune',

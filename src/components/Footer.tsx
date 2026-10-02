@@ -336,7 +336,7 @@ export default function Footer() {
                   { label: 'PG in Kharadi with food', href: '/pg-kharadi' },
                   { label: '1BHK flats in Kharadi', href: '/1bhk-flats-in-kharadi-pune' },
                   { label: 'Furnished 2BHK for rent in Kharadi', href: '/2bhk-flats-in-kharadi-pune' },
-                  { label: 'Furnished 3BHK for rent in Kharadi', href: '/3bhk-flats-in-kharadi-pune' },
+                  { label: '3BHK for rent in Kharadi', href: '/3bhk-flats-in-kharadi-pune' },
                   { label: 'Daily basis PG in Kharadi', href: '/short-term-rentals' },
                   { label: 'Flats on rent in Kharadi', href: '/long-term-rentals' },
                 ].map((item, i, arr) => (

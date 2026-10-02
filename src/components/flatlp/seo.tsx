@@ -70,12 +70,11 @@ export function FlatJsonLd({ config, name }: { config: FlatConfig; name: string 
       priceCurrency: 'INR',
       unitText: 'MONTH',
     },
-    description:
-      'Starting monthly rent. Fully furnished, with ACs, electricity, WiFi, upkeep and car parking included. Zero brokerage, one month deposit.',
+    description: config.offerDescription,
     offeredBy: { '@id': `${SITE}/#organization` },
     itemOffered: {
       '@type': 'Apartment',
-      name: `Furnished ${config.unit} flat in ${config.area}, Kharadi`,
+      name: `${config.furnishing} ${config.unit} flat in ${config.area}, Kharadi`,
       numberOfBedrooms: config.bedrooms,
       address: {
         '@type': 'PostalAddress',

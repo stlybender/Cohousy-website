@@ -1,9 +1,8 @@
 import { LEAD_BY_PAGE } from '@/lib/reviews'
 import type { FlatConfig } from '../types'
 
-// Photos are Unsplash stock (free for commercial use) until the real flat is
-// shot. Swap the files in public/flats-2bhk/ and keep the "representative"
-// labels until then.
+// Real photos of the flat (Durvankur Housing Society), received 2026-10-02.
+// They came Gemini-enhanced; the visible Gemini mark was removed before upload.
 
 export const twoBhk: FlatConfig = {
   path: '/2bhk-flats-in-kharadi-pune',
@@ -12,20 +11,44 @@ export const twoBhk: FlatConfig = {
   price: 35000,
   area: 'Kharadi Bypass',
   eyebrow: 'Kharadi Bypass, Pune',
+  furnishing: 'Fully Furnished',
+  priceNote: 'Everything included.',
   heroSub:
     'Two bedrooms on Kharadi Bypass, ready to live in. Furniture, ACs, electricity and upkeep are all part of the rent. No brokerage.',
+  heroChips: ['Zero brokerage', '1 month deposit', 'Gated society', 'Car parking'],
+  included: {
+    eyebrow: 'ONE RENT, EVERYTHING IN',
+    title: 'Just bring',
+    accent: 'your bags',
+    intro: "No furniture to buy, no broker to pay, no electricity bill to chase. It's all part of the monthly rent.",
+    items: [
+      { icon: 'sofa', title: 'Fully furnished', desc: 'Bedrooms, living room and kitchen are set up. Nothing to buy.' },
+      { icon: 'fan', title: 'Air conditioning', desc: 'ACs are part of the flat, not an extra.' },
+      { icon: 'zap', title: 'Electricity', desc: 'No separate bill at the end of the month.' },
+      { icon: 'wifi', title: 'WiFi', desc: 'Internet is on when you arrive.' },
+      { icon: 'wrench', title: 'Repairs and upkeep', desc: 'Something breaks? You call Cohousy, not the owner, and we fix it.' },
+      { icon: 'car', title: 'Car parking', desc: 'A parking slot comes with the flat.' },
+      { icon: 'shield', title: 'Gated society', desc: 'Security at the gate, lifts and power backup.' },
+      { icon: 'rupee', title: 'Zero brokerage', desc: 'You rent directly from Cohousy. No broker, no fee.' },
+    ],
+  },
+  moveInZeroRows: ['Furniture, ACs, appliances'],
+  galleryHeading: { title: 'Furnished and', accent: 'ready to live in' },
+  photosAreReal: true,
+  offerDescription:
+    'Starting monthly rent. Fully furnished, with ACs, electricity, WiFi, upkeep and car parking included. Zero brokerage, one month deposit.',
   heroImage: {
-    src: '/flats-2bhk/living-room.jpg',
-    alt: 'Furnished living room in a 2BHK flat for rent in Kharadi, Pune',
+    src: '/flats/2bhk/living-room.jpg',
+    alt: 'Furnished living room of a 2BHK flat for rent on Kharadi Bypass, Pune',
     label: 'Living room',
   },
   gallery: [
-    { src: '/flats-2bhk/living-room-2.jpg', alt: 'Bright furnished living room in a Kharadi 2BHK', label: 'Living room' },
-    { src: '/flats-2bhk/master-bedroom.jpg', alt: 'Furnished bedroom with AC in a 2BHK flat, Kharadi', label: 'Bedroom with AC' },
-    { src: '/flats-2bhk/second-bedroom.jpg', alt: 'Second bedroom in a furnished 2BHK on Kharadi Bypass', label: 'Second bedroom' },
-    { src: '/flats-2bhk/kitchen.jpg', alt: 'Modular kitchen in a furnished 2BHK flat in Pune', label: 'Modular kitchen' },
-    { src: '/flats-2bhk/dining.jpg', alt: 'Kitchen and dining area in a 2BHK flat for rent', label: 'Kitchen and dining' },
-    { src: '/flats-2bhk/living-room.jpg', alt: 'Sofa and TV area in a 2BHK flat for rent in Kharadi', label: 'Sitting area' },
+    { src: '/flats/2bhk/bedroom-1.jpg', alt: 'Furnished bedroom with wardrobe in a 2BHK flat in Kharadi', label: 'Bedroom 1' },
+    { src: '/flats/2bhk/bedroom-2.jpg', alt: 'Second bedroom with double bed and wardrobes, Kharadi 2BHK', label: 'Bedroom 2' },
+    { src: '/flats/2bhk/kitchen.jpg', alt: 'Modular kitchen in a furnished 2BHK on Kharadi Bypass', label: 'Modular kitchen' },
+    { src: '/flats/2bhk/bedroom-1-wardrobe.jpg', alt: 'Bedroom with storage wardrobe in a 2BHK for rent, Pune', label: 'Bedroom 1, wardrobe side' },
+    { src: '/flats/2bhk/bedroom-2-window.jpg', alt: 'Bright second bedroom with window in a Kharadi 2BHK', label: 'Bedroom 2, window side' },
+    { src: '/flats/2bhk/kitchen-2.jpg', alt: 'L-shaped kitchen with gas hob in a 2BHK flat, Kharadi', label: 'Kitchen' },
   ],
   audienceCopy: {
     family: 'Two bedrooms, a full kitchen and a gated society with parking. Room for a small family to settle in.',

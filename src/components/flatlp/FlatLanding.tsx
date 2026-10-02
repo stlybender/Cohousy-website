@@ -11,6 +11,8 @@ import {
   Car,
   CheckCircle2,
   ChevronDown,
+  CookingPot,
+  Building2,
   Fan,
   GraduationCap,
   Heart,
@@ -34,7 +36,7 @@ import GoogleReviews from '@/components/GoogleReviews'
 import GoogleLogo from '@/components/GoogleLogo'
 import LeadForm from './LeadForm'
 import { PHONE_DISPLAY, PHONE_TEL, track, waLink } from './leads'
-import { AUDIENCES, formatRupees, type Audience, type FlatConfig } from './types'
+import { AUDIENCES, formatRupees, type Audience, type FlatConfig, type IncludedIcon } from './types'
 
 // ─── Small building blocks ──────────────────────────────────────────────────
 
@@ -100,16 +102,18 @@ function WhatsAppCta({ message, label, unit }: { message: string; label: string;
 
 // ─── Page ───────────────────────────────────────────────────────────────────
 
-const INCLUDED = [
-  { icon: Sofa, title: 'Fully furnished', desc: 'Bedrooms, living room and kitchen are set up. Nothing to buy.' },
-  { icon: Fan, title: 'Air conditioning', desc: 'ACs are part of the flat, not an extra.' },
-  { icon: Zap, title: 'Electricity', desc: 'No separate bill at the end of the month.' },
-  { icon: Wifi, title: 'WiFi', desc: 'Internet is on when you arrive.' },
-  { icon: Wrench, title: 'Repairs and upkeep', desc: 'Something breaks? You call Cohousy, not the owner, and we fix it.' },
-  { icon: Car, title: 'Car parking', desc: 'A parking slot comes with the flat.' },
-  { icon: ShieldCheck, title: 'Gated society', desc: 'Security at the gate, lifts and power backup.' },
-  { icon: BadgeIndianRupee, title: 'Zero brokerage', desc: 'You rent directly from Cohousy. No broker, no fee.' },
-]
+const INCLUDED_ICONS: Record<IncludedIcon, typeof Home> = {
+  sofa: Sofa,
+  fan: Fan,
+  zap: Zap,
+  wifi: Wifi,
+  wrench: Wrench,
+  car: Car,
+  shield: ShieldCheck,
+  rupee: BadgeIndianRupee,
+  kitchen: CookingPot,
+  building: Building2,
+}
 
 const AUDIENCE_ICONS: Record<Audience, typeof Home> = {
   family: Users,
@@ -121,7 +125,7 @@ const AUDIENCE_ICONS: Record<Audience, typeof Home> = {
 const STEPS = [
   { icon: MessageCircleMore, title: 'Tell us what you need', desc: 'Fill a form on this page, call, or message us on WhatsApp.' },
   { icon: MapPin, title: 'Visit the flat', desc: 'We show you around at a time that suits you.' },
-  { icon: KeyRound, title: 'Move in', desc: 'Pay the deposit and first month, sign the agreement, and bring your bags.' },
+  { icon: KeyRound, title: 'Move in', desc: 'Pay the deposit and first month, sign the agreement, and move in.' },
 ]
 
 export default function FlatLanding({ config }: { config: FlatConfig }) {
@@ -169,15 +173,15 @@ export default function FlatLanding({ config }: { config: FlatConfig }) {
               {config.eyebrow.toUpperCase()}
             </span>
             <h1 className="mb-4 text-[2rem] font-bold leading-[1.05] text-black md:mb-5 md:text-5xl lg:text-[3.5rem]">
-              Fully Furnished <span className="text-accent">{unit} Flats</span> for Rent in Kharadi, Pune
+              {config.furnishing} <span className="text-accent">{unit} Flats</span> for Rent in Kharadi, Pune
             </h1>
             <p className="mb-4 text-xl font-bold text-black md:text-2xl">
               From {formatRupees(price)} a month.{' '}
-              <span className="font-semibold text-gray-600">Everything included.</span>
+              <span className="font-semibold text-gray-600">{config.priceNote}</span>
             </p>
             <p className="mb-6 hidden max-w-2xl text-lg leading-relaxed text-gray-600 sm:block">{config.heroSub}</p>
             <ul className="mb-4 grid max-w-xl grid-cols-2 gap-2 text-sm md:mb-6 md:gap-3 md:text-base">
-              {['Zero brokerage', '1 month deposit', 'Gated society', 'Car parking'].map((f) => (
+              {config.heroChips.map((f) => (
                 <li key={f} className="flex items-center gap-2 font-medium text-gray-800">
                   <CheckCircle2 size={18} className="shrink-0 text-accent" /> {f}
                 </li>
@@ -217,7 +221,7 @@ export default function FlatLanding({ config }: { config: FlatConfig }) {
               className="object-cover"
             />
             <span className="absolute bottom-3 left-3 rounded-full bg-black/50 px-3 py-1 text-xs text-white backdrop-blur">
-              Representative photo
+              {config.photosAreReal ? config.heroImage.label : 'Representative photo'}
             </span>
           </div>
         </div>
@@ -245,19 +249,22 @@ export default function FlatLanding({ config }: { config: FlatConfig }) {
         <div className="container mx-auto px-6">
           <SectionHeader
             icon={CheckCircle2}
-            eyebrow="ONE RENT, EVERYTHING IN"
-            title="Just bring"
-            accent="your bags"
-            intro="No furniture to buy, no broker to pay, no electricity bill to chase. It's all part of the monthly rent."
+            eyebrow={config.included.eyebrow}
+            title={config.included.title}
+            accent={config.included.accent}
+            intro={config.included.intro}
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {INCLUDED.map(({ icon: Icon, title, desc }) => (
+            {config.included.items.map(({ icon, title, desc }) => {
+              const Icon = INCLUDED_ICONS[icon]
+              return (
               <Reveal key={title} className="rounded-2xl border border-gray-100 bg-white p-6">
                 <Icon size={28} className="mb-4 text-accent" />
                 <h3 className="mb-2 text-xl font-bold text-black">{title}</h3>
                 <p className="leading-relaxed text-gray-600">{desc}</p>
               </Reveal>
-            ))}
+              )
+            })}
           </div>
 
           {/* Move-in cost */}
@@ -268,7 +275,7 @@ export default function FlatLanding({ config }: { config: FlatConfig }) {
                 ['Security deposit (one month, refundable)', formatRupees(price)],
                 ['First month’s rent', formatRupees(price)],
                 ['Brokerage', '₹0'],
-                ['Furniture, ACs, appliances', '₹0'],
+                ...config.moveInZeroRows.map((r) => [r, '₹0']),
               ].map(([k, v]) => (
                 <div key={k} className="flex justify-between gap-4 py-3">
                   <dt className="text-gray-600">{k}</dt>
@@ -336,9 +343,21 @@ export default function FlatLanding({ config }: { config: FlatConfig }) {
           <SectionHeader
             icon={Camera}
             eyebrow="INSIDE THE FLAT"
-            title="Furnished and"
-            accent="ready to live in"
+            title={config.galleryHeading.title}
+            accent={config.galleryHeading.accent}
             intro={
+              config.photosAreReal ? (
+                <>
+                  Real photos of the flat.{' '}
+                  <button
+                    onClick={scrollToForm}
+                    className="font-semibold text-black underline underline-offset-4 hover:text-accent"
+                  >
+                    Book a visit
+                  </button>{' '}
+                  to see it in person.
+                </>
+              ) : (
               <>
                 These are representative photos.{' '}
                 <button
@@ -349,6 +368,7 @@ export default function FlatLanding({ config }: { config: FlatConfig }) {
                 </button>{' '}
                 to see the actual flat.
               </>
+              )
             }
           />
           <div className="grid gap-4 md:grid-cols-3">
@@ -528,7 +548,10 @@ export default function FlatLanding({ config }: { config: FlatConfig }) {
         <div className="container mx-auto flex flex-col gap-6 px-6 text-sm text-gray-600 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <Image src="/logo.png" alt="Cohousy" width={98} height={40} className="mb-3 h-7 w-auto" />
-            <p>Cohousy manages homes in Kharadi, Pune. Photos on this page are representative.</p>
+            <p>
+              Cohousy manages homes in Kharadi, Pune.
+              {!config.photosAreReal && ' Photos on this page are representative.'}
+            </p>
           </div>
           <nav aria-label="More homes" className="flex flex-col gap-2">
             <p className="font-semibold text-black">More homes in Kharadi</p>
