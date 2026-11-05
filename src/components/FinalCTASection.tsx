@@ -2,11 +2,17 @@
 
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { Phone, Download, MapPin, Users, Home, Shield, Building2 } from 'lucide-react'
+import { Phone, Download, MapPin, Users, Home, Shield, Building2, LayoutGrid } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 import ContactFormDialog from './ContactFormDialog'
 
 const ctaLinks = [
+  {
+    title: 'PG in Kharadi',
+    subtitle: 'Every room type and price, side by side',
+    icon: LayoutGrid,
+    href: '/pg-kharadi'
+  },
   {
     title: 'Ladies PG in Kharadi',
     subtitle: 'Safe accommodation for women professionals',

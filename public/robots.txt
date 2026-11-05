@@ -6,7 +6,6 @@ Sitemap: https://www.cohousy.com/sitemap.xml
 
 # Disallow admin or private areas
 Disallow: /api/
-Disallow: /_next/
 Disallow: /admin/
 
 # Conversion page and sessionStorage-only route — no crawlable content
