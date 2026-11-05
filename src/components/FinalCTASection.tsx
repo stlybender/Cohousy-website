@@ -5,6 +5,7 @@ import { useRef } from 'react'
 import { Phone, Download, MapPin, Users, Home, Shield, Building2, LayoutGrid } from 'lucide-react'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 import ContactFormDialog from './ContactFormDialog'
+import { GOOGLE_RATING } from '@/lib/reviews'
 
 const ctaLinks = [
   {
@@ -46,9 +47,9 @@ const ctaLinks = [
 ]
 
 const stats = [
-  { value: '500+', label: 'Happy Residents' },
-  { value: '4.8★', label: 'Average Rating' },
-  { value: '24/7', label: 'Support Available' },
+  { value: '30+', label: 'Homes Managed in Pune' },
+  { value: `${GOOGLE_RATING.value}★`, label: 'Google Rating' },
+  { value: '2020', label: 'Running Since' },
   { value: '0%', label: 'Brokerage Fee' }
 ]
 
@@ -108,7 +109,7 @@ export default function FinalCTASection() {
             variants={withMotion(fadeInUp)}
             className="text-xl text-gray-300 font-light tracking-wide max-w-3xl mx-auto mb-12"
           >
-            Join hundreds of professionals who've made Cohousy their home in
+            Join the professionals who've made Cohousy their home in
             Kharadi's tech hub. Experience the perfect blend of comfort, community, and convenience.
           </motion.p>
 
@@ -220,7 +221,7 @@ export default function FinalCTASection() {
             Need Immediate Assistance?
           </h3>
           <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-            Our dedicated support team is available 24/7 to help you find the perfect
+            Our team is here to help you find the perfect
             accommodation in Kharadi's premier locations.
           </p>
 

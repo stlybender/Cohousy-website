@@ -27,7 +27,7 @@ const appFeatures = [
     title: 'On-Demand Services',
     description: 'Request housekeeping, maintenance, or concierge services with one tap and track service status in real-time.',
     icon: Wrench,
-    benefits: ['24/7 service requests', 'Real-time tracking', 'Service history']
+    benefits: ['Service requests', 'Real-time tracking', 'Service history']
   },
   {
     id: 'payments',
@@ -196,14 +196,6 @@ export default function AppExperienceSection() {
               >
                 Online
               </motion.div>
-
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -bottom-4 -left-4 bg-accent text-black p-2 rounded-lg text-xs font-bold shadow-lg"
-              >
-                24/7 Support
-              </motion.div>
             </div>
           </motion.div>
 
@@ -293,12 +285,11 @@ export default function AppExperienceSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center"
+          className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center"
         >
           {[
             { value: '10K+', label: 'App Downloads' },
             { value: '4.8★', label: 'App Store Rating' },
-            { value: '24/7', label: 'Digital Support' },
             { value: '100%', label: 'Digital Payments' }
           ].map((stat, index) => (
             <div key={index} className="p-6 bg-white rounded-xl border border-gray-200 shadow-sm">

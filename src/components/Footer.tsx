@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
+import { GOOGLE_RATING } from '@/lib/reviews'
 import {
   MapPin,
   Phone,
@@ -77,8 +78,8 @@ const contactInfo = {
 
 const quickStats = [
   { icon: Building2, value: '10+', label: 'Properties' },
-  { icon: Users, value: '500+', label: 'Happy Residents' },
-  { icon: Star, value: '4.9★', label: 'Average Rating' },
+  { icon: Users, value: '2020', label: 'Running Since' },
+  { icon: Star, value: `${GOOGLE_RATING.value}★`, label: 'Google Rating' },
   { icon: Shield, value: '100%', label: 'Verified Safe' }
 ]
 
@@ -118,7 +119,7 @@ export default function Footer() {
               <span className="text-accent"> Premium Living?</span>
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Join hundreds of professionals who've made Cohousy their home in Kharadi's tech hub.
+              Join the professionals who've made Cohousy their home in Kharadi's tech hub.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <ContactFormDialog
@@ -281,7 +282,7 @@ export default function Footer() {
             </div>
 
             <div className="text-sm text-gray-400">
-              Join our community of <span className="text-accent font-semibold">500+</span> professionals
+              Join our community of professionals in Kharadi
             </div>
           </motion.div>
         </motion.div>

@@ -6,6 +6,7 @@ import { MapPin, Shield, Users, Home, Smartphone, Train } from 'lucide-react'
 import Image from 'next/image'
 import { staggerContainer, fadeInUp, withMotion } from '@/lib/motion'
 import ContactFormDialog from './ContactFormDialog'
+import { GOOGLE_RATING } from '@/lib/reviews'
 
 const benefits = [
   {
@@ -203,16 +204,16 @@ export default function WhyChooseSection() {
       >
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div>
-            <div className="text-3xl font-bold text-accent mb-2">500+</div>
-            <div className="text-sm text-gray-600 font-medium">Happy Residents</div>
+            <div className="text-3xl font-bold text-accent mb-2">30+</div>
+            <div className="text-sm text-gray-600 font-medium">Homes Managed in Pune</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-accent mb-2">4.8★</div>
-            <div className="text-sm text-gray-600 font-medium">Average Rating</div>
+            <div className="text-3xl font-bold text-accent mb-2">{GOOGLE_RATING.value}★</div>
+            <div className="text-sm text-gray-600 font-medium">Google Rating</div>
           </div>
           <div>
-            <div className="text-3xl font-bold text-accent mb-2">24/7</div>
-            <div className="text-sm text-gray-600 font-medium">Security & Support</div>
+            <div className="text-3xl font-bold text-accent mb-2">2020</div>
+            <div className="text-sm text-gray-600 font-medium">Running Since</div>
           </div>
           <div>
             <div className="text-3xl font-bold text-accent mb-2">100%</div>

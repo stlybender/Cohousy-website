@@ -159,7 +159,7 @@ export default function FAQSection() {
             Still Have Questions?
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-            Our dedicated support team is available 24/7 to assist you with any queries
+            Our team is happy to help with any questions
             about our co-living spaces and booking process.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -170,7 +170,7 @@ export default function FAQSection() {
                 </button>
               }
               title="Contact Support"
-              description="Get instant help from our dedicated support team available 24/7."
+              description="Send us your question and our team will get back to you."
               serviceType="Support Request"
             />
             <ContactFormDialog

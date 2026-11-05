@@ -11,7 +11,7 @@ import LocationAmenitiesSection from '@/components/LocationAmenitiesSection'
 import AppExperienceSection from '@/components/AppExperienceSection'
 import PricingSection from '@/components/PricingSection'
 import GoogleReviews from '@/components/GoogleReviews'
-import { LEAD_BY_PAGE } from '@/lib/reviews'
+import { LEAD_BY_PAGE, GOOGLE_RATING } from '@/lib/reviews'
 import FAQSection from '@/components/FAQSection'
 import FinalCTASection from '@/components/FinalCTASection'
 
@@ -55,7 +55,7 @@ export default function Home() {
         {/* <PricingSection /> */}
         <GoogleReviews
           lead={LEAD_BY_PAGE.hub}
-          heading={<>4.9 Stars from<span className="text-accent"> 83 Google Reviews</span></>}
+          heading={<>{GOOGLE_RATING.value} Stars from<span className="text-accent"> {GOOGLE_RATING.count} Google Reviews</span></>}
           intro="Not testimonials we wrote — real reviews published on Google by people who live in our buildings, under their own names. Every one is clickable, so you can verify it yourself."
         />
         <FAQSection />
