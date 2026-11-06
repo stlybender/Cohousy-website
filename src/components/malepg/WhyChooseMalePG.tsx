@@ -164,7 +164,7 @@ export default function WhyChooseMalePG() {
               </h4>
               <ul className="space-y-2 text-sm text-gray-600">
                 <li>• 5-minute walk to major IT offices</li>
-                <li>• Networking with 500+ IT professionals</li>
+                <li>• Networking with fellow IT professionals</li>
                 <li>• Reduced transport costs and time</li>
                 <li>• Access to career growth opportunities</li>
                 <li>• Work-life balance in vibrant tech ecosystem</li>

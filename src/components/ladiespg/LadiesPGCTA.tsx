@@ -1,5 +1,6 @@
 'use client'
 
+import { GOOGLE_RATING } from '@/lib/reviews'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Phone, Calendar, Shield, MapPin, Star, Users } from 'lucide-react'
@@ -9,7 +10,7 @@ import ContactFormDialog from '../ContactFormDialog'
 
 const quickStats = [
   { icon: Shield, value: '100%', label: 'Female Only' },
-  { icon: Star, value: '4.9★', label: 'Safety Rating' },
+  { icon: Star, value: `${GOOGLE_RATING.value}★`, label: 'Google Rating' },
   { icon: Users, value: '250+', label: 'Happy Women' }
 ]
 

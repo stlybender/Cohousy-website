@@ -1,5 +1,6 @@
 'use client'
 
+import { GOOGLE_RATING } from '@/lib/reviews'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Phone, Calendar, MapPin, Download, Star, Clock } from 'lucide-react'
@@ -10,7 +11,7 @@ import ContactFormDialog from '../ContactFormDialog'
 
 const quickStats = [
     { icon: Clock, value: '5 Min', label: 'Walk to Eon IT Park' },
-    { icon: Star, value: '4.8★', label: 'Resident Rating' },
+    { icon: Star, value: `${GOOGLE_RATING.value}★`, label: 'Google Rating' },
     { icon: MapPin, value: '#1', label: 'Location in Kharadi' }
 ]
 
@@ -284,7 +285,7 @@ export default function BookNowCTA() {
                         Save Hours Daily with Perfect Location
                     </h3>
                     <p className="text-gray-600 mb-6">
-                        Join hundreds of professionals who chose convenience over compromise.
+                        Join the professionals who chose convenience over compromise.
                         Limited spots available - secure your walking distance PG today!
                     </p>
                     <div className="flex items-center justify-center space-x-6 text-sm text-gray-500 mb-6">

@@ -23,7 +23,7 @@ export const FAQS: Array<{ question: string; answer: string }> = [
   },
   {
     question: 'What is the community like in your male PG?',
-    answer: 'Our community consists of 500+ professional men from IT and corporate sectors. We organize networking events, weekend sports, gaming sessions, and skill-sharing workshops. It\'s a supportive brotherhood that helps with both personal and career growth.'
+    answer: 'Our community is made up of professional men from IT and corporate sectors. We organize networking events, weekend sports, gaming sessions, and skill-sharing workshops. It\'s a supportive brotherhood that helps with both personal and career growth.'
   },
   {
     question: 'Are there any restrictions on visitors or timings?',

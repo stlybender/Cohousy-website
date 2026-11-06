@@ -1,7 +1,7 @@
 // REAL Google reviews for the Cohousy listing in Kharadi.
 //
 // Source: Google Places API (New), place ID ChIJmyEwvSzDwjsRj8_M90Ezwws
-// Pulled 2026-10-02 with tools/gmb/fetch_place_reviews.py in the content workspace.
+// Pulled 2026-11-06 with tools/gmb/fetch_place_reviews.py in the content workspace.
 //
 // ── RULES ────────────────────────────────────────────────────────────────────
 // 1. DO NOT add invented reviews. Every entry must be a real, published Google
@@ -45,10 +45,10 @@ export interface Review {
 }
 
 export const GOOGLE_RATING = {
-  value: 4.8,
-  count: 87,
+  value: 4.9,
+  count: 86,
   /** Last verified against the Places API. Refresh monthly — see rule 2 above. */
-  pulledOn: '2026-10-02',
+  pulledOn: '2026-11-06',
   placeId: 'ChIJmyEwvSzDwjsRj8_M90Ezwws',
   mapsUri: 'https://maps.google.com/?cid=847577513299070863',
   /** Deep link that opens the "write a review" dialog for this listing. */
@@ -58,10 +58,19 @@ export const GOOGLE_RATING = {
 
 export const REVIEWS: Review[] = [
   {
+    name: 'Nitin Banne',
+    text: 'Had a great stay at cohousy The rooms were clean and well-maintained, and the staff was really helpful and friendly throughout stay. the overall environment felt safe and homely. Would definitely recommend this PG to anyone looking for a comfortable place to stay',
+    rating: 5,
+    when: 'a month ago',
+    publishedAt: '2026-09-27',
+    photo: '/reviews/nitin-banne.jpg',
+    authorUri: 'https://www.google.com/maps/contrib/115994835918184382631/reviews',
+  },
+  {
     name: 'Sugandh Gautam',
     text: 'Having stayed here for 3.5 years, I can confidently say this property offers an exceptional, hassle-free co-housing experience with good amenities and a great sense of community.',
     rating: 5,
-    when: 'a month ago',
+    when: '3 months ago',
     publishedAt: '2026-08-04',
     photo: '/reviews/sugandh-gautam.jpg',
     authorUri: 'https://www.google.com/maps/contrib/102801596572121215776/reviews',
@@ -70,37 +79,28 @@ export const REVIEWS: Review[] = [
     name: 'Sweta Roy',
     text: 'Great place with comfort, sanitation, peace, security n hygiene with all required amenities. If you are looking for peace alongwith comfort after long tiring day at your workplace, then this is the only one stop solution… Also, for the IT professionals, one of the best places to stay in Kharadi as it is just nearby and walking distance from EON IT Park and WTC.',
     rating: 5,
-    when: '4 months ago',
+    when: '5 months ago',
     publishedAt: '2026-05-18',
     photo: '/reviews/sweta-roy.jpg',
     authorUri: 'https://www.google.com/maps/contrib/101655038422614425836/reviews',
   },
   {
-    name: 'Harshit Dave',
-    text: 'The rooms are clean, hygienic, and well-maintained. The location is perfect, with easy access to the market. The owner is very helpful, creating a warm, safe, and homely atmosphere. Highly recommended for working professionals!',
+    name: 'Devashish Padgaonkar',
+    text: 'Very nice place to live, in vicinity of all major IT parks in Kharadi. This place is well managed with all problems attended at earliest. Definitely recommend this place even for long stays.',
     rating: 5,
-    when: '8 months ago',
-    publishedAt: '2026-02-01',
-    photo: '/reviews/harshit-dave.jpg',
-    authorUri: 'https://www.google.com/maps/contrib/107934827961179132970/reviews',
-  },
-  {
-    name: 'Hardik Sharma',
-    text: 'Good rooms, nice location, peaceful environment, polite staff. Special thanks to Santosh, great guy!',
-    rating: 5,
-    when: '2 months ago',
+    when: '3 months ago',
     publishedAt: '2026-08-01',
-    photo: '/reviews/hardik-sharma.jpg',
-    authorUri: 'https://www.google.com/maps/contrib/105387262467913465438/reviews',
+    photo: '/reviews/devashish-padgaonkar.jpg',
+    authorUri: 'https://www.google.com/maps/contrib/103514082842562196095/reviews',
   },
   {
-    name: 'Sourav Bansal',
-    text: 'This place offers everything what a working professional require such as ironing, washing machine, fridge etc. Rooms are also perfect.',
+    name: 'Prachi Jain',
+    text: 'Hi, the rooms are very spacious and clean, staff is very supportive and you’ll get your privacy. Will recommend staying here.',
     rating: 5,
-    when: '10 months ago',
-    publishedAt: '2025-12-01',
-    photo: '/reviews/sourav-bansal.jpg',
-    authorUri: 'https://www.google.com/maps/contrib/116576215769650314475/reviews',
+    when: '3 months ago',
+    publishedAt: '2026-08-01',
+    photo: '/reviews/prachi-jain.jpg',
+    authorUri: 'https://www.google.com/maps/contrib/110583788960202381027/reviews',
   },
 ]
 
@@ -129,16 +129,16 @@ export const LEAD_BY_PAGE = {
   coliving: 'Sugandh Gautam',
   /** Woman reviewer citing "peace, security n hygiene" — the ladies page's core concern. */
   ladies: 'Sweta Roy',
-  /** "polite staff", "peaceful environment", names the founder. */
-  male: 'Hardik Sharma',
-  /** "rooms are clean, hygienic, and well-maintained" — the private-room promise. */
-  singleRoom: 'Harshit Dave',
+  /** Male reviewer: "staff was really helpful and friendly", "safe and homely", "recommend this PG". */
+  male: 'Nitin Banne',
+  /** "rooms are very spacious and clean... you'll get your privacy" — the private-room promise. */
+  singleRoom: 'Prachi Jain',
   /** Explicitly "walking distance from EON IT Park and WTC". */
   eon: 'Sweta Roy',
-  /** Longest tenure on record: 3.5 years. */
-  longTerm: 'Sugandh Gautam',
-  /** Lists the practical kit — ironing, washing machine, fridge — that matters on a short stay. */
-  shortTerm: 'Sourav Bansal',
+  /** Says it outright: "Definitely recommend this place even for long stays". */
+  longTerm: 'Devashish Padgaonkar',
+  /** "Had a great stay... rooms were clean and well-maintained" — a finished stay, told as one. */
+  shortTerm: 'Nitin Banne',
   /** 3.5-year stay: the closest match to someone renting a whole flat for the long term. */
   flats: 'Sugandh Gautam',
 } as const

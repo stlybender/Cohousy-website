@@ -150,7 +150,7 @@ export default function CommunityLifestyle() {
             <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg">
               <div className="flex items-center space-x-2 mb-2">
                 <Users size={20} className="text-blue-600" />
-                <span className="font-semibold text-black">500+ Professionals</span>
+                <span className="font-semibold text-black">Working Professionals</span>
               </div>
               <div className="text-sm text-gray-600">IT & Corporate Network</div>
             </div>

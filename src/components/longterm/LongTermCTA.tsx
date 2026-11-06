@@ -1,5 +1,6 @@
 'use client'
 
+import { GOOGLE_RATING } from '@/lib/reviews'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Phone, Calendar, Home, Clock, Star, MapPin } from 'lucide-react'
@@ -10,7 +11,7 @@ import ContactFormDialog from '../ContactFormDialog'
 const quickStats = [
   { icon: Home, value: '3-12+', label: 'Months Flexible' },
   { icon: Clock, value: '₹3K+', label: 'Monthly Savings' },
-  { icon: Star, value: '4.9★', label: 'Long-term Rating' }
+  { icon: Star, value: `${GOOGLE_RATING.value}★`, label: 'Google Rating' }
 ]
 
 export default function LongTermCTA() {

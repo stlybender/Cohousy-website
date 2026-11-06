@@ -1,5 +1,6 @@
 'use client'
 
+import { GOOGLE_RATING } from '@/lib/reviews'
 import { useRef } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
@@ -11,7 +12,7 @@ const stats = [
   { value: '6+', label: 'Months Average Stay', icon: Calendar },
   { value: '1BHK/1RK', label: 'Private Rooms', icon: Home },
   { value: '100%', label: 'Utilities Included', icon: Shield },
-  { value: '4.8★', label: 'Resident Rating', icon: Star }
+  { value: `${GOOGLE_RATING.value}★`, label: 'Google Rating', icon: Star }
 ]
 
 export default function LongTermHero() {

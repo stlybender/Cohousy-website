@@ -1,5 +1,6 @@
 'use client'
 
+import { GOOGLE_RATING } from '@/lib/reviews'
 import { useRef } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
@@ -11,7 +12,7 @@ const stats = [
   { value: '0', label: 'Lock-in Period', icon: Zap },
   { value: '₹1,300', label: 'Per Night', icon: Calendar },
   { value: '24/7', label: 'Support', icon: Shield },
-  { value: '4.9★', label: 'Guest Rating', icon: Star }
+  { value: `${GOOGLE_RATING.value}★`, label: 'Google Rating', icon: Star }
 ]
 
 export default function ShortTermHero() {

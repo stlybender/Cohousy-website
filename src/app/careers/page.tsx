@@ -42,7 +42,7 @@ export default function CareersPage() {
           </h1>
           <p className="mx-auto mt-8 max-w-2xl text-base md:text-lg text-gray-600 leading-relaxed">
             Cohousy is a small, operations-first team in Kharadi, Pune. We run
-            co-living homes for hundreds of residents and manage 30+ homes for
+            co-living homes in Kharadi and manage 30+ homes for
             individual owners. Most of our work happens inside buildings, not
             behind dashboards — and we like it that way.
           </p>

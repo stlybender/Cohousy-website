@@ -1,5 +1,6 @@
 'use client'
 
+import { GOOGLE_RATING } from '@/lib/reviews'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Phone, Calendar, Users, MapPin, Star, Home } from 'lucide-react'
@@ -9,8 +10,8 @@ import ContactFormDialog from '../ContactFormDialog'
 
 const quickStats = [
   { icon: Users, value: '100%', label: 'Male Only' },
-  { icon: Star, value: '4.8★', label: 'Professional Rating' },
-  { icon: Home, value: '500+', label: 'Happy Residents' }
+  { icon: Star, value: `${GOOGLE_RATING.value}★`, label: 'Google Rating' },
+  { icon: Home, value: '2020', label: 'Running Since' }
 ]
 
 export default function MalePGCTA() {
@@ -222,7 +223,7 @@ export default function MalePGCTA() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: '💼', title: 'Career Growth', subtitle: '500+ IT professionals network' },
+              { icon: '💼', title: 'Career Growth', subtitle: 'A network of IT professionals' },
               { icon: '🏠', title: 'Premium Living', subtitle: 'Modern amenities & comfort' },
               { icon: '📱', title: 'Digital Experience', subtitle: 'App-managed everything' },
               { icon: '💰', title: 'Great Value', subtitle: 'All-inclusive transparent pricing' }

@@ -49,7 +49,7 @@ export default function PMTrust() {
             <p className="mt-7 text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
               We run Cohousy co-living homes in Kharadi — tenants, maintenance,
               taxes, paperwork, and a single number to call, every day, for
-              hundreds of residents.
+              every resident.
             </p>
             <p className="mt-5 text-base md:text-lg text-gray-600 leading-relaxed max-w-xl">
               Most property managers manage from an office. We manage from

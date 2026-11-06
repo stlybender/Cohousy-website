@@ -1,5 +1,6 @@
 'use client'
 
+import { GOOGLE_RATING } from '@/lib/reviews'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Phone, Calendar, Zap, Clock, Star, MapPin } from 'lucide-react'
@@ -10,7 +11,7 @@ import ContactFormDialog from '../ContactFormDialog'
 const quickStats = [
   { icon: Zap, value: '0', label: 'Lock-in Period' },
   { icon: Clock, value: '30 Min', label: 'Check-in Time' },
-  { icon: Star, value: '4.9★', label: 'Guest Rating' }
+  { icon: Star, value: `${GOOGLE_RATING.value}★`, label: 'Google Rating' }
 ]
 
 export default function ShortTermCTA() {
@@ -245,7 +246,7 @@ export default function ShortTermCTA() {
               Join thousands of professionals who chose flexibility over hassle
             </p>
             <div className="flex items-center justify-center space-x-6 text-sm text-gray-500">
-              <span>✓ 4.9★ Guest Rating</span>
+              <span>✓ {GOOGLE_RATING.value}★ Google Rating</span>
               <span>✓ 24/7 Support</span>
               <span>✓ Instant Confirmation</span>
             </div>

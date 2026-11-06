@@ -1,5 +1,6 @@
 'use client'
 
+import { GOOGLE_RATING } from '@/lib/reviews'
 import { useRef } from 'react'
 import { motion, useInView } from 'framer-motion'
 import { Phone, Download, MapPin, Clock, Star } from 'lucide-react'
@@ -10,7 +11,7 @@ import ContactFormDialog from '../ContactFormDialog'
 const quickStats = [
   { icon: MapPin, value: '5 min', label: 'Walk to Eon IT Park' },
   { icon: Clock, value: '24/7', label: 'Support & Security' },
-  { icon: Star, value: '4.9★', label: 'Resident Rating' }
+  { icon: Star, value: `${GOOGLE_RATING.value}★`, label: 'Google Rating' }
 ]
 
 export default function ColivingCTA() {

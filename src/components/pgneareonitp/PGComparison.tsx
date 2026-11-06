@@ -182,7 +182,7 @@ export default function PGComparison() {
           </h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
             This positions Cohousy as superior for modern needs near Kharadi IT Park.
-            Join hundreds of professionals who made the smart choice.
+            Join the professionals who made the smart choice.
           </p>
           <ContactFormDialog
             trigger={

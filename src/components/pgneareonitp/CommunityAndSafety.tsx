@@ -168,7 +168,7 @@ export default function CommunityAndSafety() {
 
               <div className="absolute inset-0 bg-gradient-to-r from-orange-600/90 to-transparent flex items-center">
                 <div className="p-6 text-white">
-                  <h4 className="text-xl font-bold mb-2">500+ IT Professionals</h4>
+                  <h4 className="text-xl font-bold mb-2">Fellow IT Professionals</h4>
                   <p className="text-orange-100">Active community network</p>
                 </div>
               </div>

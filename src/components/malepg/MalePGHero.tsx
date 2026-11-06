@@ -1,5 +1,6 @@
 'use client'
 
+import { GOOGLE_RATING } from '@/lib/reviews'
 import { useRef } from 'react'
 import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
@@ -11,7 +12,7 @@ const stats = [
   { value: '100%', label: 'Male Only', icon: Users },
   { value: '₹10K', label: 'Starting Price', icon: Home },
   { value: '5 Min', label: 'to Eon IT Park', icon: MapPin },
-  { value: '4.8★', label: 'Boys Rating', icon: Star }
+  { value: `${GOOGLE_RATING.value}★`, label: 'Google Rating', icon: Star }
 ]
 
 export default function MalePGHero() {
